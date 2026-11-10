@@ -160,6 +160,51 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
 .foot a:hover{color:var(--bg)}
 .copy{margin-top:40px;padding-top:24px;border-top:1px solid #ffffff1f;font-size:13px;color:#8A877F}
 
+/* ---------- motion ---------- */
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes focusPull{0%{filter:blur(10px);transform:scale(1.08);opacity:.4}70%{filter:blur(0);transform:scale(.995);opacity:1}100%{filter:none;transform:none;opacity:1}}
+@keyframes afIn{0%{inset:-14%;opacity:0}40%{opacity:1}75%{inset:-4%;border-color:var(--ink)}85%{inset:-4%;border-color:var(--yellow)}100%{inset:-4%;border-color:var(--yellow);opacity:0}}
+@keyframes rec{0%,100%{opacity:1}50%{opacity:.15}}
+.hero h1,.hero .ka-name,.hero .lead,.hero .btns,.hero .eyebrow{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero .eyebrow{animation-delay:.05s}.hero h1{animation-delay:.15s}.hero .ka-name{animation-delay:.3s}.hero .lead{animation-delay:.42s}.hero .btns{animation-delay:.54s}
+.hero-mark svg{animation:focusPull 1.3s cubic-bezier(.2,.7,.2,1) .2s both}
+.af{position:absolute;inset:-4%;pointer-events:none;animation:afIn 1.6s ease .2s both}
+.af i{position:absolute;width:14%;height:14%;border:0 solid;border-color:inherit}
+.af i:nth-child(1){top:0;left:0;border-top-width:2px;border-left-width:2px}
+.af i:nth-child(2){top:0;right:0;border-top-width:2px;border-right-width:2px}
+.af i:nth-child(3){bottom:0;left:0;border-bottom-width:2px;border-left-width:2px}
+.af i:nth-child(4){bottom:0;right:0;border-bottom-width:2px;border-right-width:2px}
+.recdot{position:absolute;top:-10%;right:0;display:flex;align-items:center;gap:7px;font-family:var(--wide);font-weight:700;font-size:12px;letter-spacing:.14em;color:var(--ink2);animation:rise .6s ease 1.6s both}
+.recdot::before{content:"";width:9px;height:9px;border-radius:50%;background:#D7261E;animation:rec 1.6s ease-in-out 2.2s infinite}
+/* buttons: viewfinder corners on hover */
+.btn{position:relative;transition:background .2s,color .2s}
+.btn::before,.btn::after{content:"";position:absolute;width:10px;height:10px;opacity:0;transition:all .25s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.btn::before{top:-2px;left:-2px;border-top:3px solid var(--yellow);border-left:3px solid var(--yellow)}
+.btn::after{bottom:-2px;right:-2px;border-bottom:3px solid var(--yellow);border-right:3px solid var(--yellow)}
+.btn:hover::before{top:-9px;left:-9px;opacity:1}
+.btn:hover::after{bottom:-9px;right:-9px;opacity:1}
+/* episodes */
+.ep{position:relative;transition:padding .25s}
+.ep::before{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--yellow);transition:width .45s cubic-bezier(.2,.7,.2,1)}
+.ep:hover::before{width:100%}
+.ep .n{transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.ep:hover .n{transform:translateX(8px)}
+/* cards */
+.card,.profile,.art{transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s}
+.card:hover,.profile:not([open]):hover{transform:translateY(-4px);box-shadow:0 14px 30px -18px #0E0E0E55}
+.card .corner{transition:width .3s,height .3s}
+.card:hover .corner{width:76px;height:76px}
+.profile[open] .p-body{animation:rise .5s cubic-bezier(.2,.7,.2,1) both}
+/* reveal on scroll (only below-the-fold items are hidden, by script) */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.eyebrow::before{transition:width .6s cubic-bezier(.2,.7,.2,1)}
+.rv .eyebrow::before{width:0}.rv.in .eyebrow::before{width:28px}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}.af{display:none}
+}
+
 @media (max-width:900px){
   .links a{display:none}
   .hero{padding:56px 0 64px}
@@ -236,7 +281,7 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
           <a class="btn ghost" href="#season"><span class="ka">ახალი სეზონი</span><span class="en">New season</span></a>
         </div>
       </div>
-      <div class="hero-mark"><svg><use href="#sc"/></svg></div>
+      <div class="hero-mark"><svg><use href="#sc"/></svg><span class="af" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="recdot" aria-hidden="true">REC</span></div>
     </div>
   </div>
 
@@ -437,6 +482,32 @@ var ARTICLES=[
   empty.hidden=true;
   function e(t){var d=document.createElement('div');d.textContent=t||'';return d.innerHTML}
   box.innerHTML=ARTICLES.map(function(a){return '<a class="art" href="'+e(a.url)+'"><span class="cat"><span class="ka">'+e(a.cat_ka)+'</span><span class="en">'+e(a.cat_en||a.cat_ka)+'</span></span><h3><span class="ka">'+e(a.title_ka)+'</span><span class="en">'+e(a.title_en||a.title_ka)+'</span></h3><p><span class="ka">'+e(a.excerpt_ka)+'</span><span class="en">'+e(a.excerpt_en||a.excerpt_ka)+'</span></p><span class="by"><b><span class="ka">'+e(a.author_ka)+'</span><span class="en">'+e(a.author_en||a.author_ka)+'</span></b> · '+e(a.date)+'</span></a>'}).join('');
+})();
+</script>
+<script>
+(function(){
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window))return;
+  var els=document.querySelectorAll('.sec-head,.card,.ep,.profile,.empty,.art,.partner,.stat,.cta h2');
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;setTimeout(function(){t.classList.add('in')},(+t.dataset.d||0));io.unobserve(t)}})},{rootMargin:'0px 0px -8% 0px'});
+  var vh=innerHeight;
+  els.forEach(function(el){
+    if(el.getBoundingClientRect().top<vh*0.92)return;
+    var sib=el.parentElement?Array.prototype.indexOf.call(el.parentElement.children,el):0;
+    el.dataset.d=Math.min(sib,5)*90;
+    el.classList.add('rv');io.observe(el);
+  });
+  /* count-up for facts when a bio opens */
+  document.querySelectorAll('details.profile').forEach(function(d){
+    d.addEventListener('toggle',function(){
+      if(!d.open)return;
+      d.querySelectorAll('.facts b').forEach(function(b){
+        var txt=b.dataset.v||(b.dataset.v=b.textContent),m=txt.match(/^(\d+)(.*)$/);if(!m)return;
+        var to=+m[1],from=to>1900?to-12:0,t0=performance.now();
+        (function f(t){var k=Math.min(1,(t-t0)/900);k=1-Math.pow(1-k,3);b.textContent=Math.round(from+(to-from)*k)+m[2];if(k<1)requestAnimationFrame(f)})(t0);
+      });
+    });
+  });
 })();
 </script>
 </body>
