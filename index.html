@@ -20,7 +20,7 @@
 <meta name="google-site-verification" content="f-FEkds6aLT5stUbz-RZ_qX6HWM9rvh-hKxlBWbggSI">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Noto+Sans+Georgian:wght@400..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Noto+Sans+Georgian:wght@400..800&family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#EEECE6; --bg2:#E4E1D8; --ink:#0E0E0E; --ink2:#3A3A38; --muted:#6B6A66;
@@ -152,11 +152,23 @@ html[lang=ka] h2{font-family:var(--ka)}
 .steps li{counter-increment:s;display:flex;gap:14px;align-items:baseline;color:var(--ink2);font-size:15px}
 .steps li::before{content:counter(s);font-family:var(--wide);font-weight:800;font-stretch:125%;font-size:20px;color:var(--yellow);min-width:22px}
 
-/* partner */
+/* partner: Safety.ge branding */
 #partner{padding:0 0 110px}
-.partner{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:center;border:2px solid var(--ink);padding:48px}
-.partner .logo{font-family:var(--wide);font-weight:800;font-size:clamp(38px,5vw,60px);letter-spacing:-.01em}
-.partner p{color:var(--ink2);margin-bottom:22px}
+.partner{--sg-red:#EA4123;--sg-ink:#252422;--sg-paper:#E8E5D8;display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:center;background:var(--sg-ink);color:var(--sg-paper);padding:56px;position:relative;overflow:hidden;font-family:"Rubik","Noto Sans Georgian",sans-serif}
+.partner::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:var(--sg-red)}
+.partner .eyebrow{color:#A8A498;font-family:"Rubik",var(--ka)}
+.partner .eyebrow::before{background:var(--sg-red)}
+.partner .logo{font-family:"Rubik",sans-serif;font-weight:800;font-size:clamp(42px,5.4vw,66px);letter-spacing:-.02em;line-height:1;margin-top:16px;color:var(--sg-paper)}
+.partner .logo i{font-style:normal;color:var(--sg-red)}
+.partner .addr{margin-top:14px;font-size:15px;color:#A8A498}
+.partner p{color:#D3CFC2;margin-bottom:22px;font-family:"Noto Sans Georgian","Rubik",sans-serif}
+.sg-facts{display:flex;gap:28px;flex-wrap:wrap;margin:0 0 26px;padding:18px 0;border-top:1px solid #ffffff1f;border-bottom:1px solid #ffffff1f}
+.sg-facts div{display:grid;gap:2px}
+.sg-facts b{font-family:"Rubik",sans-serif;font-weight:700;font-size:28px;line-height:1;color:var(--sg-paper)}
+.sg-facts span{font-size:13px;color:#A8A498}
+.partner .btn{background:var(--sg-red);border-color:var(--sg-red);color:#fff;font-family:"Rubik","Noto Sans Georgian",sans-serif}
+.partner .btn:hover{background:#c9351b;border-color:#c9351b;color:#fff}
+.partner .btn::before,.partner .btn::after{border-color:var(--sg-paper)}
 
 /* cta / footer */
 .cta{background:var(--yellow);padding:90px 0}
@@ -520,11 +532,17 @@ a.ep{text-decoration:none;color:inherit}
       <div class="partner">
         <div>
           <div class="eyebrow"><span class="ka">პარტნიორი</span><span class="en">Partner</span></div>
-          <div class="logo" style="margin-top:14px">Safety.ge</div>
+          <div class="logo">Safety<i>.ge</i></div>
+          <div class="addr"><span class="ka">უსაფრთხოების მრავალფუნქციური ცენტრი · ბელიაშვილის 136, თბილისი</span><span class="en">Multifunctional safety centre · 136 Beliashvili St, Tbilisi</span></div>
         </div>
         <div>
-          <p><span class="ka">ახალი სეზონი Safety.ge-ის შოურუმში იღება. Safety.ge არის მრავალფუნქციური უსაფრთხოების ცენტრი თბილისში: პროდუქცია, მომსახურება, ტრენინგები და კონსულტაცია ერთ სივრცეში.</span><span class="en">The new season is filmed in the Safety.ge showroom. Safety.ge is a multifunctional safety centre in Tbilisi: products, services, training and consulting in one space.</span></p>
-          <a class="btn ghost" href="https://safety.ge" target="_blank" rel="noopener"><span class="ka">ეწვიე Safety.ge-ს</span><span class="en">Visit Safety.ge</span></a>
+          <p><span class="ka">ახალი სეზონი Safety.ge-ის შოურუმში იღება. აქ ერთ სივრცეშია უსაფრთხოების პროდუქცია, მომსახურება, ტრენინგები და კონსულტაცია.</span><span class="en">The new season is filmed in the Safety.ge showroom, where safety products, services, training and consulting come together in one space.</span></p>
+          <div class="sg-facts">
+            <div><b>420 m²</b><span><span class="ka">შოურუმი</span><span class="en">showroom</span></span></div>
+            <div><b>2</b><span><span class="ka">სართული</span><span class="en">floors</span></span></div>
+            <div><b>8</b><span><span class="ka">მიმართულება</span><span class="en">safety areas</span></span></div>
+          </div>
+          <a class="btn primary" href="https://safety.ge" target="_blank" rel="noopener"><span class="ka">ეწვიე Safety.ge-ს</span><span class="en">Visit Safety.ge</span></a>
         </div>
       </div>
     </div>
