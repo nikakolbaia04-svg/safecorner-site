@@ -94,25 +94,53 @@ html[lang=ka] h2{font-family:var(--ka)}
 .soon{font-family:var(--wide);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:1.5px solid #ffffff55;padding:7px 12px;white-space:nowrap;color:#D8D5CC}
 
 /* founders */
-.people{display:grid;gap:28px}
-.profile{display:grid;grid-template-columns:300px 1fr;gap:56px;background:#F6F5F1;padding:48px;position:relative}
-.p-side{display:flex;flex-direction:column;gap:22px;min-width:0}
-.ph{width:180px;height:180px;flex:none;position:relative;background:var(--bg2);display:grid;place-items:center;font-family:var(--ka);font-weight:800;font-size:52px;color:var(--ink2)}
+.people{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+.profile{background:#F6F5F1;position:relative}
+.profile[open]{grid-column:1/-1}
+.profile summary{list-style:none;cursor:pointer;display:flex;gap:28px;align-items:center;padding:28px}
+.profile summary::-webkit-details-marker{display:none}
+.profile summary:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
+.ph{width:120px;height:120px;flex:none;position:relative;background:var(--bg2);display:grid;place-items:center;font-family:var(--ka);font-weight:800;font-size:36px;color:var(--ink2)}
 .ph::before,.ph::after{content:"";position:absolute}
-.ph::before{top:-8px;right:-8px;width:34px;height:34px;border-top:3px solid var(--ink);border-right:3px solid var(--ink)}
-.ph::after{bottom:-8px;left:-8px;width:46px;height:46px;border-bottom:8px solid var(--yellow);border-left:8px solid var(--yellow)}
-.profile h3{font-size:28px;line-height:1.2}
-.role{color:var(--muted);font-size:15px;margin-top:6px}
-.facts{list-style:none;display:grid;gap:0;border-top:2px solid var(--ink)}
+.ph::before{top:-6px;right:-6px;width:26px;height:26px;border-top:3px solid var(--ink);border-right:3px solid var(--ink)}
+.ph::after{bottom:-6px;left:-6px;width:36px;height:36px;border-bottom:7px solid var(--yellow);border-left:7px solid var(--yellow)}
+.s-text{min-width:0;flex:1}
+.profile h3{font-size:24px;line-height:1.25}
+.role{color:var(--muted);font-size:15px;margin-top:4px}
+.short-bio{color:var(--ink2);font-size:15px;margin-top:10px;line-height:1.55}
+.more{display:inline-flex;align-items:center;gap:8px;margin-top:14px;font-weight:700;font-size:14px;border-bottom:2px solid var(--yellow);padding-bottom:2px}
+.more::after{content:"+";font-family:var(--wide);font-size:18px;line-height:1;transition:transform .2s}
+.profile[open] .more::after{transform:rotate(45deg)}
+.profile[open] .more .o{display:none}
+.profile:not([open]) .more .c{display:none}
+.p-body{display:grid;grid-template-columns:260px 1fr;gap:56px;padding:8px 28px 44px;border-top:1px solid var(--line);margin:0 28px;padding-left:0;padding-right:0;padding-top:32px}
+.facts{list-style:none;border-top:2px solid var(--ink);align-self:start}
 .facts li{display:flex;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink2)}
 .facts b{font-family:var(--wide);font-weight:800;font-stretch:125%;font-size:22px;color:var(--ink);min-width:88px;font-variant-numeric:tabular-nums}
 .bio{min-width:0;max-width:680px}
-.bio .tag{display:block;margin-bottom:18px}
-.bio .lead{font-size:22px;line-height:1.5;color:var(--ink);font-weight:600;margin-bottom:26px;text-wrap:balance}
+.bio .lead{font-size:21px;line-height:1.5;color:var(--ink);font-weight:600;margin-bottom:24px;text-wrap:balance}
 .bio p{color:var(--ink2);font-size:17px;line-height:1.75;margin-bottom:18px}
-.bio blockquote{margin:30px 0 0;padding:4px 0 4px 22px;border-left:4px solid var(--yellow);font-size:18px;line-height:1.6;color:var(--ink);font-weight:600}
-.profile.short{grid-template-columns:300px 1fr;align-items:center}
-.profile.short .bio p{margin:0}
+.bio blockquote{margin:28px 0 0;padding:4px 0 4px 22px;border-left:4px solid var(--yellow);font-size:18px;line-height:1.6;color:var(--ink);font-weight:600}
+.soon-note{color:var(--muted);padding:24px 0 0}
+@media (prefers-reduced-motion:reduce){.more::after{transition:none}}
+
+/* articles */
+#articles{background:var(--bg2);border-top:1px solid var(--line)}
+.arts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.art{background:#F6F5F1;padding:28px;text-decoration:none;display:flex;flex-direction:column;gap:12px;position:relative;transition:transform .15s}
+.art:hover{transform:translateY(-3px)}
+.art .cat{font-family:var(--wide);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.art h3{font-size:21px;line-height:1.35}
+.art p{color:var(--ink2);font-size:15px}
+.art .by{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+.art .by b{color:var(--ink);font-weight:700}
+.empty{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:center;background:#F6F5F1;padding:44px;position:relative}
+.empty::after{content:"";position:absolute;left:0;bottom:0;width:56px;height:56px;border-left:8px solid var(--yellow);border-bottom:8px solid var(--yellow)}
+.empty h3{font-size:26px;line-height:1.3;margin-bottom:12px}
+.empty p{color:var(--ink2)}
+.steps{list-style:none;counter-reset:s;display:grid;gap:14px}
+.steps li{counter-increment:s;display:flex;gap:14px;align-items:baseline;color:var(--ink2);font-size:15px}
+.steps li::before{content:counter(s);font-family:var(--wide);font-weight:800;font-stretch:125%;font-size:20px;color:var(--yellow);min-width:22px}
 
 /* partner */
 #partner{padding:0 0 110px}
@@ -138,8 +166,10 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
   .hero-grid,.sec-head,.partner{grid-template-columns:1fr;gap:32px}
   .hero-mark{max-width:170px;justify-self:start;order:-1}
   .formats{grid-template-columns:1fr}
-  .profile,.profile.short{grid-template-columns:1fr;gap:32px;padding:36px}
-  .ph{width:140px;height:140px;font-size:42px}
+  .people,.arts{grid-template-columns:1fr}
+  .p-body,.empty{grid-template-columns:1fr;gap:28px}
+  .p-body{margin:0 24px}
+  .empty{padding:32px}
   section{padding:76px 0}
   .ep{grid-template-columns:64px 1fr;gap:18px}
   .ep .n{font-size:32px}
@@ -151,7 +181,7 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
   .stats .wrap{grid-template-columns:1fr}
   .stat{border-left:0;border-top:1px solid var(--line);padding:20px 0}
   .stat:first-child{border-top:0}
-  .profile{padding:28px 22px 40px}
+  .profile summary{flex-direction:column;align-items:flex-start;padding:24px}
   .bio .lead{font-size:19px}
   .brand b{font-size:15px}
   .lead{font-size:18px}
@@ -180,6 +210,7 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
       <a href="#about"><span class="ka">პროექტი</span><span class="en">About</span></a>
       <a href="#season"><span class="ka">ახალი სეზონი</span><span class="en">New season</span></a>
       <a href="#team"><span class="ka">გუნდი</span><span class="en">Team</span></a>
+      <a href="#articles"><span class="ka">სტატიები</span><span class="en">Articles</span></a>
       <a href="#partner"><span class="ka">პარტნიორი</span><span class="en">Partner</span></a>
       <div class="lang" role="group" aria-label="Language">
         <button data-l="ka" aria-pressed="true">ქარ</button>
@@ -275,37 +306,69 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
         <p><span class="ka">Safe Corner ორმა ადამიანმა შექმნა, რომლებსაც სჯერათ, რომ შრომის უსაფრთხოებაზე საუბარი ყველასთვის გასაგები უნდა იყოს.</span><span class="en">Safe Corner was founded by two people who believe that workplace safety should be explained in a way everyone understands.</span></p>
       </div>
       <div class="people">
-        <article class="profile" id="nikoloz">
-          <div class="p-side">
+        <details class="profile" id="nikoloz">
+          <summary>
             <div class="ph">ნყ</div>
-            <div>
+            <div class="s-text">
               <h3><span class="ka">ნიკოლოზ ყოლბაია</span><span class="en">Nikoloz Kolbaia</span></h3>
               <p class="role"><span class="ka">შრომის უსაფრთხოების სპეციალისტი, ტრენერი, თანადამფუძნებელი</span><span class="en">OHS specialist, trainer, co-founder</span></p>
+              <p class="short-bio"><span class="ka">დარგში 2019 წლიდან. 300-ზე მეტი პროექტი საქართველოში და საერთაშორისო პროექტები.</span><span class="en">In the field since 2019. More than 300 projects in Georgia, plus international work.</span></p>
+              <span class="more"><span class="o"><span class="ka">სრული ბიოგრაფია</span><span class="en">Full biography</span></span><span class="c"><span class="ka">დახურვა</span><span class="en">Close</span></span></span>
             </div>
+          </summary>
+          <div class="p-body">
             <ul class="facts">
               <li><b>2019</b><span class="ka">წლიდან დარგში</span><span class="en">in the field since</span></li>
               <li><b>300+</b><span class="ka">პროექტი საქართველოში</span><span class="en">projects across Georgia</span></li>
               <li><b>1000+</b><span class="ka">ადამიანი მასშტაბურ ღონისძიებებზე</span><span class="en">people at large-scale events</span></li>
             </ul>
-          </div>
-          <div class="bio">
-            <span class="tag"><span class="ka">ბიოგრაფია</span><span class="en">Biography</span></span>
+            <div class="bio">
             <p class="lead"><span class="ka">ნიკოლოზ ყოლბაია შრომის უსაფრთხოების სფეროში 2019 წლიდან მოღვაწეობს. არის შრომის უსაფრთხოების სპეციალისტი, ტრენერი და „უსაფრთხო კუთხის“ თანადამფუძნებელი.</span><span class="en">Nikoloz Kolbaia has worked in occupational health and safety since 2019. He is an OHS specialist, a trainer and the co-founder of Safe Corner.</span></p>
             <p><span class="ka">დარგობრივ უმაღლეს განათლებას მყარი პრაქტიკა ავსებს: ნიკოლოზს მონაწილეობა აქვს მიღებული საქართველოს მასშტაბით 300-ზე მეტ პროექტსა და საერთაშორისო პროექტებში. კარგად იცნობს რისკის ყველა სექტორის სპეციფიკას და აქვს ფართომასშტაბიანი ღონისძიებების უსაფრთხოების უზრუნველყოფის გამოცდილებაც, სადაც ერთდროულად რამდენიმე ათასი ადამიანის უსაფრთხოების დაცვაა საჭირო.</span><span class="en">His university degree in the field is backed by solid practice: he has taken part in more than 300 projects across Georgia as well as international projects. He knows the specifics of every risk sector and has secured large-scale events where the safety of several thousand people has to be protected at once.</span></p>
             <p><span class="ka">ამასთან, გამოცდილება აქვს შრომის უსაფრთხოების საოპერაციო მიმართულებით. იცის, როგორ უნდა იმუშაოს უსაფრთხოების სისტემამ არა მხოლოდ თეორიულად, არამედ ყოველდღიურ სამუშაო პროცესში.</span><span class="en">He also has experience in operational safety management. He knows how a safety system has to work not only on paper, but in everyday work.</span></p>
             <p><span class="ka">ტრენერის სტატუსით ატარებს სწავლებებს დასაქმებულებისა და სპეციალისტებისთვის და რთულ ნორმებს მარტივ, პრაქტიკაში გამოსადეგ ცოდნად აქცევს.</span><span class="en">As a trainer, he teaches employees and specialists and turns complex regulations into simple knowledge they can use in practice.</span></p>
             <blockquote><span class="ka">ლევან გრიგალაშვილთან ერთად დააფუძნა „უსაფრთხო კუთხე“, შრომის უსაფრთხოების პირველი ქართული YouTube პროექტი. პროექტის მიზანია, შრომის უსაფრთხოების შესახებ ხარისხიანი ცოდნა ქართულ ენაზე ყველასთვის ხელმისაწვდომი გახდეს.</span><span class="en">Together with Levan Grigalashvili he founded Safe Corner, the first Georgian YouTube project about occupational safety. Its goal is to make quality safety knowledge available to everyone in Georgian.</span></blockquote>
+            </div>
           </div>
-        </article>
-        <article class="profile short" id="levan">
-          <div class="p-side">
+        </details>
+        <details class="profile" id="levan">
+          <summary>
             <div class="ph">ლგ</div>
+            <div class="s-text">
+              <h3><span class="ka">ლევან გრიგალაშვილი</span><span class="en">Levan Grigalashvili</span></h3>
+              <p class="role"><span class="ka">თანადამფუძნებელი, წამყვანი</span><span class="en">Co-founder, host</span></p>
+              <p class="short-bio"><span class="ka">„უსაფრთხო კუთხის“ თანადამფუძნებელი.</span><span class="en">Co-founder of Safe Corner.</span></p>
+              <span class="more"><span class="o"><span class="ka">სრული ბიოგრაფია</span><span class="en">Full biography</span></span><span class="c"><span class="ka">დახურვა</span><span class="en">Close</span></span></span>
+            </div>
+          </summary>
+          <div class="p-body">
+            <div class="bio"><p class="soon-note"><span class="ka">ბიოგრაფია მალე დაემატება.</span><span class="en">Biography coming soon.</span></p></div>
           </div>
-          <div class="bio">
-            <h3><span class="ka">ლევან გრიგალაშვილი</span><span class="en">Levan Grigalashvili</span></h3>
-            <p class="role"><span class="ka">თანადამფუძნებელი, წამყვანი</span><span class="en">Co-founder, host</span></p>
-          </div>
-        </article>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section id="articles">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span class="ka">სტატიები</span><span class="en">Articles</span></div>
+          <h2 style="margin-top:16px"><span class="ka">სპეციალისტები წერენ</span><span class="en">Written by specialists</span></h2>
+        </div>
+        <p><span class="ka">შრომის უსაფრთხოების სპეციალისტების სტატიები: ნორმები, პრაქტიკა და გამოცდილება ობიექტებიდან, ქართულ ენაზე.</span><span class="en">Articles by occupational safety specialists: regulations, practice and lessons from real sites, in Georgian.</span></p>
+      </div>
+      <div class="arts" id="arts"></div>
+      <div class="empty" id="arts-empty">
+        <div>
+          <h3><span class="ka">პირველი სტატიები მალე გამოქვეყნდება</span><span class="en">The first articles are coming soon</span></h3>
+          <p><span class="ka">ხარ შრომის უსაფრთხოების სპეციალისტი და გინდა, რომ შენი ცოდნა სხვებს გაუზიარო? დაგვიკავშირდი და შენს სტატიას „უსაფრთხო კუთხეზე“ გამოვაქვეყნებთ.</span><span class="en">Are you a safety specialist who wants to share what you know? Get in touch and we will publish your article on Safe Corner.</span></p>
+        </div>
+        <ol class="steps">
+          <li><span class="ka">გამოგვიგზავნე სტატიის ტექსტი და შენი მოკლე ბიო</span><span class="en">Send us your article and a short bio</span></li>
+          <li><span class="ka">ერთად გადავხედავთ და დავამუშავებთ</span><span class="en">We review and edit it together</span></li>
+          <li><span class="ka">გამოქვეყნდება საიტზე შენი სახელით</span><span class="en">It goes live on the site under your name</span></li>
+        </ol>
       </div>
     </div>
   </section>
@@ -342,6 +405,7 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
         <a href="#about"><span class="ka">პროექტი</span><span class="en">About</span></a>
         <a href="#season"><span class="ka">სეზონი</span><span class="en">Season</span></a>
         <a href="#team"><span class="ka">გუნდი</span><span class="en">Team</span></a>
+        <a href="#articles"><span class="ka">სტატიები</span><span class="en">Articles</span></a>
       </nav>
     </div>
     <div class="copy">© 2026 Safe Corner · <span class="ka">უსაფრთხო კუთხე</span><span class="en">Safe Corner</span> · safecorner.ge</div>
@@ -360,6 +424,19 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
   try{s=localStorage.getItem('sc-lang')}catch(e){}
   set(q==='en'||q==='ka'?q:(s||'ka'));
   document.querySelectorAll('.lang button').forEach(function(b){b.onclick=function(){set(b.dataset.l)}});
+})();
+</script>
+<script>
+/* სტატიების სია: ახალი სტატია = ახალი ჩანაწერი აქ + ფაილი articles/ საქაღალდეში */
+var ARTICLES=[
+  /* {url:"articles/slug.html", cat_ka:"", cat_en:"", title_ka:"", title_en:"", excerpt_ka:"", excerpt_en:"", author_ka:"", author_en:"", date:"2026-11-20"} */
+];
+(function(){
+  var box=document.getElementById('arts'),empty=document.getElementById('arts-empty');
+  if(!ARTICLES.length){box.hidden=true;return}
+  empty.hidden=true;
+  function e(t){var d=document.createElement('div');d.textContent=t||'';return d.innerHTML}
+  box.innerHTML=ARTICLES.map(function(a){return '<a class="art" href="'+e(a.url)+'"><span class="cat"><span class="ka">'+e(a.cat_ka)+'</span><span class="en">'+e(a.cat_en||a.cat_ka)+'</span></span><h3><span class="ka">'+e(a.title_ka)+'</span><span class="en">'+e(a.title_en||a.title_ka)+'</span></h3><p><span class="ka">'+e(a.excerpt_ka)+'</span><span class="en">'+e(a.excerpt_en||a.excerpt_ka)+'</span></p><span class="by"><b><span class="ka">'+e(a.author_ka)+'</span><span class="en">'+e(a.author_en||a.author_ka)+'</span></b> · '+e(a.date)+'</span></a>'}).join('');
 })();
 </script>
 </body>
