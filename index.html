@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="ka">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Safe Corner · უსაფრთხო კუთხე</title>
+<meta name="description" content="Safe Corner — პირველი ქართული შრომის უსაფრთხოების YouTube პროექტი. პოდკასტები წამყვან სპეციალისტებთან და საველე ვიდეოები.">
+<meta property="og:title" content="Safe Corner · უსაფრთხო კუთხე">
+<meta property="og:description" content="პირველი ქართული შრომის უსაფრთხოების YouTube პროექტი.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23EBA800'/%3E%3Cpath d='M28 44V28h16M56 28h16v16M72 56v16H56' fill='none' stroke='%230E0E0E' stroke-width='5'/%3E%3Cpath d='M28 56v16h18' fill='none' stroke='%230E0E0E' stroke-width='9'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Noto+Sans+Georgian:wght@400..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEECE6; --bg2:#E4E1D8; --ink:#0E0E0E; --ink2:#3A3A38; --muted:#6B6A66;
+  --yellow:#EBA800; --line:#0E0E0E1f;
+  --wide:"Archivo",sans-serif; --ka:"Noto Sans Georgian",sans-serif;
+  --max:1180px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--ka),var(--wide);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+.en{display:none}
+html[lang=en] .ka{display:none}
+html[lang=en] .en{display:revert}
+html[lang=en] body{font-family:var(--wide)}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:38px;height:38px}
+.brand b{font-family:var(--wide);font-weight:800;font-stretch:125%;font-size:17px;letter-spacing:.01em}
+.links{display:flex;gap:28px;align-items:center;font-size:15px}
+.links a{text-decoration:none;color:var(--ink2)}
+.links a:hover{color:var(--ink)}
+.lang{display:flex;border:1.5px solid var(--ink);font-family:var(--wide);font-weight:700;font-size:13px}
+.lang button{background:none;border:0;padding:6px 10px;cursor:pointer;color:var(--ink);font:inherit}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+
+/* hero */
+.hero{padding:96px 0 88px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:64px;align-items:center}
+.eyebrow{font-family:var(--wide);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:12px}
+.eyebrow::before{content:"";width:28px;height:4px;background:var(--yellow)}
+h1{font-family:var(--wide);font-weight:800;font-stretch:125%;font-size:clamp(46px,7vw,92px);line-height:.95;letter-spacing:-.01em;margin:22px 0 18px}
+.ka-name{font-size:clamp(20px,2.4vw,28px);letter-spacing:.32em;color:var(--ink2);padding-top:18px;border-top:3px solid var(--ink);display:inline-block}
+.lead{font-size:20px;line-height:1.55;color:var(--ink2);max-width:560px;margin:30px 0 36px}
+.btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 24px;font-weight:700;font-size:16px;text-decoration:none;border:2px solid var(--ink)}
+.btn.primary{background:var(--ink);color:var(--bg)}
+.btn.primary:hover{background:#222}
+.btn.ghost:hover{background:var(--ink);color:var(--bg)}
+.btn svg{width:20px;height:20px}
+.hero-mark{position:relative;aspect-ratio:1;max-width:440px;justify-self:end;width:100%}
+.hero-mark svg{width:100%;height:100%}
+
+/* stats */
+.stats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
+.stats .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
+.stat{padding:30px 28px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat b{display:block;font-family:var(--wide);font-weight:800;font-stretch:125%;font-size:34px;line-height:1.1}
+.stat span{color:var(--muted);font-size:15px}
+
+/* sections */
+section{padding:110px 0}
+.sec-head{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;margin-bottom:56px;align-items:end}
+h2{font-family:var(--wide);font-weight:800;font-size:clamp(32px,4vw,50px);line-height:1.08;letter-spacing:-.01em}
+html[lang=ka] h2{font-family:var(--ka)}
+.sec-head p{color:var(--ink2);font-size:18px}
+
+/* about */
+.formats{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:#F6F5F1;padding:36px;position:relative}
+.card .corner{position:absolute;left:0;bottom:0;width:56px;height:56px;border-left:8px solid var(--yellow);border-bottom:8px solid var(--yellow)}
+.card h3{font-size:24px;margin:14px 0 10px;line-height:1.25}
+.card p{color:var(--ink2)}
+.tag{font-family:var(--wide);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+
+/* season */
+#season{background:var(--ink);color:var(--bg)}
+#season .sec-head p{color:#BDBAB2}
+#season .eyebrow{color:#9C9990}
+.eps{border-top:1px solid #ffffff22}
+.ep{display:grid;grid-template-columns:110px 1fr auto;gap:28px;align-items:center;padding:28px 0;border-bottom:1px solid #ffffff22}
+.ep .n{font-family:var(--wide);font-weight:800;font-stretch:125%;font-size:44px;color:var(--yellow);line-height:1}
+.ep h3{font-size:22px;line-height:1.35;font-weight:700}
+.ep p{color:#A9A69E;font-size:15px;margin-top:4px}
+.soon{font-family:var(--wide);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:1.5px solid #ffffff55;padding:7px 12px;white-space:nowrap;color:#D8D5CC}
+
+/* founders */
+.people{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.person{display:flex;gap:28px;align-items:center;background:#F6F5F1;padding:28px}
+.ph{width:132px;height:132px;flex:none;position:relative;background:var(--bg2);display:grid;place-items:center;font-family:var(--wide);font-weight:800;font-stretch:125%;font-size:40px}
+.ph::before,.ph::after{content:"";position:absolute;width:26px;height:26px}
+.ph::before{top:-6px;right:-6px;border-top:3px solid var(--ink);border-right:3px solid var(--ink)}
+.ph::after{bottom:-6px;left:-6px;border-bottom:7px solid var(--yellow);border-left:7px solid var(--yellow);width:36px;height:36px}
+.person h3{font-size:24px;line-height:1.25}
+.person p{color:var(--muted);font-size:15px;margin-top:6px}
+
+/* partner */
+#partner{padding:0 0 110px}
+.partner{display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:center;border:2px solid var(--ink);padding:48px}
+.partner .logo{font-family:var(--wide);font-weight:800;font-size:clamp(38px,5vw,60px);letter-spacing:-.01em}
+.partner p{color:var(--ink2);margin-bottom:22px}
+
+/* cta / footer */
+.cta{background:var(--yellow);padding:90px 0}
+.cta .wrap{display:flex;justify-content:space-between;align-items:center;gap:40px;flex-wrap:wrap}
+.cta h2{max-width:640px}
+footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
+.foot{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-start}
+.foot .brand b{color:var(--bg)}
+.foot nav{display:flex;gap:24px;flex-wrap:wrap}
+.foot a{text-decoration:none}
+.foot a:hover{color:var(--bg)}
+.copy{margin-top:40px;padding-top:24px;border-top:1px solid #ffffff1f;font-size:13px;color:#8A877F}
+
+@media (max-width:900px){
+  .links a{display:none}
+  .hero{padding:56px 0 64px}
+  .hero-grid,.sec-head,.partner{grid-template-columns:1fr;gap:32px}
+  .hero-mark{max-width:170px;justify-self:start;order:-1}
+  .formats,.people{grid-template-columns:1fr}
+  section{padding:76px 0}
+  .ep{grid-template-columns:64px 1fr;gap:18px}
+  .ep .n{font-size:32px}
+  .ep .soon{grid-column:2;justify-self:start}
+  .partner{padding:32px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 18px}
+  .stats .wrap{grid-template-columns:1fr}
+  .stat{border-left:0;border-top:1px solid var(--line);padding:20px 0}
+  .stat:first-child{border-top:0}
+  .person{flex-direction:column;align-items:flex-start}
+  .brand b{font-size:15px}
+  .lead{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="sc" viewBox="0 0 340 340">
+      <path d="M0 0h120v20H20v100H0z" fill="currentColor"/>
+      <path d="M340 0H220v20h100v100h20z" fill="currentColor"/>
+      <path d="M340 340H220v-20h100V220h20z" fill="currentColor"/>
+      <path d="M0 164h32v144h144v32H0z" fill="#EBA800"/>
+      <text x="172" y="222" text-anchor="middle" font-family="Archivo" font-weight="900" font-stretch="125%" font-size="150" fill="currentColor" letter-spacing="-4">SC</text>
+    </symbol>
+    <symbol id="yt" viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></symbol>
+  </defs>
+</svg>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><svg><use href="#sc"/></svg><b>SAFE CORNER</b></a>
+    <div class="links">
+      <a href="#about"><span class="ka">პროექტი</span><span class="en">About</span></a>
+      <a href="#season"><span class="ka">ახალი სეზონი</span><span class="en">New season</span></a>
+      <a href="#team"><span class="ka">გუნდი</span><span class="en">Team</span></a>
+      <a href="#partner"><span class="ka">პარტნიორი</span><span class="en">Partner</span></a>
+      <div class="lang" role="group" aria-label="Language">
+        <button data-l="ka" aria-pressed="true">ქარ</button>
+        <button data-l="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="eyebrow"><span class="ka">YouTube პროექტი · 2026</span><span class="en">YouTube project · 2026</span></div>
+        <h1>SAFE<br>CORNER</h1>
+        <div class="ka-name">უსაფრთხო კუთხე</div>
+        <p class="lead">
+          <span class="ka">პირველი ქართული შრომის უსაფრთხოების YouTube პროექტი. პოდკასტები დარგის წამყვან სპეციალისტებთან და საველე ვიდეოები ობიექტებიდან.</span>
+          <span class="en">The first Georgian YouTube project about occupational health and safety. Podcasts with leading specialists and field videos straight from real sites.</span>
+        </p>
+        <div class="btns">
+          <a class="btn primary" href="https://www.youtube.com/@safecorner" target="_blank" rel="noopener" data-yt><svg><use href="#yt"/></svg><span class="ka">უყურე YouTube-ზე</span><span class="en">Watch on YouTube</span></a>
+          <a class="btn ghost" href="#season"><span class="ka">ახალი სეზონი</span><span class="en">New season</span></a>
+        </div>
+      </div>
+      <div class="hero-mark"><svg><use href="#sc"/></svg></div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="wrap">
+      <div class="stat"><b><span class="ka">პირველი</span><span class="en">First</span></b><span class="ka">ქართული შ.უ. პოდკასტი სპეციალისტებთან</span><span class="en">Georgian OHS podcast with specialists</span></div>
+      <div class="stat"><b>2</b><span class="ka">ფორმატი: პოდკასტი და საველე ვიდეო</span><span class="en">formats: podcast and field video</span></div>
+      <div class="stat"><b>5</b><span class="ka">ეპიზოდი ახალ სეზონში</span><span class="en">episodes in the new season</span></div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span class="ka">პროექტის შესახებ</span><span class="en">About the project</span></div>
+          <h2 style="margin-top:16px"><span class="ka">უსაფრთხოება კადრში.</span><span class="en">Safety, in frame.</span></h2>
+        </div>
+        <p>
+          <span class="ka">Safe Corner შრომის უსაფრთხოებაზე მარტივად და პრაქტიკულად საუბრობს. ჩვენ პირველებმა დავიწყეთ პოდკასტები დარგის წამყვან სპეციალისტებთან და ვიღებთ ვიდეოებს იქ, სადაც უსაფრთხოება ყველაზე მეტად მნიშვნელოვანია: ობიექტებზე.</span>
+          <span class="en">Safe Corner talks about workplace safety in a simple, practical way. We were the first to host podcasts with Georgia's leading safety specialists, and we film where safety matters most: on real sites.</span>
+        </p>
+      </div>
+      <div class="formats">
+        <div class="card">
+          <span class="tag"><span class="ka">ფორმატი 01</span><span class="en">Format 01</span></span>
+          <h3><span class="ka">პოდკასტი</span><span class="en">Podcast</span></h3>
+          <p><span class="ka">ღია საუბარი სპეციალისტებთან, ინსპექტორებთან და პრაქტიკოსებთან: როგორ მუშაობს სისტემა და რა უნდა იცოდეს თითოეულმა.</span><span class="en">Open conversations with specialists, inspectors and practitioners: how the system works and what everyone should know.</span></p>
+          <span class="corner"></span>
+        </div>
+        <div class="card">
+          <span class="tag"><span class="ka">ფორმატი 02</span><span class="en">Format 02</span></span>
+          <h3><span class="ka">საველე ვიდეო</span><span class="en">Field video</span></h3>
+          <p><span class="ka">მოკლე საინფორმაციო ვიდეოები ობიექტებიდან: რეალური სიტუაციები, ხშირი შეცდომები და სწორი პრაქტიკა.</span><span class="en">Short informational videos from real sites: real situations, common mistakes and the right practice.</span></p>
+          <span class="corner"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="season">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span class="ka">ახალი სეზონი</span><span class="en">New season</span></div>
+          <h2 style="margin-top:16px"><span class="ka">ვბრუნდებით.</span><span class="en">We're back.</span></h2>
+        </div>
+        <p><span class="ka">6 თვიანი პაუზის შემდეგ Safe Corner ახალი სეზონით ბრუნდება. ხუთი ეპიზოდი, ერთი ხაზი: სპეციალისტად გახდომიდან შრომის ინსპექციამდე.</span><span class="en">After a six-month break, Safe Corner returns with a new season. Five episodes, one story: from becoming a specialist to facing the labour inspection.</span></p>
+      </div>
+      <div class="eps">
+        <div class="ep"><div class="n">01</div><div><h3><span class="ka">უსაფრთხო კუთხის დაბრუნება | Safety.ge</span><span class="en">The return of Safe Corner | Safety.ge</span></h3><p><span class="ka">პოდკასტი · ნიკოლოზი და ლევანი</span><span class="en">Podcast · Nikoloz and Levan</span></p></div><span class="soon"><span class="ka">მალე</span><span class="en">Soon</span></span></div>
+        <div class="ep"><div class="n">02</div><div><h3><span class="ka">როგორ გავხდეთ შრომის უსაფრთხოების სპეციალისტი?</span><span class="en">How to become an occupational safety specialist?</span></h3><p><span class="ka">პოდკასტი</span><span class="en">Podcast</span></p></div><span class="soon"><span class="ka">მალე</span><span class="en">Soon</span></span></div>
+        <div class="ep"><div class="n">03</div><div><h3><span class="ka">გავდივართ შრომის ინსპექციის მითითებებს</span><span class="en">Going through the labour inspection requirements</span></h3><p><span class="ka">რაში გვეხმარება Safety.ge</span><span class="en">How Safety.ge helps</span></p></div><span class="soon"><span class="ka">მალე</span><span class="en">Soon</span></span></div>
+        <div class="ep"><div class="n">04</div><div><h3><span class="ka">ვაწყობთ ობიექტს ინსპექციის მითითებების შესაბამისად</span><span class="en">Setting up a site to meet inspection requirements</span></h3><p><span class="ka">საველე ვიდეო</span><span class="en">Field video</span></p></div><span class="soon"><span class="ka">მალე</span><span class="en">Soon</span></span></div>
+        <div class="ep"><div class="n">05</div><div><h3><span class="ka">სტუმარი შრომის ინსპექციიდან</span><span class="en">A guest from the Labour Inspection</span></h3><p><span class="ka">პოდკასტი · სტუმართან ერთად</span><span class="en">Podcast · with a guest</span></p></div><span class="soon"><span class="ka">მალე</span><span class="en">Soon</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span class="ka">გუნდი</span><span class="en">Team</span></div>
+          <h2 style="margin-top:16px"><span class="ka">დამფუძნებლები</span><span class="en">Founders</span></h2>
+        </div>
+        <p><span class="ka">Safe Corner ორმა ადამიანმა შექმნა, რომლებსაც სჯერათ, რომ შრომის უსაფრთხოებაზე საუბარი ყველასთვის გასაგები უნდა იყოს.</span><span class="en">Safe Corner was founded by two people who believe that workplace safety should be explained in a way everyone understands.</span></p>
+      </div>
+      <div class="people">
+        <div class="person"><div class="ph">ნყ</div><div><h3><span class="ka">ნიკოლოზ ყოლბაია</span><span class="en">Nikoloz Kolbaia</span></h3><p><span class="ka">თანადამფუძნებელი, წამყვანი</span><span class="en">Co-founder, host</span></p></div></div>
+        <div class="person"><div class="ph">ლგ</div><div><h3><span class="ka">ლევან გრიგალაშვილი</span><span class="en">Levan Grigalashvili</span></h3><p><span class="ka">თანადამფუძნებელი, წამყვანი</span><span class="en">Co-founder, host</span></p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="partner">
+    <div class="wrap">
+      <div class="partner">
+        <div>
+          <div class="eyebrow"><span class="ka">პარტნიორი</span><span class="en">Partner</span></div>
+          <div class="logo" style="margin-top:14px">Safety.ge</div>
+        </div>
+        <div>
+          <p><span class="ka">ახალი სეზონი Safety.ge-ის შოურუმში იღება. Safety.ge არის მრავალფუნქციური უსაფრთხოების ცენტრი თბილისში: პროდუქცია, მომსახურება, ტრენინგები და კონსულტაცია ერთ სივრცეში.</span><span class="en">The new season is filmed in the Safety.ge showroom. Safety.ge is a multifunctional safety centre in Tbilisi: products, services, training and consulting in one space.</span></p>
+          <a class="btn ghost" href="https://safety.ge" target="_blank" rel="noopener"><span class="ka">ეწვიე Safety.ge-ს</span><span class="en">Visit Safety.ge</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta">
+    <div class="wrap">
+      <h2><span class="ka">გამოიწერე არხი და არ გამოტოვო ახალი ეპიზოდი.</span><span class="en">Subscribe so you don't miss a new episode.</span></h2>
+      <a class="btn primary" href="https://www.youtube.com/@safecorner?sub_confirmation=1" target="_blank" rel="noopener" data-yt-sub><svg><use href="#yt"/></svg><span class="ka">გამოწერა</span><span class="en">Subscribe</span></a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <a class="brand" href="#top" style="color:var(--bg)"><svg><use href="#sc"/></svg><b>SAFE CORNER</b></a>
+      <nav>
+        <a href="https://www.youtube.com/@safecorner" target="_blank" rel="noopener" data-yt>YouTube</a>
+        <a href="#about"><span class="ka">პროექტი</span><span class="en">About</span></a>
+        <a href="#season"><span class="ka">სეზონი</span><span class="en">Season</span></a>
+        <a href="#team"><span class="ka">გუნდი</span><span class="en">Team</span></a>
+      </nav>
+    </div>
+    <div class="copy">© 2026 Safe Corner · <span class="ka">უსაფრთხო კუთხე</span><span class="en">Safe Corner</span> · safecorner.ge</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  function set(l){
+    root.lang=l;
+    document.querySelectorAll('.lang button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===l)});
+    try{localStorage.setItem('sc-lang',l)}catch(e){}
+  }
+  var q=new URLSearchParams(location.search).get('lang'),s=null;
+  try{s=localStorage.getItem('sc-lang')}catch(e){}
+  set(q==='en'||q==='ka'?q:(s||'ka'));
+  document.querySelectorAll('.lang button').forEach(function(b){b.onclick=function(){set(b.dataset.l)}});
+})();
+</script>
+</body>
+</html>
