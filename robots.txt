@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /articles/_template.html
+
+Sitemap: https://safecorner.ge/sitemap.xml

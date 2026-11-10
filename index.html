@@ -6,7 +6,15 @@
 <title>Safe Corner · უსაფრთხო კუთხე</title>
 <meta name="description" content="Safe Corner — პირველი ქართული შრომის უსაფრთხოების YouTube პროექტი. პოდკასტები წამყვან სპეციალისტებთან და საველე ვიდეოები.">
 <meta property="og:title" content="Safe Corner · უსაფრთხო კუთხე">
-<meta property="og:description" content="პირველი ქართული შრომის უსაფრთხოების YouTube პროექტი.">
+<meta property="og:description" content="პირველი ქართული შრომის უსაფრთხოების YouTube პროექტი. პოდკასტები წამყვან სპეციალისტებთან და საველე ვიდეოები.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://safecorner.ge/">
+<meta property="og:image" content="https://safecorner.ge/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ka_GE">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://safecorner.ge/">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23EBA800'/%3E%3Cpath d='M28 44V28h16M56 28h16v16M72 56v16H56' fill='none' stroke='%230E0E0E' stroke-width='5'/%3E%3Cpath d='M28 56v16h18' fill='none' stroke='%230E0E0E' stroke-width='9'/%3E%3C/svg%3E">
 <meta name="theme-color" content="#EEECE6">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -160,6 +168,52 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
 .foot a:hover{color:var(--bg)}
 .copy{margin-top:40px;padding-top:24px;border-top:1px solid #ffffff1f;font-size:13px;color:#8A877F}
 
+/* resources */
+#resources{border-top:1px solid var(--line)}
+.res{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.r{background:#F6F5F1;padding:28px;display:flex;flex-direction:column;gap:12px;text-decoration:none;position:relative}
+.r .ic{width:46px;height:56px;border:2px solid var(--ink);position:relative;display:grid;place-items:end center;padding-bottom:6px;font-family:var(--wide);font-weight:800;font-size:11px;letter-spacing:.06em}
+.r .ic::after{content:"";position:absolute;top:-2px;right:-2px;width:14px;height:14px;background:var(--bg);border-left:2px solid var(--ink);border-bottom:2px solid var(--ink)}
+.r h3{font-size:20px;line-height:1.35}
+.r p{color:var(--ink2);font-size:15px}
+.r .st{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);font-size:14px;font-weight:700;display:flex;justify-content:space-between}
+.r .st .dl{border-bottom:2px solid var(--yellow)}
+.r.soon-r{opacity:.75}
+.r.soon-r .st{color:var(--muted)}
+/* contact */
+#contact{background:var(--ink);color:var(--bg)}
+#contact .sec-head p{color:#BDBAB2}
+#contact .eyebrow{color:#9C9990}
+.ct{display:grid;grid-template-columns:1fr 1.5fr;gap:56px;align-items:start}
+.ct-info{display:grid;gap:22px}
+.ct-info .lbl{font-family:var(--wide);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#9C9990;display:block;margin-bottom:4px}
+.ct-info a{font-size:20px;font-weight:700;text-decoration:none;border-bottom:2px solid var(--yellow);word-break:break-all}
+.form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form .full{grid-column:1/-1}
+.form label{display:grid;gap:6px;font-size:14px;color:#BDBAB2}
+.form input,.form select,.form textarea{font:inherit;font-size:16px;color:var(--bg);background:#1C1C1B;border:1.5px solid #3a3a38;padding:13px 14px;border-radius:0;width:100%}
+.form textarea{min-height:150px;resize:vertical}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--yellow)}
+.form .btn{background:var(--yellow);color:var(--ink);border-color:var(--yellow);justify-self:start;cursor:pointer;font:inherit;font-weight:700}
+.form .btn::before,.form .btn::after{border-color:var(--bg)}
+.form .hp{position:absolute;left:-9999px}
+.f-msg{grid-column:1/-1;padding:16px 18px;border-left:4px solid var(--yellow);background:#1C1C1B;font-size:15px}
+.f-msg.err{border-color:#D7261E}
+/* episode with video */
+a.ep{text-decoration:none;color:inherit}
+.watch{display:inline-flex;gap:8px;align-items:center;background:var(--yellow);color:var(--ink);font-weight:700;font-size:13px;padding:8px 14px;white-space:nowrap}
+.watch svg{width:16px;height:16px}
+.art-cta{margin-top:22px}
+
+/* facebook group band */
+.fb{background:var(--yellow);padding-block:0}
+.fb .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;padding-top:44px;padding-bottom:44px}
+.fb .ico{width:64px;height:64px;background:var(--ink);color:var(--yellow);display:grid;place-items:center}
+.fb .ico svg{width:34px;height:34px}
+.fb h3{font-size:26px;line-height:1.25}
+.fb p{color:#2a2416;margin-top:4px}
+.fb .btn.primary::before,.fb .btn.primary::after{border-color:var(--ink)}
+
 /* ---------- motion ---------- */
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 @keyframes focusPull{0%{filter:blur(10px);transform:scale(1.08);opacity:.4}70%{filter:blur(0);transform:scale(.995);opacity:1}100%{filter:none;transform:none;opacity:1}}
@@ -206,6 +260,11 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
 }
 
 @media (max-width:900px){
+  .fb .wrap{grid-template-columns:1fr;gap:20px}
+  .res{grid-template-columns:1fr}
+  .ct{grid-template-columns:1fr;gap:36px}
+  .form{grid-template-columns:1fr}
+  .ep .watch{grid-column:2;justify-self:start}
   .links a{display:none}
   .hero{padding:56px 0 64px}
   .hero-grid,.sec-head,.partner{grid-template-columns:1fr;gap:32px}
@@ -244,6 +303,7 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
       <path d="M0 164h32v144h144v32H0z" fill="#EBA800"/>
       <text x="172" y="222" text-anchor="middle" font-family="Archivo" font-weight="900" font-stretch="125%" font-size="150" fill="currentColor" letter-spacing="-4">SC</text>
     </symbol>
+    <symbol id="fbi" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8V22h3.4z"/></symbol>
     <symbol id="yt" viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></symbol>
   </defs>
 </svg>
@@ -256,7 +316,7 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
       <a href="#season"><span class="ka">ახალი სეზონი</span><span class="en">New season</span></a>
       <a href="#team"><span class="ka">გუნდი</span><span class="en">Team</span></a>
       <a href="#articles"><span class="ka">სტატიები</span><span class="en">Articles</span></a>
-      <a href="#partner"><span class="ka">პარტნიორი</span><span class="en">Partner</span></a>
+      <a href="#contact"><span class="ka">კონტაქტი</span><span class="en">Contact</span></a>
       <div class="lang" role="group" aria-label="Language">
         <button data-l="ka" aria-pressed="true">ქარ</button>
         <button data-l="en" aria-pressed="false">EN</button>
@@ -332,11 +392,11 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
         <p><span class="ka">6 თვიანი პაუზის შემდეგ Safe Corner ახალი სეზონით ბრუნდება. ხუთი ეპიზოდი, ერთი ხაზი: სპეციალისტად გახდომიდან შრომის ინსპექციამდე.</span><span class="en">After a six-month break, Safe Corner returns with a new season. Five episodes, one story: from becoming a specialist to facing the labour inspection.</span></p>
       </div>
       <div class="eps">
-        <div class="ep"><div class="n">01</div><div><h3><span class="ka">უსაფრთხო კუთხის დაბრუნება | Safety.ge</span><span class="en">The return of Safe Corner | Safety.ge</span></h3><p><span class="ka">პოდკასტი · ნიკოლოზი და ლევანი</span><span class="en">Podcast · Nikoloz and Levan</span></p></div><span class="soon"><span class="ka">მალე</span><span class="en">Soon</span></span></div>
-        <div class="ep"><div class="n">02</div><div><h3><span class="ka">როგორ გავხდეთ შრომის უსაფრთხოების სპეციალისტი?</span><span class="en">How to become an occupational safety specialist?</span></h3><p><span class="ka">პოდკასტი</span><span class="en">Podcast</span></p></div><span class="soon"><span class="ka">მალე</span><span class="en">Soon</span></span></div>
-        <div class="ep"><div class="n">03</div><div><h3><span class="ka">გავდივართ შრომის ინსპექციის მითითებებს</span><span class="en">Going through the labour inspection requirements</span></h3><p><span class="ka">რაში გვეხმარება Safety.ge</span><span class="en">How Safety.ge helps</span></p></div><span class="soon"><span class="ka">მალე</span><span class="en">Soon</span></span></div>
-        <div class="ep"><div class="n">04</div><div><h3><span class="ka">ვაწყობთ ობიექტს ინსპექციის მითითებების შესაბამისად</span><span class="en">Setting up a site to meet inspection requirements</span></h3><p><span class="ka">საველე ვიდეო</span><span class="en">Field video</span></p></div><span class="soon"><span class="ka">მალე</span><span class="en">Soon</span></span></div>
-        <div class="ep"><div class="n">05</div><div><h3><span class="ka">სტუმარი შრომის ინსპექციიდან</span><span class="en">A guest from the Labour Inspection</span></h3><p><span class="ka">პოდკასტი · სტუმართან ერთად</span><span class="en">Podcast · with a guest</span></p></div><span class="soon"><span class="ka">მალე</span><span class="en">Soon</span></span></div>
+        <div class="ep" data-ep="1"><div class="n">01</div><div><h3><span class="ka">უსაფრთხო კუთხის დაბრუნება | Safety.ge</span><span class="en">The return of Safe Corner | Safety.ge</span></h3><p><span class="ka">პოდკასტი · ნიკოლოზი და ლევანი</span><span class="en">Podcast · Nikoloz and Levan</span></p></div><span class="soon"><span class="ka">მალე</span><span class="en">Soon</span></span></div>
+        <div class="ep" data-ep="2"><div class="n">02</div><div><h3><span class="ka">როგორ გავხდეთ შრომის უსაფრთხოების სპეციალისტი?</span><span class="en">How to become an occupational safety specialist?</span></h3><p><span class="ka">პოდკასტი</span><span class="en">Podcast</span></p></div><span class="soon"><span class="ka">მალე</span><span class="en">Soon</span></span></div>
+        <div class="ep" data-ep="3"><div class="n">03</div><div><h3><span class="ka">გავდივართ შრომის ინსპექციის მითითებებს</span><span class="en">Going through the labour inspection requirements</span></h3><p><span class="ka">რაში გვეხმარება Safety.ge</span><span class="en">How Safety.ge helps</span></p></div><span class="soon"><span class="ka">მალე</span><span class="en">Soon</span></span></div>
+        <div class="ep" data-ep="4"><div class="n">04</div><div><h3><span class="ka">ვაწყობთ ობიექტს ინსპექციის მითითებების შესაბამისად</span><span class="en">Setting up a site to meet inspection requirements</span></h3><p><span class="ka">საველე ვიდეო</span><span class="en">Field video</span></p></div><span class="soon"><span class="ka">მალე</span><span class="en">Soon</span></span></div>
+        <div class="ep" data-ep="5"><div class="n">05</div><div><h3><span class="ka">სტუმარი შრომის ინსპექციიდან</span><span class="en">A guest from the Labour Inspection</span></h3><p><span class="ka">პოდკასტი · სტუმართან ერთად</span><span class="en">Podcast · with a guest</span></p></div><span class="soon"><span class="ka">მალე</span><span class="en">Soon</span></span></div>
       </div>
     </div>
   </section>
@@ -394,6 +454,17 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
     </div>
   </section>
 
+  <section class="fb" id="community" hidden>
+    <div class="wrap">
+      <div class="ico"><svg><use href="#fbi"/></svg></div>
+      <div>
+        <h3><span class="ka">გაწევრიანდი ჩვენს Facebook ჯგუფში</span><span class="en">Join our Facebook group</span></h3>
+        <p><span class="ka">მიიღე ყოველდღიური სიახლეები შრომის უსაფრთხოებაზე და ჩაერთე საუბარში სპეციალისტებთან.</span><span class="en">Get daily occupational safety news and join the conversation with specialists.</span></p>
+      </div>
+      <a class="btn primary" id="fb-link" href="#" target="_blank" rel="noopener"><svg><use href="#fbi"/></svg><span class="ka">გაწევრიანება</span><span class="en">Join the group</span></a>
+    </div>
+  </section>
+
   <section id="articles">
     <div class="wrap">
       <div class="sec-head">
@@ -408,6 +479,7 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
         <div>
           <h3><span class="ka">პირველი სტატიები მალე გამოქვეყნდება</span><span class="en">The first articles are coming soon</span></h3>
           <p><span class="ka">ხარ შრომის უსაფრთხოების სპეციალისტი და გინდა, რომ შენი ცოდნა სხვებს გაუზიარო? დაგვიკავშირდი და შენს სტატიას „უსაფრთხო კუთხეზე“ გამოვაქვეყნებთ.</span><span class="en">Are you a safety specialist who wants to share what you know? Get in touch and we will publish your article on Safe Corner.</span></p>
+          <a class="btn primary art-cta" href="#contact" data-topic="article"><span class="ka">გამოგზავნე სტატია</span><span class="en">Submit an article</span></a>
         </div>
         <ol class="steps">
           <li><span class="ka">გამოგვიგზავნე სტატიის ტექსტი და შენი მოკლე ბიო</span><span class="en">Send us your article and a short bio</span></li>
@@ -415,6 +487,19 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
           <li><span class="ka">გამოქვეყნდება საიტზე შენი სახელით</span><span class="en">It goes live on the site under your name</span></li>
         </ol>
       </div>
+    </div>
+  </section>
+
+  <section id="resources">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span class="ka">რესურსები</span><span class="en">Resources</span></div>
+          <h2 style="margin-top:16px"><span class="ka">გადმოწერე და გამოიყენე</span><span class="en">Download and use</span></h2>
+        </div>
+        <p><span class="ka">ჩეკლისტები და შაბლონები ეპიზოდებიდან: უფასოდ, ქართულად, ობიექტზე გამოსაყენებლად.</span><span class="en">Checklists and templates from our episodes: free, in Georgian, ready to use on site.</span></p>
+      </div>
+      <div class="res" id="res"></div>
     </div>
   </section>
 
@@ -429,6 +514,41 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
           <p><span class="ka">ახალი სეზონი Safety.ge-ის შოურუმში იღება. Safety.ge არის მრავალფუნქციური უსაფრთხოების ცენტრი თბილისში: პროდუქცია, მომსახურება, ტრენინგები და კონსულტაცია ერთ სივრცეში.</span><span class="en">The new season is filmed in the Safety.ge showroom. Safety.ge is a multifunctional safety centre in Tbilisi: products, services, training and consulting in one space.</span></p>
           <a class="btn ghost" href="https://safety.ge" target="_blank" rel="noopener"><span class="ka">ეწვიე Safety.ge-ს</span><span class="en">Visit Safety.ge</span></a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span class="ka">კონტაქტი</span><span class="en">Contact</span></div>
+          <h2 style="margin-top:16px"><span class="ka">მოგვწერე</span><span class="en">Write to us</span></h2>
+        </div>
+        <p><span class="ka">გინდა სტუმრად მოხვიდე პოდკასტზე, გამოაქვეყნო სტატია ან ითანამშრომლო „უსაფრთხო კუთხესთან“? შეავსე ფორმა და გიპასუხებთ.</span><span class="en">Want to be a podcast guest, publish an article or partner with Safe Corner? Fill in the form and we will get back to you.</span></p>
+      </div>
+      <div class="ct">
+        <div class="ct-info">
+          <div><span class="lbl"><span class="ka">ელფოსტა</span><span class="en">Email</span></span><a href="mailto:Safecorner2024@gmail.com">Safecorner2024@gmail.com</a></div>
+          <div><span class="lbl">YouTube</span><a href="https://www.youtube.com/@SafeCorner2024" target="_blank" rel="noopener">@SafeCorner2024</a></div>
+        </div>
+        <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="company" id="cform">
+          <input type="hidden" name="form-name" value="contact">
+          <p class="hp"><label>Company <input name="company" tabindex="-1" autocomplete="off"></label></p>
+          <label><span class="ka">სახელი და გვარი</span><span class="en">Full name</span><input id="f-name" name="name" required autocomplete="name"></label>
+          <label><span class="ka">ელფოსტა</span><span class="en">Email</span><input id="f-email" name="email" type="email" required autocomplete="email"></label>
+          <label class="full"><span class="ka">რა გაინტერესებს?</span><span class="en">What is it about?</span>
+            <select id="f-topic" name="topic">
+              <option value="guest">სტუმრად მოსვლა პოდკასტზე / Podcast guest</option>
+              <option value="article">სტატიის გამოქვეყნება / Publish an article</option>
+              <option value="partner">თანამშრომლობა / Partnership</option>
+              <option value="other">სხვა / Other</option>
+            </select>
+          </label>
+          <label class="full"><span class="ka">შეტყობინება ან სტატიის ტექსტი</span><span class="en">Message or article text</span><textarea id="f-msg" name="message" required></textarea></label>
+          <button class="btn full" type="submit"><span class="ka">გაგზავნა</span><span class="en">Send</span></button>
+          <div class="f-msg" id="f-status" hidden></div>
+        </form>
       </div>
     </div>
   </section>
@@ -451,6 +571,8 @@ footer{background:var(--ink);color:#BDBAB2;padding:56px 0 40px;font-size:15px}
         <a href="#season"><span class="ka">სეზონი</span><span class="en">Season</span></a>
         <a href="#team"><span class="ka">გუნდი</span><span class="en">Team</span></a>
         <a href="#articles"><span class="ka">სტატიები</span><span class="en">Articles</span></a>
+        <a href="#resources"><span class="ka">რესურსები</span><span class="en">Resources</span></a>
+        <a href="mailto:Safecorner2024@gmail.com">Safecorner2024@gmail.com</a>
       </nav>
     </div>
     <div class="copy">© 2026 Safe Corner · <span class="ka">უსაფრთხო კუთხე</span><span class="en">Safe Corner</span> · safecorner.ge</div>
@@ -488,7 +610,7 @@ var ARTICLES=[
 (function(){
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce||!('IntersectionObserver' in window))return;
-  var els=document.querySelectorAll('.sec-head,.card,.ep,.profile,.empty,.art,.partner,.stat,.cta h2');
+  var els=document.querySelectorAll('.sec-head,.card,.ep,.profile,.empty,.art,.r,.partner,.stat,.ct,.cta h2');
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;setTimeout(function(){t.classList.add('in')},(+t.dataset.d||0));io.unobserve(t)}})},{rootMargin:'0px 0px -8% 0px'});
   var vh=innerHeight;
   els.forEach(function(el){
@@ -507,6 +629,46 @@ var ARTICLES=[
         (function f(t){var k=Math.min(1,(t-t0)/900);k=1-Math.pow(1-k,3);b.textContent=Math.round(from+(to-from)*k)+m[2];if(k<1)requestAnimationFrame(f)})(t0);
       });
     });
+  });
+})();
+</script>
+<script>
+/* ეპიზოდების ვიდეოები: ჩაწერე YouTube ვიდეოს ID ეპიზოდის ნომრის გასწვრივ */
+/* Facebook ჯგუფის ლინკი: ცარიელი = ბლოკი დამალულია */
+var FB_GROUP="";
+var EPISODE_VIDEOS={1:"",2:"",3:"",4:"",5:""};
+/* რესურსები: file = PDF ფაილის მისამართი (resources/ საქაღალდეში); ცარიელი = "მალე" */
+var RESOURCES=[
+  {file:"",type:"PDF",ep:3,title_ka:"შრომის ინსპექციის ჩეკლისტი",title_en:"Labour inspection checklist",desc_ka:"ინსპექციის მითითებები 5 ჯგუფად, ობიექტის თვითშემოწმებისთვის. მე-3 ეპიზოდიდან.",desc_en:"Inspection requirements in 5 groups, for checking your own site. From episode 3."}
+];
+(function(){
+  function e(t){var d=document.createElement('div');d.textContent=t==null?'':String(t);return d.innerHTML}
+  if(FB_GROUP){document.getElementById('fb-link').href=FB_GROUP;document.getElementById('community').hidden=false}
+  /* episodes */
+  document.querySelectorAll('.ep[data-ep]').forEach(function(row){
+    var id=EPISODE_VIDEOS[row.dataset.ep];if(!id)return;
+    var a=document.createElement('a');a.className='ep';a.href='https://www.youtube.com/watch?v='+encodeURIComponent(id);a.target='_blank';a.rel='noopener';
+    a.innerHTML=row.innerHTML;var soon=a.querySelector('.soon');
+    soon.outerHTML='<span class="watch"><svg><use href="#yt"/></svg><span class="ka">უყურე</span><span class="en">Watch</span></span>';
+    row.replaceWith(a);
+  });
+  /* resources */
+  var rb=document.getElementById('res');
+  rb.innerHTML=RESOURCES.map(function(r){
+    var ready=!!r.file,tag=ready?'a':'div',href=ready?' href="'+e(r.file)+'" target="_blank" rel="noopener"':'';
+    return '<'+tag+' class="r'+(ready?'':' soon-r')+'"'+href+'><span class="ic">'+e(r.type||'PDF')+'</span><h3><span class="ka">'+e(r.title_ka)+'</span><span class="en">'+e(r.title_en||r.title_ka)+'</span></h3><p><span class="ka">'+e(r.desc_ka)+'</span><span class="en">'+e(r.desc_en||r.desc_ka)+'</span></p><span class="st"><span>'+(r.ep?'<span class="ka">ეპიზოდი '+e(r.ep)+'</span><span class="en">Episode '+e(r.ep)+'</span>':'')+'</span>'+(ready?'<span class="dl"><span class="ka">გადმოწერა ↓</span><span class="en">Download ↓</span></span>':'<span><span class="ka">მალე</span><span class="en">Soon</span></span>')+'</span></'+tag+'>';
+  }).join('');
+  /* contact form topic preselect */
+  document.querySelectorAll('[data-topic]').forEach(function(a){a.addEventListener('click',function(){document.getElementById('f-topic').value=a.dataset.topic})});
+  /* contact form submit (Netlify Forms) */
+  var f=document.getElementById('cform'),st=document.getElementById('f-status');
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();
+    var en=document.documentElement.lang==='en',btn=f.querySelector('button');btn.disabled=true;
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
+      .then(function(r){if(!r.ok)throw 0;f.reset();st.className='f-msg';st.textContent=en?'Thank you! Your message was sent. We will reply by email.':'გმადლობთ! შეტყობინება გაიგზავნა, ელფოსტით გიპასუხებთ.';st.hidden=false})
+      .catch(function(){st.className='f-msg err';st.textContent=en?'Sending failed. Please write to Safecorner2024@gmail.com.':'გაგზავნა ვერ მოხერხდა. მოგვწერე: Safecorner2024@gmail.com';st.hidden=false})
+      .then(function(){btn.disabled=false});
   });
 })();
 </script>
