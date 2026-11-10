@@ -563,9 +563,10 @@ a.ep{text-decoration:none;color:inherit}
           <div><span class="lbl">YouTube</span><a href="https://www.youtube.com/@SafeCorner2024" target="_blank" rel="noopener">@SafeCorner2024</a></div>
           <div><span class="lbl">Facebook</span><a href="https://www.facebook.com/profile.php?id=61563196905202" target="_blank" rel="noopener">Safe Corner</a></div>
         </div>
-        <form class="form" name="contact" method="POST" data-netlify="true" netlify-honeypot="company" id="cform">
-          <input type="hidden" name="form-name" value="contact">
-          <p class="hp"><label>Company <input name="company" tabindex="-1" autocomplete="off"></label></p>
+        <form class="form" name="contact" method="POST" action="https://formsubmit.co/Safecorner2024@gmail.com" id="cform">
+          <input type="hidden" name="_subject" value="safecorner.ge: ახალი შეტყობინება">
+          <input type="hidden" name="_template" value="table">
+          <p class="hp"><label>Company <input name="_honey" tabindex="-1" autocomplete="off"></label></p>
           <label><span class="ka">სახელი და გვარი</span><span class="en">Full name</span><input id="f-name" name="name" required autocomplete="name"></label>
           <label><span class="ka">ელფოსტა</span><span class="en">Email</span><input id="f-email" name="email" type="email" required autocomplete="email"></label>
           <label class="full"><span class="ka">რა გაინტერესებს?</span><span class="en">What is it about?</span>
@@ -692,13 +693,13 @@ var RESOURCES=[
   }).join('');
   /* contact form topic preselect */
   document.querySelectorAll('[data-topic]').forEach(function(a){a.addEventListener('click',function(){document.getElementById('f-topic').value=a.dataset.topic})});
-  /* contact form submit (Netlify Forms) */
+  /* contact form submit (FormSubmit -> Safecorner2024@gmail.com) */
   var f=document.getElementById('cform'),st=document.getElementById('f-status');
   f.addEventListener('submit',function(ev){
     ev.preventDefault();
     var en=document.documentElement.lang==='en',btn=f.querySelector('button');btn.disabled=true;
-    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()})
-      .then(function(r){if(!r.ok)throw 0;f.reset();st.className='f-msg';st.textContent=en?'Thank you! Your message was sent. We will reply by email.':'გმადლობთ! შეტყობინება გაიგზავნა, ელფოსტით გიპასუხებთ.';st.hidden=false})
+    fetch('https://formsubmit.co/ajax/Safecorner2024@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+      .then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){if(j&&String(j.success)==='false')throw 0;f.reset();st.className='f-msg';st.textContent=en?'Thank you! Your message was sent. We will reply by email.':'გმადლობთ! შეტყობინება გაიგზავნა, ელფოსტით გიპასუხებთ.';st.hidden=false})
       .catch(function(){st.className='f-msg err';st.textContent=en?'Sending failed. Please write to Safecorner2024@gmail.com.':'გაგზავნა ვერ მოხერხდა. მოგვწერე: Safecorner2024@gmail.com';st.hidden=false})
       .then(function(){btn.disabled=false});
   });
