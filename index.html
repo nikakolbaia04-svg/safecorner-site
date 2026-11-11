@@ -699,8 +699,12 @@ var RESOURCES=[
     ev.preventDefault();
     var en=document.documentElement.lang==='en',btn=f.querySelector('button');btn.disabled=true;
     fetch('https://formsubmit.co/ajax/Safecorner2024@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
-      .then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){if(j&&String(j.success)==='false')throw 0;f.reset();st.className='f-msg';st.textContent=en?'Thank you! Your message was sent. We will reply by email.':'გმადლობთ! შეტყობინება გაიგზავნა, ელფოსტით გიპასუხებთ.';st.hidden=false})
-      .catch(function(){st.className='f-msg err';st.textContent=en?'Sending failed. Please write to Safecorner2024@gmail.com.':'გაგზავნა ვერ მოხერხდა. მოგვწერე: Safecorner2024@gmail.com';st.hidden=false})
+      .then(function(r){return r.json().catch(function(){return {success:r.ok?'true':'false',message:'HTTP '+r.status}})}).then(function(j){
+        if(j&&String(j.success)==='false'){
+          if(/activat/i.test(j.message||'')){st.className='f-msg';st.textContent=en?'Almost there: the form needs a one-time activation. Check Safecorner2024@gmail.com.':'ფორმა ერთჯერად გააქტიურებას საჭიროებს: შეამოწმე Safecorner2024@gmail.com და დააჭირე Activate.';st.hidden=false;return}
+          throw new Error(j.message||'');
+        }f.reset();st.className='f-msg';st.textContent=en?'Thank you! Your message was sent. We will reply by email.':'გმადლობთ! შეტყობინება გაიგზავნა, ელფოსტით გიპასუხებთ.';st.hidden=false})
+      .catch(function(err){console.warn('form',err);st.className='f-msg err';st.textContent=(en?'Sending failed. Please write to Safecorner2024@gmail.com.':'გაგზავნა ვერ მოხერხდა. მოგვწერე: Safecorner2024@gmail.com')+(err&&err.message?' ('+err.message+')':'');st.hidden=false})
       .then(function(){btn.disabled=false});
   });
 })();
