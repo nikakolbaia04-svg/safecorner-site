@@ -219,14 +219,32 @@ a.ep{text-decoration:none;color:inherit}
 .watch svg{width:16px;height:16px}
 .art-cta{margin-top:22px}
 
-/* facebook group band */
-.fb{background:var(--yellow);padding-block:0}
-.fb .wrap{display:grid;grid-template-columns:auto 1fr auto;gap:32px;align-items:center;padding-top:44px;padding-bottom:44px}
-.fb .ico{width:64px;height:64px;background:var(--ink);color:var(--yellow);display:grid;place-items:center}
-.fb .ico svg{width:34px;height:34px}
-.fb h3{font-size:26px;line-height:1.25}
-.fb p{color:#2a2416;margin-top:4px}
-.fb .btn.primary::before,.fb .btn.primary::after{border-color:var(--ink)}
+/* community: facebook + whatsapp */
+.fb{background:var(--yellow);padding-block:72px}
+.fb .head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:32px}
+.fb .head h2{font-size:clamp(28px,3.4vw,42px);line-height:1.15}
+.fb .head p{color:#2a2416;max-width:420px;font-size:16px}
+.fb .eyebrow{color:var(--ink)}.fb .eyebrow::before{background:var(--ink)}
+.cm{display:grid;gap:18px}
+.cm-card{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;background:var(--ink);color:var(--bg);padding:30px 34px;text-decoration:none;transition:transform .25s ease,box-shadow .25s ease}
+.cm-card::before,.cm-card::after{content:"";position:absolute;width:26px;height:26px;transition:all .3s ease}
+.cm-card::before{left:-7px;bottom:-7px;border-left:7px solid var(--ink);border-bottom:7px solid var(--ink)}
+.cm-card::after{right:10px;top:10px;border-right:2px solid #ffffff40;border-top:2px solid #ffffff40}
+.cm-card[hidden]{display:none}
+.cm-card:hover{transform:translateY(-4px);box-shadow:0 18px 40px -18px #0009}
+.cm-card:hover::before{width:40px;height:40px}
+.cm-card:hover::after{border-color:var(--yellow)}
+.cm-ico{width:72px;height:72px;display:grid;place-items:center;color:#fff;position:relative}
+.cm-ico svg{width:38px;height:38px}
+.cm-card.f .cm-ico{background:#1877F2}
+.cm-card.w .cm-ico{background:#25D366}
+.cm-card h3{font-size:24px;line-height:1.25}
+.cm-card p{color:#BDBAB2;margin-top:6px;font-size:16px}
+.cm-tag{display:inline-block;font-family:var(--wide);font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--yellow);margin-bottom:6px}
+.cm-go{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:var(--ink);font-weight:700;padding:14px 22px;white-space:nowrap;transition:gap .25s ease}
+.cm-go b{font-family:var(--wide);font-size:18px;line-height:1}
+.cm-card:hover .cm-go{gap:16px}
+@media (prefers-reduced-motion:reduce){.cm-card,.cm-card::before,.cm-card::after,.cm-go{transition:none}.cm-card:hover{transform:none}}
 
 /* ---------- motion ---------- */
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
@@ -274,7 +292,10 @@ a.ep{text-decoration:none;color:inherit}
 }
 
 @media (max-width:900px){
-  .fb .wrap{grid-template-columns:1fr;gap:20px}
+  .fb .head{flex-direction:column;align-items:start}
+  .cm-card{grid-template-columns:auto 1fr;gap:18px;padding:24px 22px;align-items:start}
+  .cm-ico{width:56px;height:56px}.cm-ico svg{width:30px;height:30px}
+  .cm-go{grid-column:1/-1;justify-content:center}
   .res{grid-template-columns:1fr}
   .ct{grid-template-columns:1fr;gap:36px}
   .form{grid-template-columns:1fr}
@@ -317,6 +338,7 @@ a.ep{text-decoration:none;color:inherit}
       <path d="M0 164h32v144h144v32H0z" fill="#EBA800"/>
       <text x="172" y="222" text-anchor="middle" font-family="Archivo" font-weight="900" font-stretch="125%" font-size="150" fill="currentColor" letter-spacing="-4">SC</text>
     </symbol>
+    <symbol id="wai" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.4z"/></symbol>
     <symbol id="fbi" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8V22h3.4z"/></symbol>
     <symbol id="yt" viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></symbol>
   </defs>
@@ -480,12 +502,33 @@ a.ep{text-decoration:none;color:inherit}
 
   <section class="fb" id="community" hidden>
     <div class="wrap">
-      <div class="ico"><svg><use href="#fbi"/></svg></div>
-      <div>
-        <h3><span class="ka">გამოგვყევი Facebook-ზე</span><span class="en">Follow us on Facebook</span></h3>
-        <p><span class="ka">მიიღე ყოველდღიური სიახლეები შრომის უსაფრთხოებაზე და ჩაერთე საუბარში სპეციალისტებთან.</span><span class="en">Get daily occupational safety news and join the conversation with specialists.</span></p>
+      <div class="head">
+        <div>
+          <div class="eyebrow"><span class="ka">საზოგადოება</span><span class="en">Community</span></div>
+          <h2><span class="ka">დარჩი ჩვენთან კავშირზე</span><span class="en">Stay connected</span></h2>
+        </div>
+        <p><span class="ka">ყოველდღიური სიახლეები, ახალი ეპიზოდები და საუბარი შრომის უსაფრთხოების სპეციალისტებთან.</span><span class="en">Daily news, new episodes and conversation with occupational safety specialists.</span></p>
       </div>
-      <a class="btn primary" id="fb-link" href="#" target="_blank" rel="noopener"><svg><use href="#fbi"/></svg><span class="ka">გამოწერა</span><span class="en">Follow</span></a>
+      <div class="cm">
+        <a class="cm-card f" id="fb-link" href="#" target="_blank" rel="noopener">
+          <span class="cm-ico"><svg><use href="#fbi"/></svg></span>
+          <span>
+            <span class="cm-tag">Facebook</span>
+            <h3><span class="ka">გამოგვყევი Facebook-ზე</span><span class="en">Follow us on Facebook</span></h3>
+            <p><span class="ka">სიახლეები, ეპიზოდების ანონსები და სასარგებლო მასალები ყოველდღე.</span><span class="en">News, episode announcements and useful materials every day.</span></p>
+          </span>
+          <span class="cm-go"><span class="ka">გამოწერა</span><span class="en">Follow</span><b>→</b></span>
+        </a>
+        <a class="cm-card w" id="wa-link" href="#" target="_blank" rel="noopener" hidden>
+          <span class="cm-ico"><svg><use href="#wai"/></svg></span>
+          <span>
+            <span class="cm-tag">WhatsApp</span>
+            <h3><span class="ka">შემოგვიერთდი WhatsApp ჯგუფში</span><span class="en">Join our WhatsApp group</span></h3>
+            <p><span class="ka">დასვი კითხვები, გაუზიარე გამოცდილება კოლეგებს და მიიღე სიახლეები პირველმა.</span><span class="en">Ask questions, share experience with colleagues and get news first.</span></p>
+          </span>
+          <span class="cm-go"><span class="ka">შემოერთება</span><span class="en">Join</span><b>→</b></span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -669,6 +712,8 @@ var ARTICLES=[
 /* ეპიზოდების ვიდეოები: ჩაწერე YouTube ვიდეოს ID ეპიზოდის ნომრის გასწვრივ */
 /* Facebook ჯგუფის ლინკი: ცარიელი = ბლოკი დამალულია */
 var FB_GROUP="https://www.facebook.com/profile.php?id=61563196905202";
+/* WhatsApp ჯგუფის მოსაწვევი ლინკი (chat.whatsapp.com/...): ცარიელი = ბარათი დამალულია */
+var WA_GROUP="";
 var EPISODE_VIDEOS={1:"",2:"",3:"",4:"",5:""};
 /* რესურსები: file = PDF ფაილის მისამართი (resources/ საქაღალდეში); ცარიელი = "მალე" */
 var RESOURCES=[
@@ -677,6 +722,7 @@ var RESOURCES=[
 (function(){
   function e(t){var d=document.createElement('div');d.textContent=t==null?'':String(t);return d.innerHTML}
   if(FB_GROUP){document.getElementById('fb-link').href=FB_GROUP;document.getElementById('community').hidden=false}
+  if(WA_GROUP){var wa=document.getElementById('wa-link');wa.href=WA_GROUP;wa.hidden=false;document.getElementById('community').hidden=false}
   /* episodes */
   document.querySelectorAll('.ep[data-ep]').forEach(function(row){
     var id=EPISODE_VIDEOS[row.dataset.ep];if(!id)return;
