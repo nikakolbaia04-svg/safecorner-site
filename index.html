@@ -219,29 +219,23 @@ a.ep{text-decoration:none;color:inherit}
 .watch svg{width:16px;height:16px}
 .art-cta{margin-top:22px}
 
-/* social bands: facebook + whatsapp, each its own section */
-.sb{position:relative;overflow:hidden;color:#fff;padding-block:76px}
-.sb.f{background:radial-gradient(120% 140% at 85% 0%,#4C9BFF 0%,#1877F2 38%,#0A4FC4 75%,#073A92 100%)}
-.sb.w{background:radial-gradient(120% 140% at 85% 0%,#5BEA93 0%,#25D366 35%,#14A858 70%,#0B7A50 100%)}
-.sb::before{content:"";position:absolute;right:-8%;top:50%;width:520px;height:520px;transform:translateY(-50%);background:currentColor;opacity:.06;-webkit-mask:var(--m) center/contain no-repeat;mask:var(--m) center/contain no-repeat;pointer-events:none}
-.sb.f::before{--m:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8V22h3.4z'/%3E%3C/svg%3E")}
-.sb.w::before{--m:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2z'/%3E%3C/svg%3E")}
-.sb .wrap{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:center}
-.sb-ico{width:96px;height:96px;display:grid;place-items:center;background:#ffffff1f;border:1.5px solid #ffffff40;position:relative;backdrop-filter:blur(4px)}
-.sb-ico svg{width:50px;height:50px;color:#fff}
-.sb-ico::before,.sb-ico::after{content:"";position:absolute;width:18px;height:18px}
-.sb-ico::before{left:-8px;bottom:-8px;border-left:5px solid var(--yellow);border-bottom:5px solid var(--yellow)}
-.sb-ico::after{right:-6px;top:-6px;border-right:2px solid #fff;border-top:2px solid #fff}
-.sb-tag{font-family:var(--wide);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
-.sb h2{font-size:clamp(28px,3.4vw,44px);line-height:1.15;margin-top:6px}
-.sb p{opacity:.88;margin-top:10px;max-width:560px;font-size:17px}
-.sb-go{display:inline-flex;align-items:center;gap:12px;background:#fff;font-weight:700;font-size:17px;padding:17px 28px;text-decoration:none;white-space:nowrap;box-shadow:0 14px 30px -14px #0007;transition:gap .25s ease,transform .25s ease}
-.sb.f .sb-go{color:#0A4FC4}.sb.w .sb-go{color:#0B7A50}
-.sb-go b{font-family:var(--wide);font-size:20px;line-height:1}
-.sb-go:hover{gap:18px;transform:translateY(-2px)}
-.sb-go.soon-b{background:transparent;color:#fff!important;border:2px solid #ffffffb0;box-shadow:none;cursor:default}
-.sb-go.soon-b:hover{gap:12px;transform:none}
-@media (prefers-reduced-motion:reduce){.sb-go{transition:none}}
+/* social: compact brand-coloured tiles */
+.so{padding-block:44px}
+.so .wrap{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.so-t{position:relative;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:18px;align-items:center;padding:20px 22px;text-decoration:none;color:var(--ink);background:linear-gradient(120deg,#F6C743 0%,#EBA800 55%,#D89400 100%);transition:transform .25s ease,box-shadow .25s ease}
+.so-t>span{min-width:0}
+.so-t::before{content:"";position:absolute;left:-6px;bottom:-6px;width:22px;height:22px;border-left:6px solid var(--ink);border-bottom:6px solid var(--ink);transition:all .25s ease}
+.so-t:hover{transform:translateY(-3px);box-shadow:0 14px 28px -16px #6b4a0099}
+.so-t:hover::before{width:30px;height:30px}
+.so-ico{width:48px;height:48px;display:grid;place-items:center;background:var(--ink);color:var(--yellow)}
+.so-ico svg{width:26px;height:26px}
+.so-t h3{font-size:18px;line-height:1.3}
+.so-t p{font-size:14px;color:#3b2c08;margin-top:2px;line-height:1.45}
+.so-go{width:42px;height:42px;display:grid;place-items:center;border:2px solid var(--ink);font-family:var(--wide);font-weight:800;font-size:18px;transition:background .25s ease,color .25s ease}
+.so-t:hover .so-go{background:var(--ink);color:var(--yellow)}
+.so-t.so-wait{cursor:default}.so-t.so-wait:hover{transform:none;box-shadow:none}.so-t.so-wait:hover::before{width:22px;height:22px}
+.so-soon{font-family:var(--wide);font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;border:1.5px solid var(--ink);padding:6px 10px;white-space:nowrap}
+@media (prefers-reduced-motion:reduce){.so-t,.so-t::before,.so-go{transition:none}.so-t:hover{transform:none}}
 
 /* ---------- motion ---------- */
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
@@ -289,11 +283,8 @@ a.ep{text-decoration:none;color:inherit}
 }
 
 @media (max-width:900px){
-  .sb{padding-block:56px}
-  .sb .wrap{grid-template-columns:minmax(0,1fr);gap:22px}
-  .sb-ico{width:72px;height:72px}.sb-ico svg{width:38px;height:38px}
-  .sb-go{justify-content:center}
-  .sb::before{width:340px;height:340px;right:-30%}
+  .so .wrap{grid-template-columns:minmax(0,1fr);gap:16px}
+  .so-t{padding:16px;gap:14px}.so-t p{display:none}.so-t h3{font-size:16px}
   .res{grid-template-columns:1fr}
   .ct{grid-template-columns:1fr;gap:36px}
   .form{grid-template-columns:1fr}
@@ -498,27 +489,18 @@ a.ep{text-decoration:none;color:inherit}
     </div>
   </section>
 
-  <section class="sb f" id="community" hidden>
+  <section class="so" id="community" hidden>
     <div class="wrap">
-      <div class="sb-ico"><svg><use href="#fbi"/></svg></div>
-      <div>
-        <div class="sb-tag">Facebook</div>
-        <h2><span class="ka">გამოგვყევი <span style="white-space:nowrap">Facebook-ზე</span></span><span class="en">Follow us on Facebook</span></h2>
-        <p><span class="ka">ყოველდღიური სიახლეები შრომის უსაფრთხოებაზე, ეპიზოდების ანონსები და სასარგებლო მასალები.</span><span class="en">Daily occupational safety news, episode announcements and useful materials.</span></p>
-      </div>
-      <a class="sb-go" id="fb-link" href="#" target="_blank" rel="noopener"><span class="ka">გამოწერა</span><span class="en">Follow</span><b>→</b></a>
-    </div>
-  </section>
-
-  <section class="sb w" id="whatsapp">
-    <div class="wrap">
-      <div class="sb-ico"><svg><use href="#wai"/></svg></div>
-      <div>
-        <div class="sb-tag">WhatsApp</div>
-        <h2><span class="ka">შემოგვიერთდი WhatsApp ჯგუფში</span><span class="en">Join our WhatsApp group</span></h2>
-        <p><span class="ka">დასვი კითხვები, გაუზიარე გამოცდილება კოლეგებს და მიიღე სიახლეები პირველმა.</span><span class="en">Ask questions, share experience with colleagues and get news first.</span></p>
-      </div>
-      <a class="sb-go soon-b" id="wa-link" target="_blank" rel="noopener" aria-disabled="true"><span class="ka">მალე</span><span class="en">Soon</span></a>
+      <a class="so-t" id="fb-link" href="#" target="_blank" rel="noopener">
+        <span class="so-ico"><svg><use href="#fbi"/></svg></span>
+        <span><h3><span class="ka">გამოგვყევი Facebook-ზე</span><span class="en">Follow us on Facebook</span></h3><p><span class="ka">ყოველდღიური სიახლეები და ეპიზოდების ანონსები</span><span class="en">Daily news and episode announcements</span></p></span>
+        <span class="so-go">→</span>
+      </a>
+      <a class="so-t so-wait" id="wa-link" target="_blank" rel="noopener" aria-disabled="true">
+        <span class="so-ico"><svg><use href="#wai"/></svg></span>
+        <span><h3><span class="ka">შემოგვიერთდი WhatsApp ჯგუფში</span><span class="en">Join our WhatsApp group</span></h3><p><span class="ka">კითხვები, გამოცდილება და სიახლეები პირველმა</span><span class="en">Questions, experience and news first</span></p></span>
+        <span class="so-soon" id="wa-go"><span class="ka">მალე</span><span class="en">Soon</span></span>
+      </a>
     </div>
   </section>
 
@@ -712,7 +694,7 @@ var RESOURCES=[
 (function(){
   function e(t){var d=document.createElement('div');d.textContent=t==null?'':String(t);return d.innerHTML}
   if(FB_GROUP){document.getElementById('fb-link').href=FB_GROUP;document.getElementById('community').hidden=false}
-  if(WA_GROUP){var wa=document.getElementById('wa-link');wa.href=WA_GROUP;wa.classList.remove('soon-b');wa.removeAttribute('aria-disabled');wa.innerHTML='<span class="ka">შემოერთება</span><span class="en">Join</span><b>→</b>'}
+  if(WA_GROUP){var wa=document.getElementById('wa-link');wa.href=WA_GROUP;wa.classList.remove("so-wait");wa.removeAttribute('aria-disabled');var g=document.getElementById('wa-go');g.className='so-go';g.textContent='→'}
   /* episodes */
   document.querySelectorAll('.ep[data-ep]').forEach(function(row){
     var id=EPISODE_VIDEOS[row.dataset.ep];if(!id)return;
