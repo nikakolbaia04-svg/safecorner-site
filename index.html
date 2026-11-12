@@ -270,14 +270,30 @@ a.ep{text-decoration:none;color:inherit}
 .art-cta{margin-top:22px}
 
 /* small group links in CTA */
-.cta-r{display:flex;flex-direction:column;align-items:flex-end;gap:16px}
-.grp{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px;color:#3b2c08}
-.grp a{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1.5px solid #0E0E0E40;color:var(--ink);text-decoration:none;font-weight:700;font-size:13px;transition:background .25s,border-color .25s,color .25s}
-.grp a svg{width:16px;height:16px}
-.grp a.fb:hover{background:#1877F2;border-color:#1877F2;color:#fff}
-.grp a.wa:hover{background:#1FBE5C;border-color:#1FBE5C;color:#fff}
-.grp a[hidden]{display:none}
-@media (max-width:900px){.cta-r{align-items:flex-start}}
+/* join (small) */
+.jn{padding:44px 0;border-bottom:1px solid var(--line)}
+.jn .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.7fr);gap:40px;align-items:center}
+.jn h2{font-family:var(--ka);font-weight:800;font-size:26px;line-height:1.25;margin-top:10px}
+.jn h2 i{font-style:normal;box-shadow:inset 0 -.32em 0 #EBA80066}
+.jn-l{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.jn-l a{position:relative;display:flex;align-items:center;gap:14px;padding:16px 18px;background:#fff;border:1px solid var(--line);text-decoration:none;color:var(--ink);transition:background .3s,border-color .3s,color .3s,transform .3s}
+.jn-l a[hidden]{display:none}
+.jn-l .ji{flex:none;width:40px;height:40px;border-radius:50%;border:1.5px solid currentColor;display:grid;place-items:center;transition:border-color .3s}
+.jn-l a.fb .ji{color:#1877F2}.jn-l a.wa .ji{color:#1FBE5C}
+.jn-l .ji svg{width:18px;height:18px}
+.jn-l b{display:block;font-size:16px;line-height:1.2}
+.jn-l small{display:block;font-size:11px;letter-spacing:.04em;white-space:nowrap;color:var(--muted);margin-top:3px;transition:color .3s}
+.jn-l .ar{margin-left:auto;font-size:18px;transition:transform .3s}
+.jn-l a::before,.jn-l a::after{content:"";position:absolute;width:12px;height:12px;opacity:0;transition:opacity .3s}
+.jn-l a::before{left:-1px;top:-1px;border-left:2px solid var(--yellow);border-top:2px solid var(--yellow)}
+.jn-l a::after{right:-1px;bottom:-1px;border-right:2px solid var(--yellow);border-bottom:2px solid var(--yellow)}
+.jn-l a.fb:hover{background:#1877F2;border-color:#1877F2;color:#fff;transform:translateY(-3px)}
+.jn-l a.wa:hover{background:#1FBE5C;border-color:#1FBE5C;color:#fff;transform:translateY(-3px)}
+.jn-l a:hover .ji{color:#fff}
+.jn-l a:hover small{color:#ffffffcc}
+.jn-l a:hover .ar{transform:translateX(4px)}
+.jn-l a:hover::before,.jn-l a:hover::after{opacity:1}
+@media (max-width:900px){.jn .wrap{grid-template-columns:minmax(0,1fr);gap:20px}.jn-l{grid-template-columns:minmax(0,1fr)}.jn h2{font-size:22px}}
 
 /* ---------- motion ---------- */
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
@@ -422,6 +438,19 @@ a.ep{text-decoration:none;color:inherit}
       <div class="stat"><b>5</b><span class="ka">ეპიზოდი ახალ სეზონში</span><span class="en">episodes in the new season</span></div>
     </div>
   </div>
+
+  <section class="jn" id="community">
+    <div class="wrap">
+      <div>
+        <div class="eyebrow"><span class="ka">შემოგვიერთდი</span><span class="en">Join us</span></div>
+        <h2><span class="ka">იყავი <i>ჩვენთან ერთად.</i></span><span class="en">Be <i>with us.</i></span></h2>
+      </div>
+      <div class="jn-l">
+        <a class="fb" id="fb-link" href="#" target="_blank" rel="noopener" hidden><span class="ji"><svg><use href="#fbi"/></svg></span><span><b><span class="ka">Facebook ჯგუფი</span><span class="en">Facebook group</span></b><small>SAFE CORNER • უსაფრთხო კუთხე</small></span><span class="ar">→</span></a>
+        <a class="wa" id="wa-link" href="#" target="_blank" rel="noopener" hidden><span class="ji"><svg><use href="#wai"/></svg></span><span><b><span class="ka">WhatsApp ჩათი</span><span class="en">WhatsApp chat</span></b><small>SAFE CORNER • უსაფრთხო კუთხე</small></span><span class="ar">→</span></a>
+      </div>
+    </div>
+  </section>
 
   <section id="about">
     <div class="wrap">
@@ -629,10 +658,7 @@ a.ep{text-decoration:none;color:inherit}
   <div class="cta">
     <div class="wrap">
       <h2><span class="ka">გამოიწერე არხი და არ გამოტოვო ახალი ეპიზოდი.</span><span class="en">Subscribe so you don't miss a new episode.</span></h2>
-      <div class="cta-r">
-        <a class="btn primary" href="https://www.youtube.com/@SafeCorner2024?sub_confirmation=1" target="_blank" rel="noopener" data-yt-sub><svg><use href="#yt"/></svg><span class="ka">გამოწერა</span><span class="en">Subscribe</span></a>
-        <div class="grp" id="community"><span><span class="ka">შემოგვიერთდი:</span><span class="en">Join us:</span></span><a class="fb" id="fb-link" href="#" target="_blank" rel="noopener" hidden><svg><use href="#fbi"/></svg><span class="ka">Facebook ჯგუფი</span><span class="en">Facebook group</span></a><a class="wa" id="wa-link" href="#" target="_blank" rel="noopener" hidden><svg><use href="#wai"/></svg><span class="ka">WhatsApp ჩათი</span><span class="en">WhatsApp chat</span></a></div>
-      </div>
+      <a class="btn primary" href="https://www.youtube.com/@SafeCorner2024?sub_confirmation=1" target="_blank" rel="noopener" data-yt-sub><svg><use href="#yt"/></svg><span class="ka">გამოწერა</span><span class="en">Subscribe</span></a>
     </div>
   </div>
 </main>
