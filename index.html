@@ -552,7 +552,7 @@ a.ep{text-decoration:none;color:inherit}
       <a class="so-t" id="fb-link" href="#" target="_blank" rel="noopener">
         <span class="so-shine"></span><span class="so-ico"><svg><use href="#fbi"/></svg></span>
         <span><span class="so-k">Facebook</span><h3><span class="ka">შემოუერთდი Facebook ჯგუფს</span><span class="en">Join our Facebook group</span></h3><p><span class="ka">სიახლეები, ეპიზოდების ანონსები და საუბარი კოლეგებთან</span><span class="en">News, episode announcements and talk with colleagues</span></p></span>
-        <span class="so-go"><span class="ka">შემოერთება</span><span class="en">Join</span><b>→</b></span>
+        <span class="so-go"><span class="ka">გაწევრიანდი</span><span class="en">Join</span><b>→</b></span>
       </a>
       <a class="so-t f2 so-wait" id="wa-link" target="_blank" rel="noopener" aria-disabled="true">
         <span class="so-shine"></span><span class="so-ico"><svg><use href="#wai"/></svg></span>
@@ -752,7 +752,7 @@ var RESOURCES=[
 (function(){
   function e(t){var d=document.createElement('div');d.textContent=t==null?'':String(t);return d.innerHTML}
   if(FB_GROUP){document.getElementById('fb-link').href=FB_GROUP;document.getElementById('community').hidden=false}
-  if(WA_GROUP){var wa=document.getElementById('wa-link');wa.href=WA_GROUP;wa.classList.remove("so-wait");wa.removeAttribute('aria-disabled');var g=document.getElementById('wa-go');g.className='so-go';g.innerHTML='<span class="ka">შემოერთება</span><span class="en">Join</span><b>→</b>'}
+  if(WA_GROUP){var wa=document.getElementById('wa-link');wa.href=WA_GROUP;wa.classList.remove("so-wait");wa.removeAttribute('aria-disabled');var g=document.getElementById('wa-go');g.className='so-go';g.innerHTML='<span class="ka">გაწევრიანდი</span><span class="en">Join</span><b>→</b>'}
   /* episodes */
   document.querySelectorAll('.ep[data-ep]').forEach(function(row){
     var id=EPISODE_VIDEOS[row.dataset.ep];if(!id)return;
