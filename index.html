@@ -269,36 +269,15 @@ a.ep{text-decoration:none;color:inherit}
 .watch svg{width:16px;height:16px}
 .art-cta{margin-top:22px}
 
-/* community: split section, yellow panel + two rows */
-.cm2{padding:0!important;background:#F8F7F3;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.cm2-in{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);min-height:380px}
-.cm2-l{position:relative;background:linear-gradient(140deg,#F2B825 0%,#EBA800 55%,#DD9A00 100%);padding:70px max(28px,calc((100vw - 1124px)/2)) 70px max(28px,calc((100vw - 1124px)/2));display:flex;flex-direction:column;justify-content:center}
-.cm2-l::before{content:"";position:absolute;left:22px;bottom:22px;width:28px;height:28px;border-left:5px solid var(--ink);border-bottom:5px solid var(--ink)}
-.cm2-l::after{content:"";position:absolute;right:22px;top:22px;width:22px;height:22px;border-right:1px solid var(--ink);border-top:1px solid var(--ink)}
-.cm2-l .eb{font-family:var(--wide);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
-.cm2-l .eyebrow{color:var(--ink)}.cm2-l .eyebrow::before{background:var(--ink)}
-.cm2-l h2{font-size:clamp(32px,3vw,40px);line-height:1.12;letter-spacing:-.01em;margin:16px 0 14px;max-width:340px}
-.cm2-l p{max-width:400px;color:#3b2c08;font-size:16px;opacity:.9}
-.cm2-r{display:grid;grid-template-rows:1fr 1fr}
-.cm2-r a{position:relative;display:flex;align-items:center;gap:26px;padding:30px max(28px,calc((100vw - 1124px)/2)) 30px 64px;text-decoration:none;color:var(--ink);transition:background-color .35s ease,color .35s ease}
-.cm2-r a+a::before{content:"";position:absolute;left:64px;right:0;top:0;height:1px;background:#0E0E0E14;transition:opacity .3s}
-.cm2-r a:hover::before,.cm2-r a:hover+a::before{opacity:0}
-.cm2-ic{flex:none;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;border:1.5px solid;transition:transform .45s cubic-bezier(.2,.7,.2,1),background .35s,color .35s}
-.cm2-ic svg{width:24px;height:24px}
-#fb-link .cm2-ic{color:#1877F2;border-color:#1877F255}#wa-link .cm2-ic{color:#1FA855;border-color:#25D36666}
-.cm2-t{flex:1;min-width:0}
-.cm2-t small{display:block;font-family:var(--wide);font-weight:700;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);transition:color .35s}
-.cm2-t b{display:block;font-size:19px;font-weight:600;letter-spacing:.01em;line-height:1.35;margin-top:4px}
-.cm2-go{display:flex;align-items:center;gap:14px;font-weight:600;font-size:14px;white-space:nowrap}
-.cm2-go i{font-style:normal;width:38px;height:38px;border:1.5px solid #0E0E0E33;border-radius:50%;display:grid;place-items:center;font-size:16px;line-height:1;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .3s,background .3s}
-#fb-link:hover{background:#1877F2;color:#fff}#wa-link:hover{background:#1FBE5C;color:#fff}
-.cm2-r a:hover .cm2-ic{background:#fff;transform:scale(1.08)}
-#fb-link:hover .cm2-ic{background:#fff;border-color:#fff;color:#1877F2}#wa-link:hover .cm2-ic{background:#fff;border-color:#fff;color:#1FBE5C}
-.cm2-r a:hover .cm2-t small{color:#ffffffcc}
-.cm2-r a:hover .cm2-go i{transform:translateX(6px);border-color:#fff}
-.cm2-r a.gr-wait{cursor:default}
-@media (max-width:900px){.cm2-in{grid-template-columns:minmax(0,1fr)}.cm2-l{padding:64px 24px 84px}.cm2-r a{padding:26px 24px;gap:18px}.cm2-r a+a::before{left:24px;right:24px}.cm2-ic{width:48px;height:48px}.cm2-t b{font-size:17px}.cm2-go span{display:none}}
-@media (prefers-reduced-motion:reduce){.cm2-r a,.cm2-ic,.cm2-go i{transition:none}}
+/* small group links in CTA */
+.cta-r{display:flex;flex-direction:column;align-items:flex-end;gap:16px}
+.grp{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px;color:#3b2c08}
+.grp a{display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border:1.5px solid #0E0E0E40;color:var(--ink);text-decoration:none;font-weight:700;font-size:13px;transition:background .25s,border-color .25s,color .25s}
+.grp a svg{width:16px;height:16px}
+.grp a.fb:hover{background:#1877F2;border-color:#1877F2;color:#fff}
+.grp a.wa:hover{background:#1FBE5C;border-color:#1FBE5C;color:#fff}
+.grp a[hidden]{display:none}
+@media (max-width:900px){.cta-r{align-items:flex-start}}
 
 /* ---------- motion ---------- */
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
@@ -549,19 +528,6 @@ a.ep{text-decoration:none;color:inherit}
     </div>
   </section>
 
-  <section class="cm2" id="community" hidden>
-    <div class="cm2-in">
-      <div class="cm2-l">
-        <div class="eyebrow"><span class="ka">შემოგვიერთდი</span><span class="en">Join us</span></div>
-        <h2><span class="ka">იყავი ჩვენთან ერთად.</span><span class="en">Be part of it.</span></h2>
-        <p><span class="ka">სიახლეები, ეპიზოდების ანონსები და ცოცხალი საუბარი კოლეგებთან.</span><span class="en">News, episode announcements and live conversation with colleagues.</span></p>
-      </div>
-      <div class="cm2-r">
-        <a id="fb-link" href="#" target="_blank" rel="noopener"><span class="cm2-ic"><svg><use href="#fbi"/></svg></span><span class="cm2-t"><small><span class="ka">Facebook ჯგუფი</span><span class="en">Facebook group</span></small><b><span class="ka">SAFE CORNER • უსაფრთხო კუთხე</span><span class="en">SAFE CORNER</span></b></span><span class="cm2-go"><span><span class="ka">გაწევრიანდი</span><span class="en">Join</span></span><i>→</i></span></a>
-        <a class="gr-wait" id="wa-link" target="_blank" rel="noopener" aria-disabled="true"><span class="cm2-ic"><svg><use href="#wai"/></svg></span><span class="cm2-t"><small><span class="ka">WhatsApp ჩათი</span><span class="en">WhatsApp chat</span></small><b><span class="ka">SAFE CORNER • უსაფრთხო კუთხე</span><span class="en">SAFE CORNER</span></b></span><span class="cm2-go" id="wa-go"><span><span class="ka">მალე</span><span class="en">Soon</span></span></span></a>
-      </div>
-    </div>
-  </section>
 
   <section id="articles">
     <div class="wrap">
@@ -636,6 +602,7 @@ a.ep{text-decoration:none;color:inherit}
           <div><span class="lbl"><span class="ka">ელფოსტა</span><span class="en">Email</span></span><a href="mailto:Safecorner2024@gmail.com">Safecorner2024@gmail.com</a></div>
           <div><span class="lbl">YouTube</span><a href="https://www.youtube.com/@SafeCorner2024" target="_blank" rel="noopener">@SafeCorner2024</a></div>
           <div><span class="lbl">Facebook</span><a href="https://www.facebook.com/profile.php?id=61563196905202" target="_blank" rel="noopener">Safe Corner</a></div>
+          <div><span class="lbl"><span class="ka">ჯგუფები</span><span class="en">Groups</span></span><a href="https://www.facebook.com/groups/1523477912947664" target="_blank" rel="noopener">Facebook</a> · <a href="https://chat.whatsapp.com/GI1HW5CBWVD4ionFVCQExu" target="_blank" rel="noopener">WhatsApp</a></div>
         </div>
         <form class="form" name="contact" method="POST" action="https://formsubmit.co/Safecorner2024@gmail.com" id="cform">
           <input type="hidden" name="_subject" value="safecorner.ge: ახალი შეტყობინება">
@@ -662,7 +629,10 @@ a.ep{text-decoration:none;color:inherit}
   <div class="cta">
     <div class="wrap">
       <h2><span class="ka">გამოიწერე არხი და არ გამოტოვო ახალი ეპიზოდი.</span><span class="en">Subscribe so you don't miss a new episode.</span></h2>
-      <a class="btn primary" href="https://www.youtube.com/@SafeCorner2024?sub_confirmation=1" target="_blank" rel="noopener" data-yt-sub><svg><use href="#yt"/></svg><span class="ka">გამოწერა</span><span class="en">Subscribe</span></a>
+      <div class="cta-r">
+        <a class="btn primary" href="https://www.youtube.com/@SafeCorner2024?sub_confirmation=1" target="_blank" rel="noopener" data-yt-sub><svg><use href="#yt"/></svg><span class="ka">გამოწერა</span><span class="en">Subscribe</span></a>
+        <div class="grp" id="community"><span><span class="ka">შემოგვიერთდი:</span><span class="en">Join us:</span></span><a class="fb" id="fb-link" href="#" target="_blank" rel="noopener" hidden><svg><use href="#fbi"/></svg><span class="ka">Facebook ჯგუფი</span><span class="en">Facebook group</span></a><a class="wa" id="wa-link" href="#" target="_blank" rel="noopener" hidden><svg><use href="#wai"/></svg><span class="ka">WhatsApp ჩათი</span><span class="en">WhatsApp chat</span></a></div>
+      </div>
     </div>
   </div>
 </main>
@@ -717,7 +687,7 @@ var ARTICLES=[
 (function(){
   var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(reduce||!('IntersectionObserver' in window))return;
-  var els=document.querySelectorAll('.sec-head,.card,.fm,.cm2-r a,.ep,.profile,.empty,.art,.r,.partner,.stat,.ct,.cta h2');
+  var els=document.querySelectorAll('.sec-head,.card,.fm,.ep,.profile,.empty,.art,.r,.partner,.stat,.ct,.cta h2');
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var t=e.target;setTimeout(function(){t.classList.add('in')},(+t.dataset.d||0));io.unobserve(t)}})},{rootMargin:'0px 0px -8% 0px'});
   var vh=innerHeight;
   els.forEach(function(el){
@@ -752,8 +722,9 @@ var RESOURCES=[
 ];
 (function(){
   function e(t){var d=document.createElement('div');d.textContent=t==null?'':String(t);return d.innerHTML}
-  if(FB_GROUP){document.getElementById('fb-link').href=FB_GROUP;document.getElementById('community').hidden=false}
-  if(WA_GROUP){var wa=document.getElementById('wa-link');wa.href=WA_GROUP;wa.classList.remove('gr-wait');wa.removeAttribute('aria-disabled');document.getElementById('wa-go').innerHTML='<span><span class="ka">გაწევრიანდი</span><span class="en">Join</span></span><i>→</i>'}
+  if(FB_GROUP){var fl=document.getElementById('fb-link');fl.href=FB_GROUP;fl.hidden=false}
+  if(WA_GROUP){var wl=document.getElementById('wa-link');wl.href=WA_GROUP;wl.hidden=false}
+  if(!FB_GROUP&&!WA_GROUP)document.getElementById('community').hidden=true
   /* episodes */
   document.querySelectorAll('.ep[data-ep]').forEach(function(row){
     var id=EPISODE_VIDEOS[row.dataset.ep];if(!id)return;
