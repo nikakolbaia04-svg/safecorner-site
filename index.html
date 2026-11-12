@@ -276,8 +276,8 @@ a.ep{text-decoration:none;color:inherit}
 .jn-in::before,.jn-in::after{content:"";position:absolute;width:34px;height:34px;pointer-events:none}
 .jn-in::before{left:0;bottom:0;border-left:5px solid var(--yellow);border-bottom:5px solid var(--yellow)}
 .jn-in::after{right:0;top:0;border-right:1.5px solid #0E0E0E66;border-top:1.5px solid #0E0E0E66}
-.jn .t .eyebrow{margin-bottom:6px}
-.jn .t b{display:block;font-family:var(--ka);font-weight:800;font-size:24px;line-height:1.2}
+.jn .t{flex:1 1 360px;min-width:0}.jn .l{flex:none}.jn .t .eyebrow{margin-bottom:6px}
+.jn .t b{display:block;font-family:var(--ka);font-weight:800;font-size:19px;line-height:1.35}
 .jn .t b i{font-style:normal;box-shadow:inset 0 -.3em 0 #EBA80066}
 .jn .l{margin-left:auto;display:flex;gap:12px;flex-wrap:wrap}
 .jn .l .btn{padding:11px 18px;font-size:15px;background:transparent;color:var(--ink)}
@@ -287,7 +287,7 @@ a.ep{text-decoration:none;color:inherit}
 .jn .l .fb:hover{background:#1877F2;border-color:#1877F2;color:#fff}
 .jn .l .wa:hover{background:#1FBE5C;border-color:#1FBE5C;color:#fff}
 .jn .l .btn:hover svg{color:#fff}
-@media (max-width:700px){.jn{padding:22px 0}.jn-in{padding:20px 18px;gap:18px}.jn .t b{font-size:20px}.jn .l{margin-left:0;width:100%;flex-wrap:nowrap}.jn .l .btn{flex:1;justify-content:center;padding:11px 6px;font-size:13.5px;gap:7px;white-space:nowrap}.jn .l .btn svg{width:16px;height:16px}}
+@media (max-width:700px){.jn{padding:22px 0}.jn-in{padding:20px 18px;gap:18px}.jn .t b{font-size:18px}.jn .l{margin-left:0;width:100%;flex:1 1 100%;flex-wrap:nowrap}.jn .l .btn{flex:1;justify-content:center;padding:11px 6px;font-size:13.5px;gap:7px;white-space:nowrap}.jn .l .btn svg{width:16px;height:16px}}
 
 /* ---------- motion ---------- */
 @keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
@@ -438,7 +438,7 @@ a.ep{text-decoration:none;color:inherit}
       <div class="jn-in">
         <div class="t">
           <div class="eyebrow"><span class="ka">შემოგვიერთდი</span><span class="en">Join us</span></div>
-          <b><span class="ka">იყავი <i>ჩვენთან ერთად.</i></span><span class="en">Be <i>with us.</i></span></b>
+          <b><span class="ka">გაწევრიანდი ჩვენს Facebook ჯგუფსა და WhatsApp-ის ჩათში</span><span class="en">Join our Facebook group and WhatsApp chat</span></b>
         </div>
         <div class="l">
           <a class="btn fb" id="fb-link" href="#" target="_blank" rel="noopener" hidden><svg><use href="#fbi"/></svg><span class="ka">Facebook ჯგუფი</span><span class="en">Facebook group</span></a>
