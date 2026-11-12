@@ -276,7 +276,8 @@ a.ep{text-decoration:none;color:inherit}
 .cm2-l::before{content:"";position:absolute;left:22px;bottom:22px;width:28px;height:28px;border-left:5px solid var(--ink);border-bottom:5px solid var(--ink)}
 .cm2-l::after{content:"";position:absolute;right:22px;top:22px;width:22px;height:22px;border-right:1px solid var(--ink);border-top:1px solid var(--ink)}
 .cm2-l .eb{font-family:var(--wide);font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
-.cm2-l h2{font-size:clamp(34px,3.2vw,44px);line-height:1.08;letter-spacing:-.01em;margin:0 0 14px}
+.cm2-l .eyebrow{color:var(--ink)}.cm2-l .eyebrow::before{background:var(--ink)}
+.cm2-l h2{font-size:clamp(32px,3vw,40px);line-height:1.12;letter-spacing:-.01em;margin:16px 0 14px;max-width:340px}
 .cm2-l p{max-width:400px;color:#3b2c08;font-size:16px;opacity:.9}
 .cm2-r{display:grid;grid-template-rows:1fr 1fr}
 .cm2-r a{position:relative;display:flex;align-items:center;gap:26px;padding:30px max(28px,calc((100vw - 1124px)/2)) 30px 64px;text-decoration:none;color:var(--ink);transition:background-color .35s ease,color .35s ease}
@@ -551,7 +552,8 @@ a.ep{text-decoration:none;color:inherit}
   <section class="cm2" id="community" hidden>
     <div class="cm2-in">
       <div class="cm2-l">
-        <h2><span class="ka">შემოგვიერთდი.</span><span class="en">Join us.</span></h2>
+        <div class="eyebrow"><span class="ka">შემოგვიერთდი</span><span class="en">Join us</span></div>
+        <h2><span class="ka">იყავი ჩვენთან ერთად.</span><span class="en">Be part of it.</span></h2>
         <p><span class="ka">სიახლეები, ეპიზოდების ანონსები და ცოცხალი საუბარი კოლეგებთან.</span><span class="en">News, episode announcements and live conversation with colleagues.</span></p>
       </div>
       <div class="cm2-r">
