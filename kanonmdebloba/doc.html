@@ -39,6 +39,8 @@ h1{font-size:clamp(22px,2.4vw,30px);line-height:1.25;font-weight:800;margin:10px
 .msg{max-width:900px;margin:0 auto;padding:60px 20px;text-align:center;color:var(--ink2)}
 .msg b{display:block;font-size:20px;color:var(--ink);margin-bottom:8px}
 .msg a{color:var(--ink);border-bottom:2px solid var(--yellow);text-decoration:none}
+.orig{font-size:14px;color:var(--muted);margin-top:6px}.orig small{font-size:12px}
+html[lang=en] .orig.en{display:block}
 .am{flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px}
 .am a{display:inline-flex;gap:10px;padding:8px 14px;background:var(--card);border-left:3px solid var(--yellow);text-decoration:none;font-size:14px;transition:background .25s}
 .am a:hover{background:#EBBD45}
@@ -47,6 +49,14 @@ footer{background:var(--bg);color:var(--muted);padding:26px 0;font-size:14px;bor
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 footer a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--yellow)}
 @media (max-width:560px){.wrap{padding:0 16px}.wrap.info{padding:20px 16px 16px}.brand b{font-size:15px}.back span{display:none}.back::after{content:"ბაზა"}.reader{padding:12px 8px 40px}.dl{width:100%;justify-content:center}}
+.en{display:none}html[lang=en] .ka{display:none}html[lang=en] .en{display:revert}
+.nr{display:flex;align-items:center;gap:12px}
+.lang{display:flex;border:1.5px solid var(--ink);font-family:var(--wide);font-weight:700;font-size:13px}
+.lang button{background:none;border:0;padding:6px 10px;cursor:pointer;color:var(--ink);font:inherit}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+@media (max-width:560px){.back::after{content:none!important}.back{padding:8px 11px}.nr{gap:8px}}
+@media (max-width:420px){.brand b{display:none}}
+
 </style>
 </head>
 <body>
@@ -61,33 +71,35 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--yel
 </svg>
 <header><div class="wrap nav">
   <a class="brand" href="/"><svg><use href="#sc"/></svg><b>SAFE CORNER</b></a>
-  <a class="back" href="./">← <span>საკანონმდებლო ბაზა</span></a>
+  <div class="nr"><a class="back" href="./">← <span><span class="ka">საკანონმდებლო ბაზა</span><span class="en">Legislation</span></span></a><div class="lang" role="group" aria-label="Language"><button type="button" data-l="ka" aria-pressed="true">ქარ</button><button type="button" data-l="en" aria-pressed="false">EN</button></div></div>
 </div></header>
 <main>
   <section class="wrap info" id="info"></section>
   <section class="reader"><div class="pages" id="pages"></div><div class="msg" id="msg" hidden></div></section>
 </main>
-<footer><div class="wrap"><span>© 2026 Safe Corner · უსაფრთხო კუთხე</span><a href="/">safecorner.ge</a></div></footer>
-<script src="docs.js?v=1114a"></script>
+<footer><div class="wrap"><span>© 2026 Safe Corner · <span class="ka">უსაფრთხო კუთხე</span><span class="en">Georgian workplace safety on YouTube</span></span><a href="/">safecorner.ge</a></div></footer>
+<script src="/assets/lang.js"></script>
+<script src="docs.js?v=1114b"></script>
 <script src="lib/pdf.min.js"></script>
 <script>
 (function(){
   function e(t){var d=document.createElement('div');d.textContent=String(t==null?'':t);return d.innerHTML}
   var id=new URLSearchParams(location.search).get('id'),d=DOCS.filter(function(x){return String(x.id||x.key)===id})[0];
   var info=document.getElementById('info'),msg=document.getElementById('msg'),pages=document.getElementById('pages');
-  if(!d){info.innerHTML='<h1>დოკუმენტი ვერ მოიძებნა</h1><p class="lead"><a href="./">დაბრუნდი ბაზაში</a></p>';return}
-  document.title=d.t+' · Safe Corner';
+  if(!d){info.innerHTML='<h1><span class="ka">დოკუმენტი ვერ მოიძებნა</span><span class="en">Document not found</span></h1><p class="lead"><a href="./"><span class="ka">დაბრუნდი ბაზაში</span><span class="en">Back to legislation</span></a></p>';return}
+  function L(ka,en){return en&&en!==ka?'<span class="ka">'+ka+'</span><span class="en">'+en+'</span>':ka}
+  function tt(){document.title=(document.documentElement.lang==='en'&&d.te?d.te:d.t)+' · Safe Corner'}tt();document.addEventListener('sc-lang',tt);
   var f=d.pdf?'pdf/'+e(d.pdf):'';
-  info.innerHTML='<div class="tx"><div class="dm"><span class="ty">'+e(d.ty)+'</span>'+e([d.n?'№'+d.n:'',d.dt].filter(Boolean).join(' · '))+'</div><h1>'+e(d.t)+'</h1></div>'+(f?'<a class="dl" id="dl" href="'+f+'" download>გადმოწერა PDF ↓ <small id="np"></small></a>':'')+(d.am&&d.am.length?'<div class="am">'+d.am.map(function(a){return '<a href="pdf/'+e(a.pdf)+'" target="_blank" rel="noopener">'+e(a.t)+' <em>PDF ↓</em></a>'}).join('')+'</div>':'');
-  if(!f||!window.pdfjsLib){msg.hidden=false;msg.innerHTML='<b>სრული ტექსტი მალე დაემატება</b>';return}
+  info.innerHTML='<div class="tx"><div class="dm"><span class="ty">'+L(e(d.ty),e(d.tye))+'</span>'+e([d.n?'№'+d.n:'',d.dt].filter(Boolean).join(' · '))+'</div><h1>'+L(e(d.t),e(d.te))+'</h1>'+(d.te?'<p class="orig en">'+e(d.t)+' <small>· Georgian original</small></p>':'')+'</div>'+(f?'<a class="dl" id="dl" href="'+f+'" download><span class="ka">გადმოწერა PDF ↓</span><span class="en">Download PDF ↓</span> <small id="np"></small></a>':'')+(d.am&&d.am.length?'<div class="am">'+d.am.map(function(a){return '<a href="pdf/'+e(a.pdf)+'" target="_blank" rel="noopener">'+e(a.t)+' <em>PDF ↓</em></a>'}).join('')+'</div>':'');
+  if(!f||!window.pdfjsLib){msg.hidden=false;msg.innerHTML='<b>'+L('სრული ტექსტი მალე დაემატება','Full text coming soon')+'</b>';return}
   pdfjsLib.GlobalWorkerOptions.workerSrc='lib/pdf.worker.min.js';
   pdfjsLib.getDocument(f).promise.then(function(pdf){
-    document.getElementById('np').textContent='· '+pdf.numPages+' გვ.';
+    document.getElementById('np').innerHTML='· '+pdf.numPages+' '+L('გვ.','p.');
     var io=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;io.unobserve(x.target);render(+x.target.dataset.n,x.target)})},{rootMargin:'800px 0px'});
     for(var n=1;n<=pdf.numPages;n++){var el=document.createElement('div');el.className='pg';el.dataset.n=n;pages.appendChild(el);io.observe(el)}
     function render(n,el){pdf.getPage(n).then(function(p){var w=el.clientWidth,v=p.getViewport({scale:1}),sc=w/v.width*Math.min(2,window.devicePixelRatio||1),vp=p.getViewport({scale:sc});
       var c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;el.style.aspectRatio=vp.width+'/'+vp.height;el.appendChild(c);p.render({canvasContext:c.getContext('2d'),viewport:vp})})}
-  }).catch(function(){msg.hidden=false;msg.innerHTML='<b>ფაილი ვერ ჩაიტვირთა</b><a href="'+f+'" download>გადმოწერე PDF</a>'});
+  }).catch(function(){msg.hidden=false;msg.innerHTML='<b>'+L('ფაილი ვერ ჩაიტვირთა','The file could not be loaded')+'</b><a href="'+f+'" download>'+L('გადმოწერე PDF','Download PDF')+'</a>'});
 })();
 </script>
 <script src="/assets/bot.js" defer></script>

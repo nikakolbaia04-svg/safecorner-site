@@ -60,3 +60,27 @@ var DOCS=[
 {"t": "გარემოს ხარისხობრივი მდგომარეობის ნორმები", "ty": "ბრძანება", "n": "297/ნ", "dt": "16.08.2001", "d": "ჰაერის, წყლისა და ნიადაგის ხარისხის ნორმები ადამიანის ჯანმრთელობის დასაცავად.", "k": ["გარემო", "ჰაერი", "წყალი"], "key": "b297", "pdf": "b297.pdf", "g": "rel", "v": "13.11.2026"},
 {"g": "rel", "t": "მაღალი რისკის სამედიცინო საქმიანობის რეგლამენტში ცვლილება", "ty": "დადგენილება", "n": "429", "dt": "22.08.2022", "d": "ცვლილება მაღალი რისკის შემცველი სამედიცინო საქმიანობის ტექნიკურ რეგლამენტში (2010 წლის №359 დადგენილება).", "k": ["სამედიცინო", "კლინიკა", "მაღალი რისკი", "ცვლილება"], "key": "d429m", "pdf": "d429m.pdf", "v": "13.11.2026"}
 ];
+/* English: only titles and group names (Nikoloz 2026-11-14: do not translate the regulations themselves) */
+var TY_EN={"ორგანული კანონი":"Organic law","კანონი":"Law","კოდექსი":"Code","ტექნიკური რეგლამენტი":"Technical regulation","ბრძანება":"Order","დადგენილება":"Resolution"};
+var GROUPS_EN={law:["Laws","Laws","The core laws the occupational safety system is built on."],reg:["Regulations","Technical regulations","Specific requirements for the workplace: premises, equipment, construction, work at height, cranes, electricity, chemicals."],ord:["Orders","Orders and resolutions","Rules and lists: risk assessment, accidents, medical checks, heavy and hazardous work, inspections."],rel:["Additional","Additional acts","Construction, environmental, sanitary and other acts that relate to the topic indirectly."]};
+var DOCS_EN={
+4486188:"On Occupational Safety",1155567:"Labour Code of Georgia",5003057:"On the Labour Inspection Service",
+5512758:"Minimum safety requirements for the workplace",6488414:"Safe use of work equipment",5572284:"Safety and health signs",
+d590:"Use of personal protective equipment at work",4793418:"Personal protective equipment",5795140:"Manual handling of loads",
+2922754:"Fire safety rules and conditions",2198183:"Microclimate of industrial premises",2357152:"Construction safety",
+3836869:"Safety of work at height",2186131:"Lifting equipment (cranes)",el340:"Safety rules for operating electrical installations",
+2185967:"Technical operation of power plants and networks",1950527:"Pressure equipment",2189268:"Safe operation of boiler installations",
+2187218:"Safe operation of lifts",1981342:"Ammonia refrigeration installations",3176389:"Safety rules for buildings and structures",
+2188761:"Safety in quarries",2186184:"Safety of blasting operations",2186047:"Underground mining of deposits",
+2186308:"Safety in coal mines",2196749:"Occupational exposure limits for harmful substances in workplace air",2198163:"Exposure limits for aerosols and metals",
+2187938:"Labelling of hazardous chemicals",3198620:"Work with biological agents",
+71650:"Mandatory periodic medical examinations",4787924:"Hazardous work for pregnant, postpartum and breastfeeding women",5251745:"Night work: working time and medical checks",
+4776091:"Workplace risk assessment procedure",4307493:"Recording of occupational accidents and diseases",4277583:"List of high-risk, heavy, harmful and hazardous work",
+70600:"List of heavy, harmful and hazardous work",5033680:"Work prohibited for persons under 18",4348224:"Occupational safety specialist training programme",
+d99:"Inspection rules and procedure",4276845:"Spatial Planning, Architectural and Construction Code",2363013:"On Civil Security",
+1659419:"Product Safety and Free Movement Code",4793337:"Priority economic sectors and risk assessment",d329:"Sectors with a special working-time regime",
+b346:"Exposure limits for harmful substances in workplace air (old order)",57940:"Sanitary rules for heavy industry enterprises",d180:"Amendment to the safety rules for buildings and structures",
+d145:"Collection and treatment of hazardous waste",3779710:"Noise limits in residential and public buildings",b308:"Sanitary rules for preschool and general education institutions",
+b297:"Environmental quality standards",d429m:"Amendment to the regulation on high-risk medical activities"};
+DOCS.forEach(function(d){d.te=DOCS_EN[d.id||d.key]||"";d.tye=TY_EN[d.ty]||d.ty});
+GROUPS.forEach(function(g){var x=GROUPS_EN[g.id];if(x){g.tab_en=x[0];g.name_en=x[1];g.desc_en=x[2]}});

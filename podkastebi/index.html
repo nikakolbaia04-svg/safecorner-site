@@ -48,6 +48,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 footer a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--yellow)}
 @media (max-width:900px){.pods{grid-template-columns:1fr;grid-auto-flow:row;grid-template-rows:none}.pn{font-size:24px}.pd{grid-template-columns:48px minmax(0,1fr) 36px;gap:12px}}
 @media (max-width:560px){.wrap{padding:0 16px}.brand b{font-size:15px}.back span{display:none}.back::after{content:"მთავარი"}.hero{padding-top:40px;padding-bottom:28px}}
+.en{display:none}html[lang=en] .ka{display:none}html[lang=en] .en{display:revert}
+.nr{display:flex;align-items:center;gap:12px}
+.lang{display:flex;border:1.5px solid var(--ink);font-family:var(--wide);font-weight:700;font-size:13px}
+.lang button{background:none;border:0;padding:6px 10px;cursor:pointer;color:var(--ink);font:inherit}
+.lang button[aria-pressed=true]{background:var(--ink);color:var(--bg)}
+@media (max-width:560px){.back::after{content:none!important}.back{padding:8px 11px}.nr{gap:8px}}
+@media (max-width:420px){.brand b{display:none}}
+
 </style>
 </head>
 <body>
@@ -62,21 +70,22 @@ footer a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--yel
 </svg>
 <header><div class="wrap nav">
   <a class="brand" href="/"><svg><use href="#sc"/></svg><b>SAFE CORNER</b></a>
-  <a class="back" href="/">← <span>მთავარ გვერდზე</span></a>
+  <div class="nr"><a class="back" href="/">← <span><span class="ka">მთავარ გვერდზე</span><span class="en">Home</span></span></a><div class="lang" role="group" aria-label="Language"><button type="button" data-l="ka" aria-pressed="true">ქარ</button><button type="button" data-l="en" aria-pressed="false">EN</button></div></div>
 </div></header>
 <main>
   <section class="wrap hero">
-    <div class="eyebrow">პოდკასტები · 2024-დან</div>
-    <h1>ჩვენი სტუმრები</h1>
-    <p>14 პოდკასტი შრომის უსაფრთხოების 10 სპეციალისტთან: ინსპექცია, რისკის შეფასება, განათლება, ისტორია და პრაქტიკა.</p>
+    <div class="eyebrow"><span class="ka">პოდკასტები · 2024-დან</span><span class="en">Podcasts · since 2024</span></div>
+    <h1><span class="ka">ჩვენი სტუმრები</span><span class="en">Our guests</span></h1>
+    <p><span class="ka">14 პოდკასტი შრომის უსაფრთხოების 10 სპეციალისტთან: ინსპექცია, რისკის შეფასება, განათლება, ისტორია და პრაქტიკა.</span><span class="en">14 podcasts with 10 occupational safety specialists: inspection, risk assessment, training, history and practice. Episodes are in Georgian.</span></p>
   </section>
   <section class="list"><div class="wrap">
     <div class="pods" id="pods"></div>
-    <a class="yt" href="https://www.youtube.com/@SafeCorner2024" target="_blank" rel="noopener">ყველა ვიდეო YouTube-ზე ↗</a>
+    <a class="yt" href="https://www.youtube.com/@SafeCorner2024" target="_blank" rel="noopener"><span class="ka">ყველა ვიდეო YouTube-ზე ↗</span><span class="en">All videos on YouTube ↗</span></a>
   </div></section>
 </main>
-<footer><div class="wrap"><span>© 2026 Safe Corner · უსაფრთხო კუთხე</span><a href="/">safecorner.ge</a></div></footer>
-<script src="/assets/media.js?v=2"></script>
+<footer><div class="wrap"><span>© 2026 Safe Corner · <span class="ka">უსაფრთხო კუთხე</span><span class="en">Georgian workplace safety on YouTube</span></span><a href="/">safecorner.ge</a></div></footer>
+<script src="/assets/lang.js"></script>
+<script src="/assets/media.js?v=3"></script>
 <script>document.querySelectorAll('.pd').forEach(function(el,i){el.style.animationDelay=(i*40)+'ms'})</script>
 <script src="/assets/bot.js" defer></script>
 </body>

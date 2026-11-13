@@ -683,7 +683,7 @@ a.ep{text-decoration:none;color:inherit}
       </div>
       <div class="res" id="res"></div>
       <a class="lw" href="/kanonmdebloba/">
-        <span class="lw-m" aria-hidden="true"><small><span class="ka">მოძებნე</span><span class="en">Look up</span></small><span class="lw-rot"><span class="lw-w"><i>სიმაღლეზე მუშაობა</i><i>სახანძრო უსაფრთხოება</i><i>ამწეები</i><i>ელექტრობა</i><i>ქიმიკატები</i><i>სიმაღლეზე მუშაობა</i></span></span></span>
+        <span class="lw-m" aria-hidden="true"><small><span class="ka">მოძებნე</span><span class="en">Look up</span></small><span class="lw-rot"><span class="lw-w"><i><span class="ka">სიმაღლეზე მუშაობა</span><span class="en">Work at height</span></i><i><span class="ka">სახანძრო უსაფრთხოება</span><span class="en">Fire safety</span></i><i><span class="ka">ამწეები</span><span class="en">Cranes</span></i><i><span class="ka">ელექტრობა</span><span class="en">Electricity</span></i><i><span class="ka">ქიმიკატები</span><span class="en">Chemicals</span></i><i><span class="ka">სიმაღლეზე მუშაობა</span><span class="en">Work at height</span></i></span></span></span>
         <span class="lw-t"><span class="eyebrow"><span class="ka">საკანონმდებლო ბაზა</span><span class="en">Legislation</span></span><b><span class="ka">შრომის უსაფრთხოების კანონები და რეგლამენტები</span><span class="en">OHS laws and technical regulations</span></b><small><span class="ka">ყველა მნიშვნელოვანი დოკუმენტი ერთ სივრცეში: მოძებნე, გაეცანი სრულ ტექსტს პირდაპირ საიტზე და გადმოწერე PDF-ად.</span><span class="en">Key OHS laws and regulations in one place: search, read the full text right on the site and download as PDF.</span></small></span>
         <span class="btn ghost lw-b"><span class="ka">ბაზის გახსნა</span><span class="en">Open</span> →</span>
       </a>
@@ -836,7 +836,6 @@ var ARTICLES=[
 var FB_GROUP="https://www.facebook.com/groups/1523477912947664";
 /* WhatsApp ჯგუფის მოსაწვევი ლინკი (chat.whatsapp.com/...): ცარიელი = ბარათი დამალულია */
 var WA_GROUP="https://chat.whatsapp.com/GI1HW5CBWVD4ionFVCQExu";
-var EPISODE_VIDEOS={1:"",2:"",3:"",4:"",5:""};
 /* რესურსები: file = PDF ფაილის მისამართი (resources/ საქაღალდეში); ცარიელი = "მალე" */
 var RESOURCES=[
   {file:"",type:"PDF",ep:3,title_ka:"შრომის ინსპექციის ჩეკლისტი",title_en:"Labour inspection checklist",desc_ka:"ინსპექციის მითითებები 5 ჯგუფად, ობიექტის თვითშემოწმებისთვის. მე-3 ეპიზოდიდან.",desc_en:"Inspection requirements in 5 groups, for checking your own site. From episode 3."}
@@ -846,14 +845,6 @@ var RESOURCES=[
   if(FB_GROUP){var fl=document.getElementById('fb-link');fl.href=FB_GROUP;fl.hidden=false}
   if(WA_GROUP){var wl=document.getElementById('wa-link');wl.href=WA_GROUP;wl.hidden=false}
   if(!FB_GROUP&&!WA_GROUP)document.getElementById('community').hidden=true
-  /* episodes */
-  document.querySelectorAll('.ep[data-ep]').forEach(function(row){
-    var id=EPISODE_VIDEOS[row.dataset.ep];if(!id)return;
-    var a=document.createElement('a');a.className='ep';a.href='https://www.youtube.com/watch?v='+encodeURIComponent(id);a.target='_blank';a.rel='noopener';
-    a.innerHTML=row.innerHTML;var soon=a.querySelector('.soon');
-    soon.outerHTML='<span class="watch"><svg><use href="#yt"/></svg><span class="ka">უყურე</span><span class="en">Watch</span></span>';
-    row.replaceWith(a);
-  });
   /* resources */
   var rb=document.getElementById('res');
   rb.innerHTML=RESOURCES.map(function(r){
@@ -878,7 +869,7 @@ var RESOURCES=[
   });
 })();
 </script>
-<script src="/assets/media.js?v=2"></script>
+<script src="/assets/media.js?v=3"></script>
 <script src="/assets/bot.js" defer></script>
 </body>
 </html>
