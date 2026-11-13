@@ -330,22 +330,18 @@ a.ep{text-decoration:none;color:inherit}
 .lw:hover .lw-b::before{top:-9px;left:-9px;opacity:1}.lw:hover .lw-b::after{bottom:-9px;right:-9px;opacity:1}
 @media (max-width:900px){.lw{grid-template-columns:minmax(0,1fr);gap:16px;padding:24px 20px}.lw-m{width:100%;border-right:0;padding-right:0;padding-bottom:14px;border-bottom:1px solid #0E0E0E26}.lw-w i{font-size:clamp(18px,5.6vw,21px)}.lw-t b{font-size:20px}.lw-b{justify-content:center}}
 /* join (slim strip, in brand style) */
-.jn{padding:30px 0;border-bottom:1px solid var(--line)}
-.jn-in{position:relative;display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding:22px 28px}
-.jn-in::before,.jn-in::after{content:"";position:absolute;width:34px;height:34px;pointer-events:none}
-.jn-in::before{left:0;bottom:0;border-left:5px solid var(--yellow);border-bottom:5px solid var(--yellow)}
-.jn-in::after{right:0;top:0;border-right:1.5px solid #0E0E0E66;border-top:1.5px solid #0E0E0E66}
-.jn .t{flex:1 1 360px;min-width:0}.jn .l{flex:none}.jn .t .eyebrow{margin-bottom:6px}
-.jn .t b{display:block;font-family:var(--ka);font-weight:800;font-size:19px;line-height:1.35}
-.jn .t b i{font-style:normal;box-shadow:inset 0 -.3em 0 #EBA80066}
-.jn .l{margin-left:auto;display:flex;gap:12px;flex-wrap:wrap}
-.jn .l .btn{padding:11px 18px;font-size:15px;background:transparent;color:var(--ink)}
-.jn .l .btn[hidden]{display:none}
-.jn .l .btn svg{width:18px;height:18px;transition:color .2s}
-.jn .l .fb svg{color:#1877F2}.jn .l .wa svg{color:#1FBE5C}
-.jn .l .fb:hover{background:#1877F2;border-color:#1877F2;color:#fff}
-.jn .l .wa:hover{background:#1FBE5C;border-color:#1FBE5C;color:#fff}
-.jn .l .btn:hover svg{color:#fff}
+.jn{padding:0;background:var(--bg2);border-bottom:1px solid var(--line)}
+.jn-in{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:16px 0}
+.jn .t{flex:1 1 360px;min-width:0;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.jn .t .eyebrow{margin:0}
+.jn .t b{font-family:var(--ka);font-weight:700;font-size:16px;line-height:1.4}
+.jn .l{margin-left:auto;display:flex;gap:28px;flex-wrap:wrap;flex:none}
+.jn .l a{font-weight:700;font-size:15px;text-decoration:none;color:var(--ink);padding:4px 0;border-bottom:2px solid var(--yellow);white-space:nowrap;transition:border-color .25s}
+.jn .l a:hover{border-color:var(--ink)}
+.jn .l a[hidden]{display:none}
+.jn .l a svg{display:none}
+.jn .l a::after{content:" ↗"}
+@media (max-width:560px){.jn .l{margin-left:0;gap:22px}}
 @media (max-width:700px){.jn{padding:22px 0}.jn-in{padding:20px 18px;gap:18px}.jn .t b{font-size:18px}.jn .l{margin-left:0;width:100%;flex:1 1 100%;flex-wrap:nowrap}.jn .l .btn{flex:1;justify-content:center;padding:11px 6px;font-size:13.5px;gap:7px;white-space:nowrap}.jn .l .btn svg{width:16px;height:16px}}
 
 /* ---------- motion ---------- */
@@ -503,8 +499,8 @@ a.ep{text-decoration:none;color:inherit}
           <b><span class="ka">გაწევრიანდი ჩვენს Facebook ჯგუფსა და WhatsApp-ის ჩათში</span><span class="en">Join our Facebook group and WhatsApp chat</span></b>
         </div>
         <div class="l">
-          <a class="btn fb" id="fb-link" href="#" target="_blank" rel="noopener" hidden><svg><use href="#fbi"/></svg><span class="ka">Facebook ჯგუფი</span><span class="en">Facebook group</span></a>
-          <a class="btn wa" id="wa-link" href="#" target="_blank" rel="noopener" hidden><svg><use href="#wai"/></svg><span class="ka">WhatsApp ჩათი</span><span class="en">WhatsApp chat</span></a>
+          <a class="fb" id="fb-link" href="#" target="_blank" rel="noopener" hidden><svg><use href="#fbi"/></svg><span class="ka">Facebook ჯგუფი</span><span class="en">Facebook group</span></a>
+          <a class="wa" id="wa-link" href="#" target="_blank" rel="noopener" hidden><svg><use href="#wai"/></svg><span class="ka">WhatsApp ჩათი</span><span class="en">WhatsApp chat</span></a>
         </div>
       </div>
     </div>
