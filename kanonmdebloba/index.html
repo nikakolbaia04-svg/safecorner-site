@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>საკანონმდებლო ბაზა · Safe Corner</title>
-<meta name="description" content="შრომის უსაფრთხოების კანონები და ტექნიკური რეგლამენტები ერთ ადგილას. Safe Corner.">
+<meta name="description" content="შრომის უსაფრთხოების კანონები, ტექნიკური რეგლამენტები და ბრძანებები ერთ ადგილას, მოკლე აღწერებით და ოფიციალური ბმულებით. Safe Corner.">
 <meta name="theme-color" content="#EEECE6">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23EBA800'/%3E%3Cpath d='M28 44V28h16M56 28h16v16M72 56v16H56' fill='none' stroke='%230E0E0E' stroke-width='5'/%3E%3Cpath d='M28 56v16h18' fill='none' stroke='%230E0E0E' stroke-width='9'/%3E%3C/svg%3E">
 <meta property="og:title" content="საკანონმდებლო ბაზა · Safe Corner">
@@ -14,72 +14,110 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Noto+Sans+Georgian:wght@400..800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#EEECE6;--bg2:#E4E1D8;--ink:#0E0E0E;--ink2:#3A3A38;--muted:#6B6A66;--yellow:#EBA800;--line:#0E0E0E1f;--wide:"Archivo",sans-serif;--ka:"Noto Sans Georgian",sans-serif}
+:root{--bg:#EEECE6;--bg2:#E4E1D8;--card:#F6F5F1;--ink:#0E0E0E;--ink2:#3A3A38;--muted:#6B6A66;--yellow:#EBA800;--line:#0E0E0E1f;--wide:"Archivo",sans-serif;--ka:"Noto Sans Georgian",sans-serif;--ease:cubic-bezier(.2,.7,.2,1)}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:150px}
 body{background:var(--bg);color:var(--ink);font-family:var(--ka),var(--wide);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
+::selection{background:var(--yellow)}
 .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
-header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-.brand svg{width:38px;height:38px}
-.brand b{font-family:var(--wide);font-weight:800;font-stretch:125%;font-size:17px;letter-spacing:.01em}
-.back{font-size:15px;color:var(--ink2);text-decoration:none;display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border:1.5px solid #0E0E0E33;transition:background .2s,color .2s,border-color .2s}
+.brand svg{width:38px;height:38px;transition:transform .5s var(--ease)}
+.brand:hover svg{transform:rotate(-6deg) scale(1.05)}
+.brand b{font-family:var(--wide);font-weight:800;font-stretch:125%;font-size:17px;letter-spacing:.01em;white-space:nowrap}
+.back{font-size:15px;color:var(--ink2);text-decoration:none;display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border:1.5px solid #0E0E0E33;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
+.back i{font-style:normal;transition:transform .3s var(--ease)}
 .back:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.back:hover i{transform:translateX(-4px)}
 .eyebrow{font-family:var(--wide);font-weight:700;font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:12px}
 .eyebrow::before{content:"";width:28px;height:4px;background:var(--yellow)}
 
+/* entrance */
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.hero .eyebrow,.hero h1,.hero p,.hero .src,.top{opacity:0;animation:up .8s var(--ease) forwards}
+.hero h1{animation-delay:.08s}.hero p{animation-delay:.16s}.hero .src{animation-delay:.24s}.top{animation-delay:.3s}
+
 /* hero */
-.hero{padding:72px 0 48px}
+.hero{padding:72px 0 52px}
 .hero-g{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:end}
 h1{font-size:clamp(32px,4.4vw,54px);line-height:1.12;font-weight:800;margin:18px 0 18px;text-wrap:balance}
 .hero p{font-size:19px;color:var(--ink2);max-width:620px}
-.top{background:#F6F5F1;padding:24px 26px 18px;position:relative}
-.top::before{content:"";position:absolute;left:0;bottom:0;width:36px;height:36px;border-left:5px solid var(--yellow);border-bottom:5px solid var(--yellow)}
-.top::after{content:"";position:absolute;right:0;top:0;width:36px;height:36px;border-right:1.5px solid #0E0E0E66;border-top:1.5px solid #0E0E0E66}
-.top h3{font-family:var(--wide);font-weight:700;font-size:12px;letter-spacing:.16em;color:var(--muted);margin-bottom:8px}
-.top a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0;border-top:1px solid var(--line);text-decoration:none;font-weight:700;font-size:15.5px;line-height:1.35;transition:padding .25s}
-.top a small{display:block;color:var(--muted);font-weight:400;font-size:12.5px;margin-top:2px}
-.top a em{font-style:normal;flex:none;width:30px;height:30px;display:grid;place-items:center;border:1.5px solid #0E0E0E33;transition:background .25s,color .25s,border-color .25s}
-.top a:hover{padding-left:6px}
-.top a:hover em{background:var(--yellow);border-color:var(--yellow)}
-.src{display:flex;gap:10px;align-items:center;margin-top:22px;font-size:14px;color:var(--muted)}
+.src{display:flex;gap:6px 10px;align-items:center;flex-wrap:wrap;margin-top:22px;font-size:14px;color:var(--muted)}
 .src b{color:var(--ink);border-bottom:2px solid var(--yellow)}
+.top{background:var(--card);padding:24px 26px 18px;position:relative}
+.top::before,.top::after{content:"";position:absolute;width:36px;height:36px;transition:width .5s var(--ease),height .5s var(--ease)}
+.top::before{left:0;bottom:0;border-left:5px solid var(--yellow);border-bottom:5px solid var(--yellow)}
+.top::after{right:0;top:0;border-right:1.5px solid #0E0E0E66;border-top:1.5px solid #0E0E0E66}
+.top:hover::before,.top:hover::after{width:52px;height:52px}
+.top h3{font-family:var(--wide);font-weight:700;font-size:12px;letter-spacing:.16em;color:var(--muted);margin-bottom:8px}
+.top a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0;border-top:1px solid var(--line);text-decoration:none;font-weight:700;font-size:15.5px;line-height:1.35;transition:padding .3s var(--ease)}
+.top a small{display:block;color:var(--muted);font-weight:400;font-size:12.5px;margin-top:2px}
+.top a em,.go em{font-style:normal;flex:none;width:30px;height:30px;display:grid;place-items:center;border:1.5px solid #0E0E0E33;transition:background .3s,border-color .3s,transform .3s var(--ease)}
+.top a:hover{padding-left:6px}
+.top a:hover em{background:var(--yellow);border-color:var(--yellow);transform:rotate(45deg)}
 
 /* tools */
-.tools{position:sticky;top:72px;z-index:5;background:var(--bg);padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.tools{position:sticky;top:72px;z-index:10;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(8px);padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+.tools.stuck{box-shadow:0 10px 30px #0000000f}
 .tools .wrap{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
-.search{flex:1 1 320px;display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid #0E0E0E33;padding:0 14px;transition:border-color .2s}
-.search:focus-within{border-color:var(--ink)}
+.search{flex:1 1 300px;display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid #0E0E0E33;padding:0 8px 0 14px;transition:border-color .25s,box-shadow .25s}
+.search:focus-within{border-color:var(--ink);box-shadow:4px 4px 0 var(--yellow)}
 .search svg{width:18px;height:18px;flex:none;color:var(--muted)}
 .search input{flex:1;border:0;outline:0;background:transparent;font:inherit;font-size:15px;padding:12px 0;min-width:0}
-.tabs{display:flex;gap:8px;flex-wrap:wrap}
-.tabs button{font:inherit;font-size:14px;font-weight:700;padding:10px 14px;background:transparent;border:1.5px solid #0E0E0E33;cursor:pointer;color:var(--ink);transition:background .2s,color .2s,border-color .2s}
-.tabs button:hover{border-color:var(--ink)}
-.tabs button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.tabs button i{font-style:normal;font-weight:400;opacity:.6;margin-left:4px}
+.search input::-webkit-search-cancel-button{display:none}
+.clr{border:0;background:transparent;font-size:18px;line-height:1;width:28px;height:28px;cursor:pointer;color:var(--muted);opacity:0;pointer-events:none;transition:opacity .2s}
+.search.has .clr{opacity:1;pointer-events:auto}
+.kbd{font-family:var(--wide);font-size:11px;border:1px solid #0E0E0E33;padding:1px 6px;color:var(--muted)}
+.search.has .kbd,.search:focus-within .kbd{display:none}
+.tabs{position:relative;display:flex;gap:4px;flex-wrap:wrap;padding:4px;border:1.5px solid #0E0E0E26;background:#fff}
+.tabs .ind{position:absolute;top:4px;left:0;height:calc(100% - 8px);background:var(--ink);transition:transform .45s var(--ease),width .45s var(--ease);z-index:0}
+.tabs button{position:relative;z-index:1;font:inherit;font-size:14px;font-weight:700;padding:8px 13px;background:transparent;border:0;cursor:pointer;color:var(--ink);white-space:nowrap;transition:color .3s}
+.tabs button[aria-pressed=true]{color:var(--bg)}
+.tabs button i{font-style:normal;font-weight:400;opacity:.6;margin-left:5px;font-size:12.5px}
+.count{font-size:14px;color:var(--muted);padding:22px 0 0}
+.count b{color:var(--ink)}
 
 /* list */
-.list{padding:40px 0 96px}
-.grp{margin-bottom:48px}
-.grp h2{font-size:22px;font-weight:800;display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
-.grp h2 span{font-family:var(--wide);font-weight:900;font-size:14px;color:var(--yellow);letter-spacing:.06em}
-.grp .gd{color:var(--muted);font-size:15px;margin-bottom:14px}
-.doc{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:20px;align-items:center;padding:18px 20px;background:#F6F5F1;border:1px solid transparent;text-decoration:none;position:relative;margin-top:8px;transition:background .25s,transform .25s,border-color .25s}
-.doc::before,.doc::after{content:"";position:absolute;width:12px;height:12px;opacity:0;transition:opacity .25s}
-.doc::before{left:-1px;bottom:-1px;border-left:3px solid var(--yellow);border-bottom:3px solid var(--yellow)}
+.list{padding:8px 0 96px}
+.grp{margin-top:44px}
+.gh{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:14px;border-bottom:2px solid var(--ink);position:relative}
+.gh::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:80px;background:var(--yellow);transform-origin:left;animation:grow .9s var(--ease) both}
+.gh span{font-family:var(--wide);font-weight:900;font-stretch:125%;font-size:15px;color:var(--yellow)}
+.gh h2{font-size:24px;font-weight:800;line-height:1.25}
+.gh p{flex-basis:100%;color:var(--muted);font-size:15px}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.doc{display:flex;flex-direction:column;gap:10px;padding:22px 22px 18px;background:var(--card);border:1px solid transparent;text-decoration:none;position:relative;opacity:0;animation:up .6s var(--ease) forwards;animation-delay:calc(var(--i,0) * 45ms);transition:background .3s,border-color .3s,box-shadow .35s var(--ease),transform .35s var(--ease)}
+.doc::before,.doc::after{content:"";position:absolute;width:0;height:0;opacity:0;transition:width .4s var(--ease),height .4s var(--ease),opacity .3s}
+.doc::before{left:-1px;bottom:-1px;border-left:4px solid var(--yellow);border-bottom:4px solid var(--yellow)}
 .doc::after{right:-1px;top:-1px;border-right:1.5px solid var(--ink);border-top:1.5px solid var(--ink)}
-.doc:hover{background:#fff;border-color:var(--line);transform:translateX(4px)}
-.doc:hover::before,.doc:hover::after{opacity:1}
-.ty{font-size:11px;font-weight:800;letter-spacing:.06em;padding:5px 9px;white-space:nowrap;border:1.5px solid var(--ink);min-width:96px;text-align:center}
+.doc:hover{background:#fff;border-color:var(--line);transform:translateY(-4px);box-shadow:0 18px 40px #0000001a}
+.doc:hover::before,.doc:hover::after{width:22px;height:22px;opacity:1}
+.dm{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+.ty{font-size:11px;font-weight:800;letter-spacing:.05em;padding:4px 9px;white-space:nowrap;border:1.5px solid var(--ink);color:var(--ink)}
 .ty.law{background:var(--yellow);border-color:var(--yellow)}
-.doc b{display:block;font-size:17px;line-height:1.35}
-.doc small{display:block;color:var(--muted);font-size:13.5px;margin-top:3px}
-.go{font-size:14px;font-weight:700;white-space:nowrap;border-bottom:2px solid var(--yellow);padding-bottom:1px}
-.empty{padding:40px 0;color:var(--muted);text-align:center}
-.note{background:#F6EBC9;padding:22px 24px;font-size:15px;color:var(--ink2);position:relative}
+.ty.ord{border-style:dashed}
+.doc h3{font-size:18px;line-height:1.35;font-weight:800}
+.doc p{font-size:14.5px;color:var(--ink2);line-height:1.55}
+.df{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.tags{display:flex;gap:6px;flex-wrap:wrap}
+.tags span{font-size:11.5px;color:var(--muted);background:#0E0E0E0a;padding:2px 8px}
+.go{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;white-space:nowrap}
+.doc:hover .go em{background:var(--yellow);border-color:var(--yellow);transform:rotate(45deg)}
+mark{background:#EBA80066;color:inherit;padding:0 1px}
+.empty{padding:56px 0;color:var(--muted);text-align:center;animation:up .5s var(--ease)}
+.empty b{display:block;color:var(--ink);font-size:20px;margin-bottom:6px}
+.note{margin-top:56px;background:#F6EBC9;padding:24px 26px;font-size:15px;color:var(--ink2);display:grid;grid-template-columns:auto minmax(0,1fr);gap:18px;align-items:start}
+.note .ic{width:34px;height:34px;border:2px solid var(--ink);display:grid;place-items:center;font-weight:900;font-family:var(--wide)}
 .note b{color:var(--ink)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+.totop{position:fixed;right:22px;bottom:22px;z-index:30;width:48px;height:48px;border:0;background:var(--ink);color:var(--bg);font-size:20px;cursor:pointer;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .35s,transform .35s var(--ease),background .25s}
+.totop.on{opacity:1;transform:none;pointer-events:auto}
+.totop:hover{background:var(--yellow);color:var(--ink)}
 
 footer{background:var(--ink);color:#BDBAB2;padding:36px 0;font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
@@ -89,12 +127,12 @@ footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
   .hero{padding:44px 0 32px}.hero-g{grid-template-columns:minmax(0,1fr);gap:32px}
   .hero p{font-size:17px}
   .tools{position:static}
-  .doc{grid-template-columns:minmax(0,1fr);gap:8px;padding:16px}
-  .ty,.go{justify-self:start;min-width:0}
-  .tabs{flex-wrap:nowrap;overflow-x:auto;width:100%;scrollbar-width:none;padding-bottom:2px}.tabs button{white-space:nowrap;flex:none}
-  .src{flex-wrap:wrap;gap:4px 8px}
+  .tabs{flex-wrap:nowrap;overflow-x:auto;width:100%;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
+  .cards{grid-template-columns:minmax(0,1fr)}
+  .df{flex-wrap:wrap}
 }
-@media (max-width:560px){.wrap{padding:0 16px}.brand b{font-size:15px;white-space:nowrap}.back{white-space:nowrap;padding:8px 12px}.back span{display:none}.back::after{content:"მთავარი"}}
+@media (max-width:560px){.wrap{padding:0 16px}.brand b{font-size:15px}.back span{display:none}.back::after{content:"მთავარი"}.gh h2{font-size:21px}.doc{padding:18px 16px 14px}.note{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.hero .eyebrow,.hero h1,.hero p,.hero .src,.top,.doc,.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -106,17 +144,11 @@ footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
     <path d="M0 164h32v144h144v32H0z" fill="#EBA800"/>
     <text x="172" y="222" text-anchor="middle" font-family="Archivo" font-weight="900" font-stretch="125%" font-size="150" fill="currentColor" letter-spacing="-4">SC</text>
   </symbol>
-  <symbol id="fr" viewBox="0 0 340 340">
-    <path d="M0 0h120v20H20v100H0z" fill="currentColor"/>
-    <path d="M340 0H220v20h100v100h20z" fill="currentColor"/>
-    <path d="M340 340H220v-20h100V220h20z" fill="currentColor"/>
-    <path d="M0 164h32v144h144v32H0z" fill="#EBA800"/>
-  </symbol>
 </svg>
 
 <header><div class="wrap nav">
   <a class="brand" href="/"><svg><use href="#sc"/></svg><b>SAFE CORNER</b></a>
-  <a class="back" href="/#resources">← <span>მთავარ გვერდზე</span></a>
+  <a class="back" href="/#resources"><i>←</i> <span>მთავარ გვერდზე</span></a>
 </div></header>
 
 <main>
@@ -124,76 +156,121 @@ footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
     <div>
       <div class="eyebrow">საკანონმდებლო ბაზა</div>
       <h1>შრომის უსაფრთხოების კანონმდებლობა ერთ ადგილას</h1>
-      <p>კანონები და ტექნიკური რეგლამენტები, რომლებიც ყველაზე ხშირად გვჭირდება ობიექტზე. თითოეული დოკუმენტი იხსნება ოფიციალურ წყაროზე, ყოველთვის ბოლო, მოქმედი რედაქციით.</p>
-      <div class="src">წყარო: <b>matsne.gov.ge</b> · საქართველოს საკანონმდებლო მაცნე</div>
+      <p>კანონები, ტექნიკური რეგლამენტები და ბრძანებები, რომლებიც ობიექტზე ყველაზე ხშირად გვჭირდება. თითოეულს მოკლე აღწერა ახლავს, ბმული კი ოფიციალურ წყაროზე, მოქმედ რედაქციაზე გადაგიყვანს.</p>
+      <div class="src">წყარო: <b>matsne.gov.ge</b> <span>· საქართველოს საკანონმდებლო მაცნე</span></div>
     </div>
-    <div class="top" id="top3">
-      <h3>ყველაზე ხშირად</h3>
-      <a href="https://matsne.gov.ge/ka/document/view/4486188" target="_blank" rel="noopener"><span>შრომის უსაფრთხოების შესახებ<small>ორგანული კანონი</small></span><em>↗</em></a>
-      <a href="https://matsne.gov.ge/ka/document/view/3836869" target="_blank" rel="noopener"><span>სიმაღლეზე მუშაობის უსაფრთხოება<small>ტექნიკური რეგლამენტი</small></span><em>↗</em></a>
-      <a href="https://matsne.gov.ge/ka/document/view/2357152" target="_blank" rel="noopener"><span>მშენებლობის უსაფრთხოება<small>ტექნიკური რეგლამენტი</small></span><em>↗</em></a>
-      <a href="https://matsne.gov.ge/ka/document/view/5572284" target="_blank" rel="noopener"><span>უსაფრთხოების ნიშნები<small>ტექნიკური რეგლამენტი</small></span><em>↗</em></a>
-    </div>
+    <div class="top" id="top"><h3>ყველაზე ხშირად</h3></div>
   </div></section>
 
-  <div class="tools"><div class="wrap">
-    <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="მოძებნე: მაგ. „სიმაღლე“, „ნიშნები“, „ამწე“" aria-label="ძებნა"></label>
-    <div class="tabs" id="tabs" role="group" aria-label="კატეგორიები"></div>
+  <div class="tools" id="tools"><div class="wrap">
+    <label class="search" id="sb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="მოძებნე: მაგ. „სიმაღლე“, „ნიშნები“, „ამწე“" aria-label="ძებნა" autocomplete="off"><span class="kbd">/</span><button class="clr" id="clr" type="button" aria-label="გასუფთავება">×</button></label>
+    <div class="tabs" id="tabs" role="group" aria-label="კატეგორიები"><span class="ind" id="ind"></span></div>
   </div></div>
 
   <section class="list"><div class="wrap">
+    <p class="count" id="count" aria-live="polite"></p>
     <div id="out"></div>
-    <div class="note"><b>შენიშვნა:</b> ბაზა საინფორმაციოა და თანდათან შეივსება. იურიდიული ძალა აქვს მხოლოდ matsne.gov.ge-ზე გამოქვეყნებულ ტექსტს. თუ მნიშვნელოვანი დოკუმენტი გამოგვრჩა, მოგვწერე: <a href="mailto:Safecorner2024@gmail.com">Safecorner2024@gmail.com</a></div>
+    <div class="note rv"><span class="ic">i</span><div><b>შენიშვნა:</b> ბაზა საინფორმაციოა და თანდათან შეივსება. იურიდიული ძალა აქვს მხოლოდ matsne.gov.ge-ზე გამოქვეყნებულ ტექსტს; ზოგიერთი ძველი აქტი ნაწილობრივ შეიძლება ჩანაცვლებული იყოს ახალი რეგლამენტებით. თუ მნიშვნელოვანი დოკუმენტი გამოგვრჩა, მოგვწერე: <a href="mailto:Safecorner2024@gmail.com">Safecorner2024@gmail.com</a></div></div>
   </div></section>
 </main>
 
+<button class="totop" id="totop" type="button" aria-label="ზემოთ">↑</button>
 <footer><div class="wrap"><span>© 2026 Safe Corner · უსაფრთხო კუთხე</span><a href="/">safecorner.ge</a></div></footer>
 
 <script>
-/* ── დოკუმენტების სია: ახლის დასამატებლად დაამატე ერთი ხაზი ── */
+/* ── კატეგორიები ── */
 var GROUPS=[
-  {id:"law",n:"01",name:"კანონები",desc:"ძირითადი კანონები, რომლებზეც შრომის უსაფრთხოების სისტემა დგას."},
-  {id:"gen",n:"02",name:"ზოგადი ტექნიკური რეგლამენტები",desc:"მოქმედებს თითქმის ყველა სამუშაო სივრცეზე."},
-  {id:"sec",n:"03",name:"დარგობრივი ტექნიკური რეგლამენტები",desc:"კონკრეტული სამუშაოებისა და დარგებისთვის."}
+  {id:"law",n:"01",tab:"კანონები",name:"კანონები",desc:"ძირითადი კანონები, რომლებზეც შრომის უსაფრთხოების სისტემა დგას."},
+  {id:"gen",n:"02",tab:"სამუშაო სივრცე",name:"სამუშაო სივრცე და აღჭურვილობა",desc:"ზოგადი მოთხოვნები, რომლებიც თითქმის ყველა სამუშაო ადგილზე მოქმედებს."},
+  {id:"hea",n:"03",tab:"ჯანმრთელობა",name:"ჯანმრთელობა და მავნე ფაქტორები",desc:"ქიმიური და ბიოლოგიური აგენტები, ზღვრული კონცენტრაციები, გამოსხივება, სამედიცინო შემოწმება."},
+  {id:"sec",n:"04",tab:"დარგობრივი",name:"დარგობრივი რეგლამენტები",desc:"მშენებლობა, სიმაღლე, ამწეები, ელექტროობა, სამთო საქმე და სხვა კონკრეტული სამუშაოები."},
+  {id:"pro",n:"05",tab:"პროცედურები",name:"პროცედურები და სპეციალისტები",desc:"უბედური შემთხვევების აღრიცხვა, საშიში სამუშაოების ჩამონათვალი, სპეციალისტის მომზადება."}
 ];
+/* ── დოკუმენტები: ახლის დასამატებლად დაამატე ერთი ჩანაწერი ──
+   g = კატეგორია, t = მოკლე სათაური, ty = სახე, n = ნომერი, dt = თარიღი, d = აღწერა, k = საძიებო სიტყვები, id = matsne-ს ID, top = „ყველაზე ხშირად“ */
 var DOCS=[
-  {g:"law",t:"შრომის უსაფრთხოების შესახებ",m:"ორგანული კანონი · №4283-IIს · 2019",id:4486188,type:"კანონი"},
-  {g:"law",t:"საქართველოს შრომის კოდექსი",m:"ორგანული კანონი",id:1155567,type:"კანონი"},
-  {g:"law",t:"შრომის ინსპექციის შესახებ",m:"კანონი",id:5003057,type:"კანონი"},
-  {g:"gen",t:"სამუშაო სივრცეში უსაფრთხოებისა და ჯანმრთელობის დაცვის მინიმალური მოთხოვნები",m:"ტექნიკური რეგლამენტი · მთავრობის დადგენილება",id:5512758},
-  {g:"gen",t:"სამუშაო სივრცეში უსაფრთხოების და ჯანმრთელობის ნიშნების განთავსება",m:"ტექნიკური რეგლამენტი · დადგენილება №457 · 2022",id:5572284},
-  {g:"gen",t:"სამუშაო მოწყობილობების გამოყენებისას უსაფრთხოების მინიმალური მოთხოვნები",m:"ტექნიკური რეგლამენტი · დადგენილება №135 · 2025",id:6488414},
-  {g:"gen",t:"ტვირთის ხელით აწევისას უსაფრთხოების მინიმალური მოთხოვნები",m:"ტექნიკური რეგლამენტი · მთავრობის დადგენილება",id:5795140},
-  {g:"gen",t:"ინდივიდუალური დაცვის საშუალებები",m:"ტექნიკური რეგლამენტი · მთავრობის დადგენილება",id:4793418},
-  {g:"gen",t:"სახანძრო უსაფრთხოების წესები და პირობები",m:"ტექნიკური რეგლამენტი · მთავრობის დადგენილება",id:2922754},
-  {g:"sec",t:"მშენებლობის უსაფრთხოება",m:"ტექნიკური რეგლამენტი · დადგენილება №361 · 2014",id:2357152},
-  {g:"sec",t:"სიმაღლეზე მუშაობის უსაფრთხოების მოთხოვნები",m:"ტექნიკური რეგლამენტი · დადგენილება №477 · 2017",id:3836869},
-  {g:"sec",t:"ამწე მოწყობილობების მოწყობა და უსაფრთხო ექსპლუატაცია",m:"ტექნიკური რეგლამენტი · მთავრობის დადგენილება",id:2186131},
-  {g:"sec",t:"შენობა-ნაგებობის უსაფრთხოების წესები",m:"ტექნიკური რეგლამენტი · მთავრობის დადგენილება",id:3176389},
-  {g:"sec",t:"წნევის ქვეშ მომუშავე მოწყობილობები",m:"ტექნიკური რეგლამენტი · მთავრობის დადგენილება",id:1950527},
-  {g:"sec",t:"კარიერების უსაფრთხოება",m:"ტექნიკური რეგლამენტი · მთავრობის დადგენილება",id:2188761},
-  {g:"sec",t:"საამფეთქებლო სამუშაოების უსაფრთხოება",m:"ტექნიკური რეგლამენტი · მთავრობის დადგენილება",id:2186184}
-];
+{"g": "law","t": "შრომის უსაფრთხოების შესახებ","ty": "ორგანული კანონი","n": "4283-IIს","dt": "19.02.2019","d": "მთავარი კანონი: დამსაქმებლის და დასაქმებულის ვალდებულებები, რისკების შეფასება, სპეციალისტი, პრევენციული ღონისძიებები.","k": ["დამსაქმებელი","რისკის შეფასება","სპეციალისტი"],"id": 4486188,"top": 1},
+{"g": "law","t": "საქართველოს შრომის კოდექსი","ty": "ორგანული კანონი","n": "4113-რს","dt": "17.12.2010","d": "შრომითი ურთიერთობების ძირითადი წესები: ხელშეკრულება, სამუშაო დრო, დასვენება, შვებულება.","k": ["ხელშეკრულება","სამუშაო დრო","შვებულება"],"id": 1155567},
+{"g": "law","t": "შრომის ინსპექციის შესახებ","ty": "კანონი","n": "7178-Iს","dt": "29.09.2020","d": "რას ამოწმებს შრომის ინსპექცია, რა უფლებები აქვს ინსპექტორს და როგორ ეკისრება ჯარიმა.","k": ["ინსპექტორი","შემოწმება","ჯარიმა"],"id": 5003057},
+{"g": "gen","t": "სამუშაო სივრცის უსაფრთხოების მინიმალური მოთხოვნები","ty": "ტექნიკური რეგლამენტი","n": "341","dt": "01.07.2022","d": "სამუშაო ადგილის ზოგადი მოწყობა: გასასვლელები, განათება, ვენტილაცია, ტემპერატურა, საევაკუაციო გზები.","k": ["სამუშაო ადგილი","ევაკუაცია","განათება"],"id": 5512758},
+{"g": "gen","t": "სამუშაო მოწყობილობების უსაფრთხო გამოყენება","ty": "ტექნიკური რეგლამენტი","n": "135","dt": "01.05.2025","d": "მანქანა-დანადგარების და ხელსაწყოების შერჩევა, შემოწმება და უსაფრთხო გამოყენება სამუშაო ადგილზე.","k": ["დანადგარები","ხელსაწყოები","შემოწმება"],"id": 6488414},
+{"g": "gen","t": "უსაფრთხოების და ჯანმრთელობის ნიშნები","ty": "ტექნიკური რეგლამენტი","n": "457","dt": "16.09.2022","d": "რომელი ნიშანი სად და როგორ უნდა განთავსდეს: ამკრძალავი, გამაფრთხილებელი, სავალდებულო, საევაკუაციო.","k": ["ნიშნები","მარკირება","ფერები"],"id": 5572284},
+{"g": "gen","t": "ტვირთის ხელით აწევა","ty": "ტექნიკური რეგლამენტი","n": "167","dt": "01.05.2023","d": "როდის და როგორ შეიძლება ტვირთის ხელით აწევა, რისკის შეფასება და დასაქმებულის მომზადება.","k": ["ტვირთი","ზურგი","ერგონომიკა"],"id": 5795140},
+{"g": "gen","t": "ინდივიდუალური დაცვის საშუალებები","ty": "ტექნიკური რეგლამენტი","n": "82","dt": "06.02.2020","d": "მოთხოვნები ინდივიდუალური დაცვის საშუალებების დაპროექტებისა და წარმოებისთვის: ჩაფხუტი, ხელთათმანი, ქამარი და სხვა.","k": ["ჩაფხუტი","ხელთათმანი","IDS"],"id": 4793418},
+{"g": "gen","t": "სახანძრო უსაფრთხოების წესები და პირობები","ty": "ტექნიკური რეგლამენტი","n": "","dt": "","d": "სახანძრო უსაფრთხოების მოთხოვნები შენობებისა და ობიექტებისთვის: ცეცხლსაქრობები, გასასვლელები, სიგნალიზაცია.","k": ["ხანძარი","ცეცხლსაქრობი","ევაკუაცია"],"id": 2922754},
+{"g": "hea","t": "მავნე ნივთიერებების ზღვრული კონცენტრაციები სამუშაო ზონის ჰაერში","ty": "ტექნიკური რეგლამენტი","n": "70","dt": "15.01.2014","d": "რამდენი მავნე ნივთიერება შეიძლება იყოს სამუშაო ზონის ჰაერში: ზღვრულად დასაშვები კონცენტრაციები.","k": ["ქიმიკატები","ჰაერი","ზდკ"],"id": 2196749},
+{"g": "hea","t": "აეროზოლების და ლითონების ზღვრული კონცენტრაციები","ty": "ტექნიკური რეგლამენტი","n": "67","dt": "15.01.2014","d": "მტვრის, ფიბროგენული აეროზოლებისა და ლითონების დასაშვები დონე სამუშაო ზონის ჰაერში.","k": ["მტვერი","აეროზოლი","ლითონები"],"id": 2198163},
+{"g": "hea","t": "საშიში ქიმიური ნივთიერებების ნიშანდება და ეტიკეტირება","ty": "ტექნიკური რეგლამენტი","n": "428","dt": "31.12.2013","d": "როგორ უნდა იყოს ნიშანდებული და ეტიკეტირებული საშიში ქიმიური ნივთიერებები.","k": ["ქიმიკატები","ეტიკეტი","ნიშანდება"],"id": 2187938},
+{"g": "hea","t": "ბიოლოგიურ აგენტებზე მუშაობა","ty": "ტექნიკური რეგლამენტი","n": "82","dt": "19.02.2016","d": "სანიტარიული და ბიოუსაფრთხოების ნორმები ლაბორატორიებისა და დაწესებულებებისთვის, რომლებიც ბიოლოგიურ აგენტებთან მუშაობენ.","k": ["ლაბორატორია","ბიოუსაფრთხოება","ინფექცია"],"id": 3198620},
+{"g": "hea","t": "სავალდებულო პერიოდული სამედიცინო შემოწმება","ty": "ბრძანება","n": "215/ნ","dt": "11.07.2007","d": "რა შემთხვევაშია სავალდებულო დასაქმებულის პერიოდული სამედიცინო შემოწმება დამსაქმებლის ხარჯით და როგორ ტარდება.","k": ["სამედიცინო შემოწმება","ჯანმრთელობა"],"id": 71650},
+{"g": "sec","t": "მშენებლობის უსაფრთხოება","ty": "ტექნიკური რეგლამენტი","n": "361","dt": "27.05.2014","d": "უსაფრთხოების მოთხოვნები სამშენებლო მოედანზე: ორგანიზება, ხარაჩოები, მიწის სამუშაოები, ტექნიკა.","k": ["მშენებლობა","ხარაჩო","მიწის სამუშაო"],"id": 2357152,"top": 1},
+{"g": "sec","t": "სიმაღლეზე მუშაობის უსაფრთხოება","ty": "ტექნიკური რეგლამენტი","n": "477","dt": "27.10.2017","d": "2 მეტრის და მეტი სიმაღლიდან ვარდნის საფრთხის მქონე სამუშაოები: დამცავი სისტემები, ქამრები, ანკერები.","k": ["სიმაღლე","ქამარი","ვარდნა"],"id": 3836869,"top": 1},
+{"g": "sec","t": "ამწე მოწყობილობები","ty": "ტექნიკური რეგლამენტი","n": "429","dt": "31.12.2013","d": "ამწეების დაპროექტება, მონტაჟი, ტექნიკური შემოწმება და უსაფრთხო ექსპლუატაცია.","k": ["ამწე","ტვირთის აწევა","ექსპლუატაცია"],"id": 2186131},
+{"g": "sec","t": "შენობა-ნაგებობის უსაფრთხოების წესები","ty": "ტექნიკური რეგლამენტი","n": "41","dt": "28.01.2016","d": "შენობა-ნაგებობების დაგეგმარების, მშენებლობისა და მოვლა-პატრონობის უსაფრთხოების წესები.","k": ["შენობა","მშენებლობა","დაგეგმარება"],"id": 3176389},
+{"g": "sec","t": "წნევის ქვეშ მომუშავე მოწყობილობები","ty": "ტექნიკური რეგლამენტი","n": "151","dt": "19.06.2013","d": "ქვაბების, რეზერვუარების და სხვა წნევის ქვეშ მომუშავე მოწყობილობების მოთხოვნები.","k": ["წნევა","ქვაბი","რეზერვუარი"],"id": 1950527},
+{"g": "sec","t": "ლიფტების უსაფრთხო ექსპლუატაცია","ty": "ტექნიკური რეგლამენტი","n": "446","dt": "31.12.2013","d": "ლიფტების ექსპლუატაციის, მოვლისა და პერიოდული ტექნიკური შემოწმების მოთხოვნები.","k": ["ლიფტი","ტექნიკური შემოწმება"],"id": 2187218},
+{"g": "sec","t": "ელექტროდანადგარების ექსპლუატაციის უსაფრთხოება","ty": "ბრძანება","n": "100","dt": "18.11.2008","d": "ელექტროუსაფრთხოების წესები ელექტროდანადგარების ექსპლუატაციისა და მომსახურებისას.","k": ["ელექტრობა","დენი","დამიწება"],"id": 80518},
+{"g": "sec","t": "ელექტროსადგურების და ქსელების ტექნიკური ექსპლუატაცია","ty": "ტექნიკური რეგლამენტი","n": "434","dt": "31.12.2013","d": "ელექტროსადგურებისა და ელექტროქსელების ექსპლუატაციის ორგანიზაციული და ტექნიკური მოთხოვნები.","k": ["ელექტროსადგური","ქსელი","ენერგეტიკა"],"id": 2185967},
+{"g": "sec","t": "ამიაკზე მომუშავე სამაცივრო დანადგარები","ty": "ტექნიკური რეგლამენტი","n": "203","dt": "02.08.2013","d": "ამიაკის სამაცივრო დანადგარების მოწყობის, უსაფრთხოებისა და ექსპლუატაციის მოთხოვნები.","k": ["ამიაკი","სამაცივრე","საწარმო"],"id": 1981342},
+{"g": "sec","t": "კარიერების უსაფრთხოება","ty": "ტექნიკური რეგლამენტი","n": "450","dt": "31.12.2013","d": "კარიერებში მუშაობის უსაფრთხოება: პერსონალი, ტექნოლოგია და ექსპლუატაცია.","k": ["კარიერი","სამთო","ტექნიკა"],"id": 2188761},
+{"g": "sec","t": "საამფეთქებლო სამუშაოების უსაფრთხოება","ty": "ტექნიკური რეგლამენტი","n": "432","dt": "31.12.2013","d": "სამრეწველო ფეთქებადი მასალებით სამუშაოების უსაფრთხოების მოთხოვნები.","k": ["აფეთქება","ფეთქებადი მასალა"],"id": 2186184},
+{"g": "sec","t": "საბადოების მიწისქვეშა დამუშავება","ty": "ტექნიკური რეგლამენტი","n": "430","dt": "31.12.2013","d": "მადნეული და არამადნეული საბადოების მიწისქვეშა წესით დამუშავების უსაფრთხოება.","k": ["შახტი","მიწისქვეშა","სამთო"],"id": 2186047},
+{"g": "sec","t": "ნახშირის შახტების უსაფრთხოება","ty": "ტექნიკური რეგლამენტი","n": "449","dt": "31.12.2013","d": "ნახშირის შახტების უსაფრთხოება, მათ შორის მიწისქვეშა სამუშაოები და ვენტილაცია.","k": ["შახტი","ნახშირი","ვენტილაცია"],"id": 2186308},
+{"g": "pro","t": "უბედური შემთხვევების და პროფესიული დაავადებების აღრიცხვა","ty": "ბრძანება","n": "01-11/ნ","dt": "12.09.2018","d": "როგორ ვაღრიცხოთ, მოვიკვლიოთ და ვაცნობოთ სამუშაო ადგილზე მომხდარი უბედური შემთხვევა ან პროფესიული დაავადება.","k": ["უბედური შემთხვევა","მოკვლევა","ანგარიში"],"id": 4307493,"top": 1},
+{"g": "pro","t": "მომეტებული საფრთხის, მძიმე, მავნე და საშიში სამუშაოების ჩამონათვალი","ty": "დადგენილება","n": "381","dt": "27.07.2018","d": "რომელი სამუშაოებია მომეტებული საფრთხის შემცველი: ეს განსაზღვრავს დამატებით ვალდებულებებს.","k": ["საშიში სამუშაოები","ჩამონათვალი"],"id": 4277583},
+{"g": "pro","t": "18 წლამდე პირებისთვის აკრძალული სამუშაოები","ty": "ბრძანება","n": "01-126/ნ","dt": "30.11.2020","d": "მძიმე, მავნე და საშიში სამუშაოები, რომლებზეც არასრულწლოვანის დასაქმება დაუშვებელია.","k": ["არასრულწლოვანი","აკრძალვა"],"id": 5033680},
+{"g": "pro","t": "შრომის უსაფრთხოების სპეციალისტის პროგრამა","ty": "ბრძანება","n": "01-25/ნ","dt": "31.10.2018","d": "სპეციალისტის აკრედიტებული სასწავლო პროგრამის მოცულობა, განხორციელების წესი და პირობები.","k": ["სპეციალისტი","სწავლება","სერტიფიკატი"],"id": 4348224}];
 (function(){
   function e(t){var d=document.createElement('div');d.textContent=String(t==null?'':t);return d.innerHTML}
-  var cur='all',q=document.getElementById('q'),out=document.getElementById('out'),tabs=document.getElementById('tabs');
-  var T=[{id:'all',name:'ყველა',c:DOCS.length}].concat(GROUPS.map(function(g){return {id:g.id,name:g.id=='law'?'კანონები':g.id=='gen'?'ზოგადი რეგლამენტები':'დარგობრივი',c:DOCS.filter(function(d){return d.g==g.id}).length}}));
-  tabs.innerHTML=T.map(function(t){return '<button data-t="'+t.id+'" aria-pressed="'+(t.id==cur)+'">'+e(t.name)+'<i>'+t.c+'</i></button>'}).join('');
-  tabs.addEventListener('click',function(ev){var b=ev.target.closest('button');if(!b)return;cur=b.dataset.t;tabs.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});draw()});
-  q.addEventListener('input',draw);
-  function draw(){
-    var s=q.value.trim().toLowerCase(),html='',n=0;
+  function url(d){return 'https://matsne.gov.ge/ka/document/view/'+d.id}
+  function cls(ty){return /კანონ/.test(ty)?' law':/ბრძანებ/.test(ty)?' ord':''}
+  function meta(d){return [d.n?'№'+d.n:'',d.dt||''].filter(Boolean).join(' · ')}
+  /* top list */
+  var top=document.getElementById('top');
+  DOCS.filter(function(d){return d.top}).slice(0,4).forEach(function(d){
+    top.insertAdjacentHTML('beforeend','<a href="'+url(d)+'" target="_blank" rel="noopener"><span>'+e(d.t)+'<small>'+e(d.ty)+'</small></span><em>↗</em></a>');
+  });
+  /* tabs */
+  var cur='all',tabs=document.getElementById('tabs'),ind=document.getElementById('ind');
+  var T=[{id:'all',tab:'ყველა'}].concat(GROUPS);
+  T.forEach(function(t){var c=t.id=='all'?DOCS.length:DOCS.filter(function(d){return d.g==t.id}).length;
+    tabs.insertAdjacentHTML('beforeend','<button type="button" data-t="'+t.id+'" aria-pressed="'+(t.id==cur)+'">'+e(t.tab)+'<i>'+c+'</i></button>')});
+  function moveInd(){var b=tabs.querySelector('[aria-pressed=true]');if(!b)return;ind.style.width=b.offsetWidth+'px';ind.style.transform='translateX('+b.offsetLeft+'px)'}
+  tabs.addEventListener('click',function(ev){var b=ev.target.closest('button');if(!b||b.dataset.t==cur)return;cur=b.dataset.t;
+    tabs.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});moveInd();
+    b.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});draw(true)});
+  window.addEventListener('resize',moveInd);
+  /* search */
+  var q=document.getElementById('q'),sb=document.getElementById('sb'),tm;
+  q.addEventListener('input',function(){sb.classList.toggle('has',!!q.value);clearTimeout(tm);tm=setTimeout(function(){draw(false)},120)});
+  document.getElementById('clr').addEventListener('click',function(){q.value='';sb.classList.remove('has');q.focus();draw(false)});
+  document.addEventListener('keydown',function(ev){if(ev.key=='/'&&document.activeElement!==q){ev.preventDefault();q.focus()}if(ev.key=='Escape'&&document.activeElement===q){q.value='';sb.classList.remove('has');draw(false)}});
+  function hl(text,s){var h=e(text);if(!s)return h;var i=h.toLowerCase().indexOf(e(s).toLowerCase());if(i<0)return h;var L=e(s).length;return h.slice(0,i)+'<mark>'+h.slice(i,i+L)+'</mark>'+h.slice(i+L)}
+  var out=document.getElementById('out'),cnt=document.getElementById('count');
+  function draw(scroll){
+    var s=q.value.trim().toLowerCase(),html='',n=0,i=0;
     GROUPS.forEach(function(g){
       if(cur!='all'&&cur!=g.id)return;
-      var ds=DOCS.filter(function(d){return d.g==g.id&&(!s||(d.t+' '+d.m).toLowerCase().indexOf(s)>-1)});
+      var ds=DOCS.filter(function(d){return d.g==g.id&&(!s||[d.t,d.d,d.ty,d.n,(d.k||[]).join(' ')].join(' ').toLowerCase().indexOf(s)>-1)});
       if(!ds.length)return;n+=ds.length;
-      html+='<div class="grp"><h2><span>'+g.n+'</span>'+e(g.name)+'</h2><p class="gd">'+e(g.desc)+'</p>'+ds.map(function(d){
-        return '<a class="doc" href="https://matsne.gov.ge/ka/document/view/'+d.id+'" target="_blank" rel="noopener"><span class="ty'+(d.g=='law'?' law':'')+'">'+e(d.type||'რეგლამენტი')+'</span><span><b>'+e(d.t)+'</b><small>'+e(d.m)+'</small></span><span class="go">გახსნა ↗</span></a>';
-      }).join('')+'</div>';
+      html+='<div class="grp"><div class="gh"><span>'+g.n+'</span><h2>'+e(g.name)+'</h2><p>'+e(g.desc)+'</p></div><div class="cards">'+ds.map(function(d){
+        return '<a class="doc" style="--i:'+(i++)+'" href="'+url(d)+'" target="_blank" rel="noopener"><span class="dm"><span class="ty'+cls(d.ty)+'">'+e(d.ty)+'</span>'+e(meta(d))+'</span><h3>'+hl(d.t,s)+'</h3><p>'+hl(d.d,s)+'</p><span class="df"><span class="tags">'+(d.k||[]).slice(0,3).map(function(k){return '<span>'+e(k)+'</span>'}).join('')+'</span><span class="go">matsne <em>↗</em></span></span></a>';
+      }).join('')+'</div></div>';
     });
-    out.innerHTML=n?html:'<p class="empty">ვერაფერი მოიძებნა. სცადე სხვა სიტყვა.</p>';
+    out.innerHTML=n?html:'<div class="empty"><b>ვერაფერი მოიძებნა</b>სცადე სხვა სიტყვა ან აირჩიე „ყველა“.</div>';
+    cnt.innerHTML=s?'ძებნა „'+e(q.value.trim())+'“: <b>'+n+'</b> დოკუმენტი':'ნაჩვენებია <b>'+n+'</b> დოკუმენტი';
+    if(scroll){var y=document.getElementById('tools').getBoundingClientRect().top+scrollY-72;if(scrollY>y)scrollTo({top:y,behavior:'smooth'})}
   }
-  draw();
+  draw(false);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(moveInd);setTimeout(moveInd,50);
+  /* reveal + sticky + to top */
+  var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},
+{threshold:.15});
+  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
+  var tools=document.getElementById('tools'),tt=document.getElementById('totop');
+  addEventListener('scroll',function(){var r=tools.getBoundingClientRect().top;tools.classList.toggle('stuck',r<=72.5&&scrollY>200);tt.classList.toggle('on',scrollY>700)},
+{passive:true});
+  tt.addEventListener('click',function(){scrollTo({top:0,behavior:'smooth'})});
 })();
 </script>
 </body>

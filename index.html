@@ -273,15 +273,21 @@ a.ep{text-decoration:none;color:inherit}
 /* legislation window */
 .lw{margin-top:24px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:32px;align-items:center;padding:30px 34px;background:#F6EBC9;text-decoration:none;color:var(--ink);position:relative;transition:background .3s}
 .lw:hover{background:#F2DF9F}
-.lw-m{display:flex;flex-direction:column;align-items:flex-start;padding-right:32px;border-right:1px solid #0E0E0E26;font-size:13px;font-weight:700;color:#5c4a1a;letter-spacing:.04em}
-.lw-m b{font-family:var(--wide);font-weight:800;font-stretch:125%;font-size:56px;line-height:1;color:var(--ink);margin-bottom:4px}
+.lw-m{display:flex;flex-direction:column;align-items:flex-start;gap:6px;width:250px;padding-right:28px;border-right:1px solid #0E0E0E26}
+.lw-m small{font-family:var(--wide);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#5c4a1a}
+.lw-rot{display:block;height:44px;overflow:hidden;position:relative;width:100%}
+.lw-w{display:flex;flex-direction:column;animation:lwrot 16s cubic-bezier(.7,0,.2,1) infinite}
+.lw-w i{display:block;height:44px;line-height:44px;font-style:normal;font-weight:800;font-size:30px;white-space:nowrap;color:var(--ink)}
+.lw:hover .lw-w{animation-play-state:paused}
+@keyframes lwrot{0.00%,9.75%{transform:translateY(-0.0000%)}12.50%,22.25%{transform:translateY(-11.1111%)}25.00%,34.75%{transform:translateY(-22.2222%)}37.50%,47.25%{transform:translateY(-33.3333%)}50.00%,59.75%{transform:translateY(-44.4444%)}62.50%,72.25%{transform:translateY(-55.5556%)}75.00%,84.75%{transform:translateY(-66.6667%)}87.50%,97.25%{transform:translateY(-77.7778%)}100%{transform:translateY(-88.8889%)}}
+@media (prefers-reduced-motion:reduce){.lw-w{animation:none}}
 .lw-t b{display:block;font-size:24px;line-height:1.25;margin:10px 0 6px}
 .lw-t small{display:block;color:var(--ink2);font-size:15px;max-width:640px}
 .lw .eyebrow{color:#5c4a1a}
 .lw-b{white-space:nowrap;background:transparent}
 .lw:hover .lw-b{background:var(--ink);color:var(--bg)}
 .lw:hover .lw-b::before{top:-9px;left:-9px;opacity:1}.lw:hover .lw-b::after{bottom:-9px;right:-9px;opacity:1}
-@media (max-width:900px){.lw{grid-template-columns:minmax(0,1fr);gap:16px;padding:24px 20px}.lw-m{flex-direction:row;align-items:baseline;gap:10px;border-right:0;padding-right:0}.lw-m b{font-size:40px}.lw-t b{font-size:20px}.lw-b{justify-content:center}}
+@media (max-width:900px){.lw{grid-template-columns:minmax(0,1fr);gap:16px;padding:24px 20px}.lw-m{width:100%;border-right:0;padding-right:0;padding-bottom:14px;border-bottom:1px solid #0E0E0E26}.lw-w i{font-size:26px}.lw-t b{font-size:20px}.lw-b{justify-content:center}}
 /* join (slim strip, in brand style) */
 .jn{padding:30px 0;border-bottom:1px solid var(--line)}
 .jn-in{position:relative;display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding:22px 28px}
@@ -604,8 +610,8 @@ a.ep{text-decoration:none;color:inherit}
       </div>
       <div class="res" id="res"></div>
       <a class="lw" href="/kanonmdebloba/">
-        <span class="lw-m"><b>16</b><span class="ka">დოკუმენტი</span><span class="en">documents</span></span>
-        <span class="lw-t"><span class="eyebrow"><span class="ka">საკანონმდებლო ბაზა</span><span class="en">Legislation</span></span><b><span class="ka">შრომის უსაფრთხოების კანონები და რეგლამენტები</span><span class="en">OHS laws and technical regulations</span></b><small><span class="ka">ორგანული კანონი, შრომის კოდექსი, ტექნიკური რეგლამენტები: ერთ ადგილას, ძებნით, matsne.gov.ge-ს ოფიციალური ბმულებით.</span><span class="en">Organic law, labour code and technical regulations in one place, searchable, with official matsne.gov.ge links.</span></small></span>
+        <span class="lw-m" aria-hidden="true"><small><span class="ka">მოძებნე</span><span class="en">Look up</span></small><span class="lw-rot"><span class="lw-w"><i>სიმაღლე</i><i>მშენებლობა</i><i>ნიშნები</i><i>ამწეები</i><i>ელექტრობა</i><i>ქიმიკატები</i><i>ხანძარი</i><i>ლიფტები</i><i>სიმაღლე</i></span></span></span>
+        <span class="lw-t"><span class="eyebrow"><span class="ka">საკანონმდებლო ბაზა</span><span class="en">Legislation</span></span><b><span class="ka">შრომის უსაფრთხოების კანონები და რეგლამენტები</span><span class="en">OHS laws and technical regulations</span></b><small><span class="ka">30-ზე მეტი კანონი, რეგლამენტი და ბრძანება: მოკლე აღწერებით, ძებნით და matsne.gov.ge-ს ოფიციალური ბმულებით.</span><span class="en">Organic law, labour code and technical regulations in one place, searchable, with official matsne.gov.ge links.</span></small></span>
         <span class="btn ghost lw-b"><span class="ka">ბაზის გახსნა</span><span class="en">Open</span> →</span>
       </a>
     </div>
