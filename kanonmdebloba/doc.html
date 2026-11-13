@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ka">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>დოკუმენტი · Safe Corner</title>
+<meta name="theme-color" content="#EEECE6">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%23EBA800'/%3E%3Cpath d='M28 44V28h16M56 28h16v16M72 56v16H56' fill='none' stroke='%230E0E0E' stroke-width='5'/%3E%3Cpath d='M28 56v16h18' fill='none' stroke='%230E0E0E' stroke-width='9'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Noto+Sans+Georgian:wght@400..800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEECE6;--card:#F6F5F1;--ink:#0E0E0E;--ink2:#3A3A38;--muted:#6B6A66;--yellow:#EBA800;--line:#0E0E0E1f;--wide:"Archivo",sans-serif;--ka:"Noto Sans Georgian",sans-serif;--ease:cubic-bezier(.2,.7,.2,1)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:var(--ka),var(--wide);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:38px;height:38px}
+.brand b{font-family:var(--wide);font-weight:800;font-stretch:125%;font-size:17px;white-space:nowrap}
+.back{font-size:15px;color:var(--ink2);text-decoration:none;display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border:1.5px solid #0E0E0E33;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
+.back:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.info{padding:56px 0 36px;animation:up .7s var(--ease) both}
+.dm{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
+.ty{font-size:11px;font-weight:800;letter-spacing:.05em;padding:4px 9px;border:1.5px solid var(--ink);color:var(--ink)}
+.ty.law{background:var(--yellow);border-color:var(--yellow)}
+h1{font-size:clamp(28px,3.6vw,44px);line-height:1.18;font-weight:800;margin:16px 0 12px;max-width:900px;text-wrap:balance}
+.lead{font-size:18px;color:var(--ink2);max-width:760px}
+.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid var(--ink);transition:background .25s,color .25s}
+.btn.p{background:var(--ink);color:var(--bg)}.btn.p:hover{background:#2a2a2a}
+.btn.g:hover{background:var(--ink);color:var(--bg)}
+.ver{font-size:13.5px;color:var(--muted)}
+.ver a{color:var(--ink);border-bottom:2px solid var(--yellow);text-decoration:none}
+.reader{position:relative;background:#DCD9D0;padding:28px 0 64px;border-top:1px solid var(--line)}
+.bar{position:sticky;top:72px;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:900px;margin:0 auto 18px;padding:10px 14px;background:var(--ink);color:var(--bg);font-size:14px}
+.bar b{font-family:var(--wide);font-weight:800}
+.bar a{color:var(--bg);text-decoration:none;border-bottom:2px solid var(--yellow)}
+.pages{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+.pg{position:relative;background:#fff;box-shadow:0 10px 30px #0000001f;aspect-ratio:1/1.414;opacity:0;animation:up .6s var(--ease) forwards}
+.pg canvas{display:block;width:100%;height:auto}
+.pg::after{content:attr(data-n);position:absolute;right:10px;bottom:8px;font-size:11px;color:#9a978e;font-family:var(--wide)}
+.msg{max-width:900px;margin:0 auto;padding:60px 20px;text-align:center;color:var(--ink2)}
+.msg b{display:block;font-size:20px;color:var(--ink);margin-bottom:8px}
+footer{background:var(--ink);color:#BDBAB2;padding:32px 0;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
+@media (max-width:560px){.wrap{padding:0 16px}.wrap.info{padding:32px 16px 24px}.brand b{font-size:15px}.back span{display:none}.back::after{content:"ბაზა"}.reader{padding:16px 8px 40px}.bar{top:72px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="sc" viewBox="0 0 340 340">
+    <path d="M0 0h120v20H20v100H0z" fill="currentColor"/>
+    <path d="M340 0H220v20h100v100h20z" fill="currentColor"/>
+    <path d="M340 340H220v-20h100V220h20z" fill="currentColor"/>
+    <path d="M0 164h32v144h144v32H0z" fill="#EBA800"/>
+    <text x="172" y="222" text-anchor="middle" font-family="Archivo" font-weight="900" font-stretch="125%" font-size="150" fill="currentColor" letter-spacing="-4">SC</text>
+  </symbol>
+</svg>
+<header><div class="wrap nav">
+  <a class="brand" href="/"><svg><use href="#sc"/></svg><b>SAFE CORNER</b></a>
+  <a class="back" href="./">← <span>საკანონმდებლო ბაზა</span></a>
+</div></header>
+<main>
+  <section class="wrap info" id="info"></section>
+  <section class="reader"><div class="bar" id="bar" hidden></div><div class="pages" id="pages"></div><div class="msg" id="msg" hidden></div></section>
+</main>
+<footer><div class="wrap"><span>© 2026 Safe Corner · უსაფრთხო კუთხე</span><a href="/">safecorner.ge</a></div></footer>
+<script src="docs.js"></script>
+<script src="lib/pdf.min.js"></script>
+<script>
+(function(){
+  function e(t){var d=document.createElement('div');d.textContent=String(t==null?'':t);return d.innerHTML}
+  var id=new URLSearchParams(location.search).get('id'),d=DOCS.filter(function(x){return String(x.id)===id})[0];
+  var info=document.getElementById('info'),msg=document.getElementById('msg'),bar=document.getElementById('bar'),pages=document.getElementById('pages');
+  if(!d){info.innerHTML='<h1>დოკუმენტი ვერ მოიძებნა</h1><p class="lead"><a href="./">დაბრუნდი ბაზაში</a></p>';return}
+  document.title=d.t+' · Safe Corner';
+  var matsne='https://matsne.gov.ge/ka/document/view/'+d.id,law=/კანონ/.test(d.ty);
+  info.innerHTML='<div class="dm"><span class="ty'+(law?' law':'')+'">'+e(d.ty)+'</span>'+e([d.n?'№'+d.n:'',d.dt].filter(Boolean).join(' · '))+'</div><h1>'+e(d.t)+'</h1><p class="lead">'+e(d.d)+'</p><div class="acts">'+(d.pdf?'<a class="btn p" href="pdf/'+e(d.pdf)+'" download>გადმოწერა PDF ↓</a>':'')+'<a class="btn g" href="'+matsne+'" target="_blank" rel="noopener">matsne.gov.ge ↗</a><span class="ver">'+(d.v?'ვერსია: '+e(d.v)+' · ':'')+'უახლესი რედაქცია ყოველთვის <a href="'+matsne+'" target="_blank" rel="noopener">matsne-ზეა</a></span></div>';
+  if(!d.pdf||!window.pdfjsLib){msg.hidden=false;msg.innerHTML='<b>სრული ტექსტი მალე დაემატება</b>მანამდე დოკუმენტი გახსენი matsne.gov.ge-ზე.';return}
+  pdfjsLib.GlobalWorkerOptions.workerSrc='lib/pdf.worker.min.js';
+  pdfjsLib.getDocument('pdf/'+d.pdf).promise.then(function(pdf){
+    bar.hidden=false;bar.innerHTML='<span><b>'+pdf.numPages+'</b> გვერდი</span><a href="pdf/'+e(d.pdf)+'" download>გადმოწერა ↓</a>';
+    var io=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;io.unobserve(x.target);render(+x.target.dataset.n,x.target)})},{rootMargin:'800px 0px'});
+    for(var n=1;n<=pdf.numPages;n++){var el=document.createElement('div');el.className='pg';el.dataset.n=n;pages.appendChild(el);io.observe(el)}
+    function render(n,el){pdf.getPage(n).then(function(p){var w=el.clientWidth,v=p.getViewport({scale:1}),sc=w/v.width*Math.min(2,window.devicePixelRatio||1),vp=p.getViewport({scale:sc});
+      var c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;el.style.aspectRatio=vp.width+'/'+vp.height;el.appendChild(c);p.render({canvasContext:c.getContext('2d'),viewport:vp})})}
+  }).catch(function(){msg.hidden=false;msg.innerHTML='<b>ფაილი ვერ ჩაიტვირთა</b><a href="pdf/'+e(d.pdf)+'">გადმოწერე PDF</a> ან გახსენი <a href="'+matsne+'" target="_blank" rel="noopener">matsne-ზე</a>.'});
+})();
+</script>
+</body>
+</html>
