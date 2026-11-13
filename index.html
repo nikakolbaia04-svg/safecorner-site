@@ -270,6 +270,20 @@ a.ep{text-decoration:none;color:inherit}
 .art-cta{margin-top:22px}
 
 /* small group links in CTA */
+/* legislation window */
+.lw{margin-top:24px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:32px;align-items:center;padding:30px 34px;background:#F6EBC9;text-decoration:none;color:var(--ink);position:relative;transition:background .3s}
+.lw:hover{background:#F2DF9F}
+.lw-m{position:relative;width:96px;height:96px;flex:none}
+.lw-m svg{width:100%;height:100%;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.lw-m i{position:absolute;inset:0;display:grid;place-items:center;font-style:normal;font-family:var(--wide);font-weight:900;font-size:46px;line-height:1;padding-bottom:3px}
+.lw:hover .lw-m svg{transform:scale(1.08)}
+.lw-t b{display:block;font-size:24px;line-height:1.25;margin:10px 0 6px}
+.lw-t small{display:block;color:var(--ink2);font-size:15px;max-width:640px}
+.lw .eyebrow{color:#5c4a1a}
+.lw-b{white-space:nowrap;background:transparent}
+.lw:hover .lw-b{background:var(--ink);color:var(--bg)}
+.lw:hover .lw-b::before{top:-9px;left:-9px;opacity:1}.lw:hover .lw-b::after{bottom:-9px;right:-9px;opacity:1}
+@media (max-width:900px){.lw{grid-template-columns:minmax(0,1fr);gap:16px;padding:24px 20px}.lw-m{width:60px;height:60px}.lw-m i{font-size:28px}.lw-t b{font-size:20px}.lw-b{justify-content:center}}
 /* join (slim strip, in brand style) */
 .jn{padding:30px 0;border-bottom:1px solid var(--line)}
 .jn-in{position:relative;display:flex;align-items:center;gap:28px;flex-wrap:wrap;padding:22px 28px}
@@ -382,6 +396,7 @@ a.ep{text-decoration:none;color:inherit}
       <path d="M0 164h32v144h144v32H0z" fill="#EBA800"/>
       <text x="172" y="222" text-anchor="middle" font-family="Archivo" font-weight="900" font-stretch="125%" font-size="150" fill="currentColor" letter-spacing="-4">SC</text>
     </symbol>
+    <symbol id="fr" viewBox="0 0 340 340"><path d="M0 0h120v20H20v100H0z" fill="currentColor"/><path d="M340 0H220v20h100v100h20z" fill="currentColor"/><path d="M340 340H220v-20h100V220h20z" fill="currentColor"/><path d="M0 164h32v144h144v32H0z" fill="#EBA800"/></symbol>
     <symbol id="wai" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a9.9 9.9 0 0 0-8.5 15l-1.4 5 5.2-1.4A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2c0 1.3.9 2.5 1 2.7.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.2-.3-.2-.6-.4z"/></symbol>
     <symbol id="fbi" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8V22h3.4z"/></symbol>
     <symbol id="yt" viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></symbol>
@@ -396,6 +411,7 @@ a.ep{text-decoration:none;color:inherit}
       <a href="#season"><span class="ka">ახალი სეზონი</span><span class="en">New season</span></a>
       <a href="#team"><span class="ka">გუნდი</span><span class="en">Team</span></a>
       <a href="#articles"><span class="ka">სტატიები</span><span class="en">Articles</span></a>
+      <a href="#resources"><span class="ka">რესურსები</span><span class="en">Resources</span></a>
       <a href="#contact"><span class="ka">კონტაქტი</span><span class="en">Contact</span></a>
       <div class="lang" role="group" aria-label="Language">
         <button data-l="ka" aria-pressed="true">ქარ</button>
@@ -589,6 +605,11 @@ a.ep{text-decoration:none;color:inherit}
         <p><span class="ka">ჩეკლისტები და შაბლონები ეპიზოდებიდან: უფასოდ, ქართულად, ობიექტზე გამოსაყენებლად.</span><span class="en">Checklists and templates from our episodes: free, in Georgian, ready to use on site.</span></p>
       </div>
       <div class="res" id="res"></div>
+      <a class="lw" href="/kanonmdebloba/">
+        <span class="lw-m" aria-hidden="true"><svg><use href="#fr"/></svg><i>§</i></span>
+        <span class="lw-t"><span class="eyebrow"><span class="ka">საკანონმდებლო ბაზა</span><span class="en">Legislation</span></span><b><span class="ka">შრომის უსაფრთხოების კანონები და რეგლამენტები</span><span class="en">OHS laws and technical regulations</span></b><small><span class="ka">ორგანული კანონი, შრომის კოდექსი, ტექნიკური რეგლამენტები: ერთ ადგილას, ძებნით, matsne.gov.ge-ს ოფიციალური ბმულებით.</span><span class="en">Organic law, labour code and technical regulations in one place, searchable, with official matsne.gov.ge links.</span></small></span>
+        <span class="btn ghost lw-b"><span class="ka">ბაზის გახსნა</span><span class="en">Open</span> →</span>
+      </a>
     </div>
   </section>
 
@@ -670,6 +691,7 @@ a.ep{text-decoration:none;color:inherit}
         <a href="#season"><span class="ka">სეზონი</span><span class="en">Season</span></a>
         <a href="#team"><span class="ka">გუნდი</span><span class="en">Team</span></a>
         <a href="#articles"><span class="ka">სტატიები</span><span class="en">Articles</span></a>
+      <a href="#resources"><span class="ka">რესურსები</span><span class="en">Resources</span></a>
         <a href="#resources"><span class="ka">რესურსები</span><span class="en">Resources</span></a>
         <a href="mailto:Safecorner2024@gmail.com">Safecorner2024@gmail.com</a>
       </nav>
