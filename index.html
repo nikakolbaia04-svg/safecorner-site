@@ -150,6 +150,37 @@ html[lang=ka] h2{font-family:var(--ka)}
 @media (prefers-reduced-motion:reduce){.ep-x .n,.ld-bar i,.ld-t b,.cs i{animation:none;opacity:1}}
 .soon{font-family:var(--wide);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:1.5px solid #0E0E0E40;padding:7px 12px;white-space:nowrap;color:var(--ink2)}
 
+/* podcasts + field videos */
+#podcasts{border-top:1px solid var(--line)}
+.pods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:40px;border-top:2px solid var(--ink)}
+.pd{display:grid;grid-template-columns:64px minmax(0,1fr) 40px;gap:16px;align-items:center;padding:18px 6px 18px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);position:relative;transition:background .25s,padding .3s cubic-bezier(.2,.7,.2,1)}
+.pd::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:var(--yellow);transition:width .3s}
+.pd:hover{background:#F6F5F1;padding-left:14px}.pd:hover::before{width:4px}
+.pn{font-family:var(--wide);font-weight:800;font-stretch:125%;font-size:30px;line-height:1;color:var(--yellow)}
+.pb b{display:block;font-size:17px;line-height:1.3}
+.pb small{display:block;font-size:13px;color:var(--muted);margin-top:2px}
+.pt{display:block;font-size:14.5px;color:var(--ink2);margin-top:6px;line-height:1.45}
+.pw{width:40px;height:40px;display:grid;place-items:center;border:1.5px solid #0E0E0E33;transition:background .25s,border-color .25s}
+.pw svg{width:16px;height:16px;fill:var(--ink)}
+.pd:hover .pw{background:var(--yellow);border-color:var(--yellow)}
+.pods-more{margin-top:28px}
+#fieldv{background:var(--bg2);border-top:1px solid var(--line)}
+.fvs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.fv{background:#F6F5F1;display:flex;flex-direction:column;position:relative}
+.fv::after{content:"";position:absolute;left:-6px;bottom:-6px;width:34px;height:34px;border-left:5px solid var(--yellow);border-bottom:5px solid var(--yellow);pointer-events:none;transition:width .4s,height .4s}
+.fv:hover::after{width:52px;height:52px}
+.fv-p{position:relative;display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;cursor:pointer;background:#000;overflow:hidden}
+.fv-p img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.fv-p:hover img{transform:scale(1.04)}
+.fv-b{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;background:var(--yellow);display:grid;place-items:center;box-shadow:0 10px 30px #0000004d;transition:transform .3s}
+.fv-b svg{width:26px;height:26px;fill:var(--ink);margin-left:3px}
+.fv-p:hover .fv-b{transform:scale(1.1)}
+.fv-if{width:100%;aspect-ratio:16/9;border:0;display:block;background:#000}
+.fv-t{padding:20px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.fv-t h3{font-size:18px;line-height:1.35;font-weight:800}
+.fv-t p{font-size:14.5px;color:var(--ink2)}
+.fv-t a{margin-top:auto;padding-top:8px;align-self:flex-start;font-size:13px;font-weight:700;text-decoration:none;border-bottom:2px solid var(--yellow)}
+@media (max-width:900px){.pods{grid-template-columns:1fr}.fvs{grid-template-columns:1fr}.pn{font-size:24px}.pd{grid-template-columns:48px minmax(0,1fr) 36px;gap:12px}}
 /* founders */
 .people{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
 .profile{background:#F6F5F1;position:relative}
@@ -413,6 +444,7 @@ a.ep{text-decoration:none;color:inherit}
     <div class="links">
       <a href="#about"><span class="ka">პროექტი</span><span class="en">About</span></a>
       <a href="#season"><span class="ka">ახალი სეზონი</span><span class="en">New season</span></a>
+      <a href="#podcasts"><span class="ka">ვიდეოები</span><span class="en">Videos</span></a>
       <a href="#team"><span class="ka">გუნდი</span><span class="en">Team</span></a>
       <a href="#articles"><span class="ka">სტატიები</span><span class="en">Articles</span></a>
       <a href="#resources"><span class="ka">რესურსები</span><span class="en">Resources</span></a>
@@ -448,7 +480,7 @@ a.ep{text-decoration:none;color:inherit}
   <div class="stats">
     <div class="wrap">
       <div class="stat"><b><span class="ka">პირველი</span><span class="en">First</span></b><span class="ka">ქართული შ.უ. პოდკასტი სპეციალისტებთან</span><span class="en">Georgian OHS podcast with specialists</span></div>
-      <div class="stat"><b>6</b><span class="ka">ფორმატი: პოდკასტიდან საკანონმდებლო სიახლეებამდე</span><span class="en">formats: from podcasts to legal updates</span></div>
+      <div class="stat"><b>14</b><span class="ka">პოდკასტი დარგის 10 სპეციალისტთან</span><span class="en">podcasts with 10 industry specialists</span></div>
       <div class="stat"><b>5</b><span class="ka">ეპიზოდი ახალ სეზონში</span><span class="en">episodes in the new season</span></div>
     </div>
   </div>
@@ -507,6 +539,33 @@ a.ep{text-decoration:none;color:inherit}
         <div class="ep" data-ep="4"><div class="n">04</div><div><h3><span class="ka">ვაწყობთ ობიექტს ინსპექციის მითითებების შესაბამისად</span><span class="en">Setting up a site to meet inspection requirements</span></h3><p><span class="ka">საველე ვიდეო</span><span class="en">Field video</span></p></div><span class="soon"><span class="ka">მალე</span><span class="en">Soon</span></span></div>
         <div class="ep ep-x" data-ep="5"><div class="n">05</div><div><h3><span class="ka">ეპიზოდი, რომელიც ყველასათვის ძალიან საინტერესო იქნება</span><span class="en">An episode everyone will find really interesting</span></h3><div class="ld"><span class="ld-bar"><i></i></span><span class="ld-t">Loading<b>.</b><b>.</b><b>.</b></span></div></div><span class="cs"><i></i>Coming soon</span></div>
       </div>
+    </div>
+  </section>
+
+  <section id="podcasts">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span class="ka">პოდკასტები · 2024-დან</span><span class="en">Podcasts · since 2024</span></div>
+          <h2 style="margin-top:16px"><span class="ka">ვინ ისაუბრა უსაფრთხო კუთხეში</span><span class="en">Who has joined Safe Corner</span></h2>
+        </div>
+        <p><span class="ka">14 პოდკასტი დარგის სპეციალისტებთან: ინსპექცია, განათლება, რისკის შეფასება, ისტორია და პრაქტიკა.</span><span class="en">14 podcasts with industry specialists: inspection, training, risk assessment, history and practice.</span></p>
+      </div>
+      <div class="pods" id="pods"></div>
+      <a class="btn ghost pods-more" href="https://www.youtube.com/@SafeCorner2024" target="_blank" rel="noopener"><span class="ka">ყველა ეპიზოდი YouTube-ზე</span><span class="en">All episodes on YouTube</span> ↗</a>
+    </div>
+  </section>
+
+  <section id="fieldv">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <div class="eyebrow"><span class="ka">საველე ვიდეოები</span><span class="en">Field videos</span></div>
+          <h2 style="margin-top:16px"><span class="ka">ობიექტიდან, რეალურად</span><span class="en">On site, for real</span></h2>
+        </div>
+        <p><span class="ka">რეალური შემოწმებები სამუშაო ობიექტებზე: ამწე, ხარაჩო, დამცავი ქამარი. უყურე პირდაპირ აქ.</span><span class="en">Real inspections on work sites: crane, scaffolding, safety harness. Watch right here.</span></p>
+      </div>
+      <div class="fvs" id="field"></div>
     </div>
   </section>
 
@@ -693,6 +752,7 @@ a.ep{text-decoration:none;color:inherit}
         <a href="https://www.facebook.com/profile.php?id=61563196905202" target="_blank" rel="noopener">Facebook</a>
         <a href="#about"><span class="ka">პროექტი</span><span class="en">About</span></a>
         <a href="#season"><span class="ka">სეზონი</span><span class="en">Season</span></a>
+        <a href="#podcasts"><span class="ka">ვიდეოები</span><span class="en">Videos</span></a>
         <a href="#team"><span class="ka">გუნდი</span><span class="en">Team</span></a>
         <a href="#articles"><span class="ka">სტატიები</span><span class="en">Articles</span></a>
       <a href="#resources"><span class="ka">რესურსები</span><span class="en">Resources</span></a>
@@ -804,6 +864,7 @@ var RESOURCES=[
   });
 })();
 </script>
+<script src="/assets/media.js?v=1"></script>
 <script src="/assets/bot.js" defer></script>
 </body>
 </html>
