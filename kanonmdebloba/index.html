@@ -35,9 +35,15 @@ header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 9
 .hero-g{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:56px;align-items:end}
 h1{font-size:clamp(32px,4.4vw,54px);line-height:1.12;font-weight:800;margin:18px 0 18px;text-wrap:balance}
 .hero p{font-size:19px;color:var(--ink2);max-width:620px}
-.mark{position:relative;justify-self:end;width:200px;aspect-ratio:1}
-.mark svg{width:100%;height:100%}
-.mark .p{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--wide);font-weight:900;font-size:96px;line-height:1;padding-bottom:6px}
+.top{background:#F6F5F1;padding:24px 26px 18px;position:relative}
+.top::before{content:"";position:absolute;left:0;bottom:0;width:36px;height:36px;border-left:5px solid var(--yellow);border-bottom:5px solid var(--yellow)}
+.top::after{content:"";position:absolute;right:0;top:0;width:36px;height:36px;border-right:1.5px solid #0E0E0E66;border-top:1.5px solid #0E0E0E66}
+.top h3{font-family:var(--wide);font-weight:700;font-size:12px;letter-spacing:.16em;color:var(--muted);margin-bottom:8px}
+.top a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0;border-top:1px solid var(--line);text-decoration:none;font-weight:700;font-size:15.5px;line-height:1.35;transition:padding .25s}
+.top a small{display:block;color:var(--muted);font-weight:400;font-size:12.5px;margin-top:2px}
+.top a em{font-style:normal;flex:none;width:30px;height:30px;display:grid;place-items:center;border:1.5px solid #0E0E0E33;transition:background .25s,color .25s,border-color .25s}
+.top a:hover{padding-left:6px}
+.top a:hover em{background:var(--yellow);border-color:var(--yellow)}
 .src{display:flex;gap:10px;align-items:center;margin-top:22px;font-size:14px;color:var(--muted)}
 .src b{color:var(--ink);border-bottom:2px solid var(--yellow)}
 
@@ -80,7 +86,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
 footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
 
 @media (max-width:900px){
-  .hero{padding:44px 0 32px}.hero-g{grid-template-columns:minmax(0,1fr)}.mark{display:none}
+  .hero{padding:44px 0 32px}.hero-g{grid-template-columns:minmax(0,1fr);gap:32px}
   .hero p{font-size:17px}
   .tools{position:static}
   .doc{grid-template-columns:minmax(0,1fr);gap:8px;padding:16px}
@@ -88,7 +94,7 @@ footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
   .tabs{flex-wrap:nowrap;overflow-x:auto;width:100%;scrollbar-width:none;padding-bottom:2px}.tabs button{white-space:nowrap;flex:none}
   .src{flex-wrap:wrap;gap:4px 8px}
 }
-@media (max-width:560px){.wrap{padding:0 16px}.brand b{font-size:15px}}
+@media (max-width:560px){.wrap{padding:0 16px}.brand b{font-size:15px;white-space:nowrap}.back{white-space:nowrap;padding:8px 12px}.back span{display:none}.back::after{content:"მთავარი"}}
 </style>
 </head>
 <body>
@@ -121,7 +127,13 @@ footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
       <p>კანონები და ტექნიკური რეგლამენტები, რომლებიც ყველაზე ხშირად გვჭირდება ობიექტზე. თითოეული დოკუმენტი იხსნება ოფიციალურ წყაროზე, ყოველთვის ბოლო, მოქმედი რედაქციით.</p>
       <div class="src">წყარო: <b>matsne.gov.ge</b> · საქართველოს საკანონმდებლო მაცნე</div>
     </div>
-    <div class="mark" aria-hidden="true"><svg><use href="#fr"/></svg><span class="p">§</span></div>
+    <div class="top" id="top3">
+      <h3>ყველაზე ხშირად</h3>
+      <a href="https://matsne.gov.ge/ka/document/view/4486188" target="_blank" rel="noopener"><span>შრომის უსაფრთხოების შესახებ<small>ორგანული კანონი</small></span><em>↗</em></a>
+      <a href="https://matsne.gov.ge/ka/document/view/3836869" target="_blank" rel="noopener"><span>სიმაღლეზე მუშაობის უსაფრთხოება<small>ტექნიკური რეგლამენტი</small></span><em>↗</em></a>
+      <a href="https://matsne.gov.ge/ka/document/view/2357152" target="_blank" rel="noopener"><span>მშენებლობის უსაფრთხოება<small>ტექნიკური რეგლამენტი</small></span><em>↗</em></a>
+      <a href="https://matsne.gov.ge/ka/document/view/5572284" target="_blank" rel="noopener"><span>უსაფრთხოების ნიშნები<small>ტექნიკური რეგლამენტი</small></span><em>↗</em></a>
+    </div>
   </div></section>
 
   <div class="tools"><div class="wrap">
