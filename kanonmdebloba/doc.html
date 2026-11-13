@@ -45,6 +45,12 @@ h1{font-size:clamp(28px,3.6vw,44px);line-height:1.18;font-weight:800;margin:16px
 .pg::after{content:attr(data-n);position:absolute;right:10px;bottom:8px;font-size:11px;color:#9a978e;font-family:var(--wide)}
 .msg{max-width:900px;margin:0 auto;padding:60px 20px;text-align:center;color:var(--ink2)}
 .msg b{display:block;font-size:20px;color:var(--ink);margin-bottom:8px}
+/* amendments */
+.am{margin-top:22px;display:flex;flex-direction:column;gap:8px;max-width:760px;font-size:15px}
+.am b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.am a{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;background:var(--card);border-left:4px solid var(--yellow);text-decoration:none;transition:background .25s}
+.am a:hover{background:#EBBD45}
+.am em{font-style:normal;font-weight:700;white-space:nowrap}
 footer{background:var(--ink);color:#BDBAB2;padding:32px 0;font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
@@ -75,12 +81,12 @@ footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
 <script>
 (function(){
   function e(t){var d=document.createElement('div');d.textContent=String(t==null?'':t);return d.innerHTML}
-  var id=new URLSearchParams(location.search).get('id'),d=DOCS.filter(function(x){return String(x.id)===id})[0];
+  var id=new URLSearchParams(location.search).get('id'),d=DOCS.filter(function(x){return String(x.id||x.key)===id})[0];
   var info=document.getElementById('info'),msg=document.getElementById('msg'),bar=document.getElementById('bar'),pages=document.getElementById('pages');
   if(!d){info.innerHTML='<h1>დოკუმენტი ვერ მოიძებნა</h1><p class="lead"><a href="./">დაბრუნდი ბაზაში</a></p>';return}
   document.title=d.t+' · Safe Corner';
-  var matsne='https://matsne.gov.ge/ka/document/view/'+d.id,law=/კანონ/.test(d.ty);
-  info.innerHTML='<div class="dm"><span class="ty'+(law?' law':'')+'">'+e(d.ty)+'</span>'+e([d.n?'№'+d.n:'',d.dt].filter(Boolean).join(' · '))+'</div><h1>'+e(d.t)+'</h1><p class="lead">'+e(d.d)+'</p><div class="acts">'+(d.pdf?'<a class="btn p" href="pdf/'+e(d.pdf)+'" download>გადმოწერა PDF ↓</a>':'')+'<a class="btn g" href="'+matsne+'" target="_blank" rel="noopener">matsne.gov.ge ↗</a><span class="ver">'+(d.v?'ვერსია: '+e(d.v)+' · ':'')+'უახლესი რედაქცია ყოველთვის <a href="'+matsne+'" target="_blank" rel="noopener">matsne-ზეა</a></span></div>';
+  var matsne=d.id?'https://matsne.gov.ge/ka/document/view/'+d.id:'',law=/კანონ/.test(d.ty);
+  info.innerHTML='<div class="dm"><span class="ty'+(law?' law':'')+'">'+e(d.ty)+'</span>'+e([d.n?'№'+d.n:'',d.dt].filter(Boolean).join(' · '))+'</div><h1>'+e(d.t)+'</h1><p class="lead">'+e(d.d)+'</p><div class="acts">'+(d.pdf?'<a class="btn p" href="pdf/'+e(d.pdf)+'" download>გადმოწერა PDF ↓</a>':'')+(matsne?'<a class="btn g" href="'+matsne+'" target="_blank" rel="noopener">matsne.gov.ge ↗</a>':'')+'<span class="ver">'+(d.v?'PDF ატვირთულია: '+e(d.v)+' · ':'')+'უახლესი რედაქცია ყოველთვის <a href="'+(matsne||'https://matsne.gov.ge/ka')+'" target="_blank" rel="noopener">matsne-ზეა</a></span></div>'+(d.am&&d.am.length?'<div class="am"><b>ცვლილებები</b>'+d.am.map(function(a){return '<a href="pdf/'+e(a.pdf)+'" target="_blank" rel="noopener">'+e(a.t)+' <em>PDF ↗</em></a>'}).join('')+'</div>':'');
   if(!d.pdf||!window.pdfjsLib){msg.hidden=false;msg.innerHTML='<b>სრული ტექსტი მალე დაემატება</b>მანამდე დოკუმენტი გახსენი matsne.gov.ge-ზე.';return}
   pdfjsLib.GlobalWorkerOptions.workerSrc='lib/pdf.worker.min.js';
   pdfjsLib.getDocument('pdf/'+d.pdf).promise.then(function(pdf){
@@ -89,7 +95,7 @@ footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
     for(var n=1;n<=pdf.numPages;n++){var el=document.createElement('div');el.className='pg';el.dataset.n=n;pages.appendChild(el);io.observe(el)}
     function render(n,el){pdf.getPage(n).then(function(p){var w=el.clientWidth,v=p.getViewport({scale:1}),sc=w/v.width*Math.min(2,window.devicePixelRatio||1),vp=p.getViewport({scale:sc});
       var c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;el.style.aspectRatio=vp.width+'/'+vp.height;el.appendChild(c);p.render({canvasContext:c.getContext('2d'),viewport:vp})})}
-  }).catch(function(){msg.hidden=false;msg.innerHTML='<b>ფაილი ვერ ჩაიტვირთა</b><a href="pdf/'+e(d.pdf)+'">გადმოწერე PDF</a> ან გახსენი <a href="'+matsne+'" target="_blank" rel="noopener">matsne-ზე</a>.'});
+  }).catch(function(){msg.hidden=false;msg.innerHTML='<b>ფაილი ვერ ჩაიტვირთა</b><a href="pdf/'+e(d.pdf)+'">გადმოწერე PDF</a> '+(matsne?'ან გახსენი <a href="'+matsne+'" target="_blank" rel="noopener">matsne-ზე</a>.':'')});
 })();
 </script>
 </body>

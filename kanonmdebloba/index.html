@@ -181,7 +181,7 @@ footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
 <script>
 (function(){
   function e(t){var d=document.createElement('div');d.textContent=String(t==null?'':t);return d.innerHTML}
-  function url(d){return d.pdf?'doc.html?id='+d.id:'https://matsne.gov.ge/ka/document/view/'+d.id}
+  function url(d){return d.pdf?'doc.html?id='+(d.id||d.key):'https://matsne.gov.ge/ka/document/view/'+d.id}
   function tgt(d){return d.pdf?'':' target="_blank" rel="noopener"'}
   function cls(ty){return /კანონ/.test(ty)?' law':/ბრძანებ/.test(ty)?' ord':''}
   function meta(d){return [d.n?'№'+d.n:'',d.dt||''].filter(Boolean).join(' · ')}
