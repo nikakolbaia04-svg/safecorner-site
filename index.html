@@ -431,6 +431,9 @@ a.ep{text-decoration:none;color:inherit}
 #fieldv .pwin:hover{background:#fff}
 #team{background:var(--bg2);border-top:1px solid var(--line)}
 #resources{background:var(--bg)}
+#about,#season,#fieldv,#team,#resources{position:relative;border-top:1px solid #0E0E0E40}
+#about::before,#season::before,#fieldv::before,#team::before,#resources::before{content:"";position:absolute;top:-3px;left:max(28px,calc((100% - var(--max))/2 + 28px));width:96px;height:5px;background:var(--yellow)}
+#fieldv .fv,#fieldv .pwin,#about .card{outline:1px solid #0E0E0E1f;outline-offset:-1px}
 #contact{background:var(--ink);color:var(--bg);border-top:0}
 #contact .sec-head p{color:#BDBAB2}
 #contact .eyebrow,#contact .ct-info .lbl{color:#9C9990}
