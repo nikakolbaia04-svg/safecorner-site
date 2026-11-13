@@ -55,7 +55,7 @@ h1{font-size:clamp(32px,4.4vw,54px);line-height:1.12;font-weight:800;margin:18px
 .top h3{font-family:var(--wide);font-weight:700;font-size:12px;letter-spacing:.16em;color:var(--muted);margin-bottom:8px}
 .top a{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0;border-top:1px solid var(--line);text-decoration:none;font-weight:700;font-size:15.5px;line-height:1.35;transition:padding .3s var(--ease)}
 .top a small{display:block;color:var(--muted);font-weight:400;font-size:12.5px;margin-top:2px}
-.top a em,.go em{font-style:normal;flex:none;width:30px;height:30px;display:grid;place-items:center;border:1.5px solid #0E0E0E33;transition:background .3s,border-color .3s,transform .3s var(--ease)}
+.top a em{font-style:normal;flex:none;width:30px;height:30px;display:grid;place-items:center;border:1.5px solid #0E0E0E33;transition:background .3s,border-color .3s,transform .3s var(--ease)}
 .top a:hover{padding-left:6px}
 .top a:hover em{background:var(--yellow);border-color:var(--yellow);transform:rotate(45deg)}
 
@@ -88,24 +88,30 @@ h1{font-size:clamp(32px,4.4vw,54px);line-height:1.12;font-weight:800;margin:18px
 .gh span{font-family:var(--wide);font-weight:900;font-stretch:125%;font-size:15px;color:var(--yellow)}
 .gh h2{font-size:24px;font-weight:800;line-height:1.25}
 .gh p{flex-basis:100%;color:var(--muted);font-size:15px}
-.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.doc{display:flex;flex-direction:column;gap:10px;padding:22px 22px 18px;background:var(--card);border:1px solid transparent;text-decoration:none;position:relative;opacity:0;animation:up .6s var(--ease) forwards;animation-delay:calc(var(--i,0) * 45ms);transition:background .3s,border-color .3s,box-shadow .35s var(--ease),transform .35s var(--ease)}
-.doc::before,.doc::after{content:"";position:absolute;width:0;height:0;opacity:0;transition:width .4s var(--ease),height .4s var(--ease),opacity .3s}
-.doc::before{left:-1px;bottom:-1px;border-left:4px solid var(--yellow);border-bottom:4px solid var(--yellow)}
-.doc::after{right:-1px;top:-1px;border-right:1.5px solid var(--ink);border-top:1.5px solid var(--ink)}
-.doc:hover{background:#fff;border-color:var(--line);transform:translateY(-4px);box-shadow:0 18px 40px #0000001a}
-.doc:hover::before,.doc:hover::after{width:22px;height:22px;opacity:1}
-.dm{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
-.ty{font-size:11px;font-weight:800;letter-spacing:.05em;padding:4px 9px;white-space:nowrap;border:1.5px solid var(--ink);color:var(--ink)}
-.ty.law{background:var(--yellow);border-color:var(--yellow)}
-.ty.ord{border-style:dashed}
-.doc h3{font-size:18px;line-height:1.35;font-weight:800}
-.doc p{font-size:14.5px;color:var(--ink2);line-height:1.55}
-.df{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px}
-.tags{display:flex;gap:6px;flex-wrap:wrap}
-.tags span{font-size:11.5px;color:var(--muted);background:#0E0E0E0a;padding:2px 8px}
-.go{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;white-space:nowrap}
-.doc:hover .go em{background:var(--yellow);border-color:var(--yellow);transform:rotate(45deg)}
+.rows{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:118px minmax(0,1fr) auto;gap:22px;align-items:center;padding:16px 18px 16px 16px;border-bottom:1px solid var(--line);text-decoration:none;position:relative;opacity:0;animation:up .5s var(--ease) forwards;animation-delay:calc(var(--i,0) * 30ms);transition:background .25s,padding .3s var(--ease)}
+.row::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:var(--yellow);transition:width .3s var(--ease)}
+.row:hover{background:var(--card);padding-left:24px}
+.row:hover::before{width:4px}
+.rn{font-family:var(--wide);font-weight:800;font-size:13.5px;line-height:1.3;color:var(--ink)}
+.rn small{display:block;font-family:var(--ka);font-weight:400;font-size:12px;color:var(--muted);margin-top:3px}
+.rt h3{font-size:16.5px;line-height:1.35;font-weight:800}
+.rt p{font-size:14px;color:var(--muted);line-height:1.5;margin-top:3px;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical;overflow:hidden}
+.ra{display:flex;align-items:center;gap:12px;white-space:nowrap}
+.ty{font-size:10.5px;font-weight:800;letter-spacing:.04em;padding:3px 8px;white-space:nowrap;border:1.5px solid #0E0E0E40;color:var(--ink2)}
+.ty.law{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
+.go em{font-style:normal;flex:none;width:30px;height:30px;display:grid;place-items:center;border:1.5px solid #0E0E0E33;transition:background .3s,border-color .3s,transform .3s var(--ease)}
+.row:hover .go em{background:var(--yellow);border-color:var(--yellow);transform:translateX(3px)}
+.row.ext .go em{color:var(--muted)}
+.more{margin-top:44px}
+.more summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px 20px;background:var(--card);font-weight:800;font-size:17px;transition:background .25s}
+.more summary::-webkit-details-marker{display:none}
+.more summary:hover{background:#EBBD45}
+.more summary small{display:block;font-weight:400;font-size:13.5px;color:var(--ink2);margin-top:2px}
+.more summary em{font-style:normal;font-size:20px;transition:transform .3s var(--ease)}
+.more[open] summary em{transform:rotate(45deg)}
+.more .rows{margin-top:6px}
+@media (max-width:760px){.row{grid-template-columns:minmax(0,1fr) auto;gap:6px 14px;padding:14px 4px}.row:hover{padding-left:12px}.rn{grid-column:1/-1;display:flex;gap:8px;align-items:baseline;font-size:12.5px}.rn small{margin:0}.rt p{-webkit-line-clamp:2}.ty{display:none}}
 mark{background:#EBA80066;color:inherit;padding:0 1px}
 .empty{padding:56px 0;color:var(--muted);text-align:center;animation:up .5s var(--ease)}
 .empty b{display:block;color:var(--ink);font-size:20px;margin-bottom:6px}
@@ -115,7 +121,7 @@ mark{background:#EBA80066;color:inherit;padding:0 1px}
 .rv{opacity:0;transform:translateY(22px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .rv.in{opacity:1;transform:none}
 
-.totop{position:fixed;right:22px;bottom:22px;z-index:30;width:48px;height:48px;border:0;background:var(--ink);color:var(--bg);font-size:20px;cursor:pointer;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .35s,transform .35s var(--ease),background .25s}
+.totop{position:fixed;left:22px;bottom:22px;z-index:30;width:48px;height:48px;border:0;background:var(--ink);color:var(--bg);font-size:20px;cursor:pointer;opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .35s,transform .35s var(--ease),background .25s}
 .totop.on{opacity:1;transform:none;pointer-events:auto}
 .totop:hover{background:var(--yellow);color:var(--ink)}
 
@@ -129,11 +135,8 @@ footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
   .tools{position:static}
   .tabs{flex-wrap:nowrap;overflow-x:auto;width:100%;scrollbar-width:none}.tabs::-webkit-scrollbar{display:none}
   .cards{grid-template-columns:minmax(0,1fr)}
-  .df{flex-wrap:wrap}
-}
-@media (max-width:560px){.wrap{padding:0 16px}.brand b{font-size:15px}.back span{display:none}.back::after{content:"მთავარი"}.gh h2{font-size:21px}.doc{padding:18px 16px 14px}.note{grid-template-columns:minmax(0,1fr)}}
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.hero .eyebrow,.hero h1,.hero p,.hero .src,.top,.doc,.rv{opacity:1;transform:none}}
-</style>
+  }
+@media (max-width:560px){.wrap{padding:0 16px}.brand b{font-size:15px}.back span{display:none}.back::after{content:"მთავარი"}.gh h2{font-size:21px}@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.hero .eyebrow,.hero h1,.hero p,.hero .src,.top,</style>
 </head>
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -156,8 +159,7 @@ footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
     <div>
       <div class="eyebrow">საკანონმდებლო ბაზა</div>
       <h1>შრომის უსაფრთხოების კანონმდებლობა ერთ ადგილას</h1>
-      <p>კანონები, ტექნიკური რეგლამენტები და ბრძანებები, რომლებიც ობიექტზე ყველაზე ხშირად გვჭირდება. თითოეულს მოკლე აღწერა ახლავს, ბმული კი ოფიციალურ წყაროზე, მოქმედ რედაქციაზე გადაგიყვანს.</p>
-      <div class="src">წყარო: <b>matsne.gov.ge</b> <span>· საქართველოს საკანონმდებლო მაცნე</span></div>
+      <p>კანონები, ტექნიკური რეგლამენტები და ბრძანებები, რომლებიც ობიექტზე ყველაზე ხშირად გვჭირდება. თითოეულს მოკლე აღწერა ახლავს: გახსენი სრული ტექსტი პირდაპირ საიტზე ან გადმოწერე PDF-ად.</p>
     </div>
     <div class="top" id="top"><h3>ყველაზე ხშირად</h3></div>
   </div></section>
@@ -170,7 +172,7 @@ footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
   <section class="list"><div class="wrap">
     <p class="count" id="count" aria-live="polite"></p>
     <div id="out"></div>
-    <div class="note rv"><span class="ic">i</span><div><b>შენიშვნა:</b> ბაზა საინფორმაციოა და თანდათან შეივსება. იურიდიული ძალა აქვს მხოლოდ matsne.gov.ge-ზე გამოქვეყნებულ ტექსტს; ზოგიერთი ძველი აქტი ნაწილობრივ შეიძლება ჩანაცვლებული იყოს ახალი რეგლამენტებით. თუ მნიშვნელოვანი დოკუმენტი გამოგვრჩა, მოგვწერე: <a href="mailto:Safecorner2024@gmail.com">Safecorner2024@gmail.com</a></div></div>
+    <div class="note rv"><span class="ic">i</span><div><b>შენიშვნა:</b> ბაზა საინფორმაციოა და თანდათან შეივსება. ზოგიერთი ფაილი დოკუმენტის პირველადი რედაქციაა, ამიტომ მნიშვნელოვანი გადაწყვეტილების წინ გადაამოწმე მოქმედი ვერსია ან მიმართე სპეციალისტს.</div></div>
   </div></section>
 </main>
 
@@ -192,7 +194,7 @@ footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
   });
   /* tabs */
   var cur='all',tabs=document.getElementById('tabs'),ind=document.getElementById('ind');
-  var T=[{id:'all',tab:'ყველა'}].concat(GROUPS);
+  var T=[{id:'all',tab:'ყველა'}].concat(GROUPS.filter(function(g){return !g.more}));
   T.forEach(function(t){var c=t.id=='all'?DOCS.length:DOCS.filter(function(d){return d.g==t.id}).length;
     tabs.insertAdjacentHTML('beforeend','<button type="button" data-t="'+t.id+'" aria-pressed="'+(t.id==cur)+'">'+e(t.tab)+'<i>'+c+'</i></button>')});
   function moveInd(){var b=tabs.querySelector('[aria-pressed=true]');if(!b)return;ind.style.width=b.offsetWidth+'px';ind.style.transform='translateX('+b.offsetLeft+'px)'}
@@ -213,9 +215,11 @@ footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
       if(cur!='all'&&cur!=g.id)return;
       var ds=DOCS.filter(function(d){return d.g==g.id&&(!s||[d.t,d.d,d.ty,d.n,(d.k||[]).join(' ')].join(' ').toLowerCase().indexOf(s)>-1)});
       if(!ds.length)return;n+=ds.length;
-      html+='<div class="grp"><div class="gh"><span>'+g.n+'</span><h2>'+e(g.name)+'</h2><p>'+e(g.desc)+'</p></div><div class="cards">'+ds.map(function(d){
-        return '<a class="doc" style="--i:'+(i++)+'" href="'+url(d)+'"'+tgt(d)+'><span class="dm"><span class="ty'+cls(d.ty)+'">'+e(d.ty)+'</span>'+e(meta(d))+'</span><h3>'+hl(d.t,s)+'</h3><p>'+hl(d.d,s)+'</p><span class="df"><span class="tags">'+(d.k||[]).slice(0,3).map(function(k){return '<span>'+e(k)+'</span>'}).join('')+'</span>'+(d.pdf?'<span class="go">წაკითხვა <em>→</em></span>':'<span class="go">matsne <em>↗</em></span>')+'</span></a>';
-      }).join('')+'</div></div>';
+      var rows='<div class="rows">'+ds.map(function(d){
+        return '<a class="row'+(d.pdf?'':' ext')+'" style="--i:'+(i++)+'" href="'+url(d)+'"'+tgt(d)+'><span class="rn">'+(d.n?'№'+e(d.n):'—')+'<small>'+e(d.dt||'')+'</small></span><span class="rt"><h3>'+hl(d.t,s)+'</h3><p>'+hl(d.d,s)+'</p></span><span class="ra"><span class="ty'+cls(d.ty)+'">'+e(d.ty)+'</span><span class="go"><em>'+(d.pdf?'→':'↗')+'</em></span></span></a>';
+      }).join('')+'</div>';
+      if(g.more&&cur=='all'&&!s)html+='<details class="more"><summary><span>'+e(g.name)+' ('+ds.length+')<small>'+e(g.desc)+'</small></span><em>+</em></summary>'+rows+'</details>';
+      else html+='<div class="grp"><div class="gh"><span>'+g.n+'</span><h2>'+e(g.name)+'</h2><p>'+e(g.desc)+'</p></div>'+rows+'</div>';
     });
     out.innerHTML=n?html:'<div class="empty"><b>ვერაფერი მოიძებნა</b>სცადე სხვა სიტყვა ან აირჩიე „ყველა“.</div>';
     cnt.innerHTML=s?'ძებნა „'+e(q.value.trim())+'“: <b>'+n+'</b> დოკუმენტი':'ნაჩვენებია <b>'+n+'</b> დოკუმენტი';
