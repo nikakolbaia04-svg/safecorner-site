@@ -23,38 +23,30 @@ header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 9
 .back{font-size:15px;color:var(--ink2);text-decoration:none;display:inline-flex;gap:8px;align-items:center;padding:8px 14px;border:1.5px solid #0E0E0E33;white-space:nowrap;transition:background .25s,color .25s,border-color .25s}
 .back:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 @keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.info{padding:56px 0 36px;animation:up .7s var(--ease) both}
+.info{padding:26px 0 18px;animation:up .6s var(--ease) both;display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.info .tx{flex:1 1 520px;min-width:0}
 .dm{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
-.ty{font-size:11px;font-weight:800;letter-spacing:.05em;padding:4px 9px;border:1.5px solid var(--ink);color:var(--ink)}
-.ty.law{background:var(--yellow);border-color:var(--yellow)}
-h1{font-size:clamp(28px,3.6vw,44px);line-height:1.18;font-weight:800;margin:16px 0 12px;max-width:900px;text-wrap:balance}
-.lead{font-size:18px;color:var(--ink2);max-width:760px}
-.acts{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;align-items:center}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 20px;font-weight:700;font-size:15px;text-decoration:none;border:2px solid var(--ink);transition:background .25s,color .25s}
-.btn.p{background:var(--ink);color:var(--bg)}.btn.p:hover{background:#2a2a2a}
-.btn.g:hover{background:var(--ink);color:var(--bg)}
-.ver{font-size:13.5px;color:var(--muted)}
-.ver a{color:var(--ink);border-bottom:2px solid var(--yellow);text-decoration:none}
-.reader{position:relative;background:#DCD9D0;padding:28px 0 64px;border-top:1px solid var(--line)}
-.bar{position:sticky;top:72px;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:12px;max-width:900px;margin:0 auto 18px;padding:10px 14px;background:var(--ink);color:var(--bg);font-size:14px}
-.bar b{font-family:var(--wide);font-weight:800}
-.bar a{color:var(--bg);text-decoration:none;border-bottom:2px solid var(--yellow)}
-.pages{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
-.pg{position:relative;background:#fff;box-shadow:0 10px 30px #0000001f;aspect-ratio:1/1.414;opacity:0;animation:up .6s var(--ease) forwards}
+.ty{font-size:11px;font-weight:800;letter-spacing:.05em;padding:3px 9px;background:var(--yellow);color:var(--ink)}
+h1{font-size:clamp(22px,2.4vw,30px);line-height:1.25;font-weight:800;margin:10px 0 0;max-width:820px;text-wrap:balance}
+.dl{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;font-weight:700;font-size:15px;text-decoration:none;background:var(--yellow);color:var(--ink);border:2px solid var(--yellow);white-space:nowrap;transition:background .25s,border-color .25s,transform .25s}
+.dl:hover{background:#EBBD45;border-color:#EBBD45;transform:translateY(-2px)}
+.dl small{font-weight:500;color:var(--ink2);font-size:13px}
+.reader{position:relative;background:#E4E1D9;padding:24px 0 56px;border-top:1px solid var(--line)}
+.pages{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.pg{position:relative;background:#fff;box-shadow:0 6px 22px #0000001a;aspect-ratio:1/1.414;opacity:0;animation:up .6s var(--ease) forwards}
 .pg canvas{display:block;width:100%;height:auto}
 .pg::after{content:attr(data-n);position:absolute;right:10px;bottom:8px;font-size:11px;color:#9a978e;font-family:var(--wide)}
 .msg{max-width:900px;margin:0 auto;padding:60px 20px;text-align:center;color:var(--ink2)}
 .msg b{display:block;font-size:20px;color:var(--ink);margin-bottom:8px}
-/* amendments */
-.am{margin-top:22px;display:flex;flex-direction:column;gap:8px;max-width:760px;font-size:15px}
-.am b{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
-.am a{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;background:var(--card);border-left:4px solid var(--yellow);text-decoration:none;transition:background .25s}
+.msg a{color:var(--ink);border-bottom:2px solid var(--yellow);text-decoration:none}
+.am{flex-basis:100%;display:flex;flex-wrap:wrap;gap:8px}
+.am a{display:inline-flex;gap:10px;padding:8px 14px;background:var(--card);border-left:3px solid var(--yellow);text-decoration:none;font-size:14px;transition:background .25s}
 .am a:hover{background:#EBBD45}
-.am em{font-style:normal;font-weight:700;white-space:nowrap}
-footer{background:var(--ink);color:#BDBAB2;padding:32px 0;font-size:14px}
+.am em{font-style:normal;font-weight:700}
+footer{background:var(--bg);color:var(--muted);padding:26px 0;font-size:14px;border-top:1px solid var(--line)}
 footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
-@media (max-width:560px){.wrap{padding:0 16px}.wrap.info{padding:32px 16px 24px}.brand b{font-size:15px}.back span{display:none}.back::after{content:"ბაზა"}.reader{padding:16px 8px 40px}.bar{top:72px}}
+footer a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--yellow)}
+@media (max-width:560px){.wrap{padding:0 16px}.wrap.info{padding:20px 16px 16px}.brand b{font-size:15px}.back span{display:none}.back::after{content:"ბაზა"}.reader{padding:12px 8px 40px}.dl{width:100%;justify-content:center}}
 </style>
 </head>
 <body>
@@ -73,7 +65,7 @@ footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
 </div></header>
 <main>
   <section class="wrap info" id="info"></section>
-  <section class="reader"><div class="bar" id="bar" hidden></div><div class="pages" id="pages"></div><div class="msg" id="msg" hidden></div></section>
+  <section class="reader"><div class="pages" id="pages"></div><div class="msg" id="msg" hidden></div></section>
 </main>
 <footer><div class="wrap"><span>© 2026 Safe Corner · უსაფრთხო კუთხე</span><a href="/">safecorner.ge</a></div></footer>
 <script src="docs.js"></script>
@@ -82,20 +74,20 @@ footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
 (function(){
   function e(t){var d=document.createElement('div');d.textContent=String(t==null?'':t);return d.innerHTML}
   var id=new URLSearchParams(location.search).get('id'),d=DOCS.filter(function(x){return String(x.id||x.key)===id})[0];
-  var info=document.getElementById('info'),msg=document.getElementById('msg'),bar=document.getElementById('bar'),pages=document.getElementById('pages');
+  var info=document.getElementById('info'),msg=document.getElementById('msg'),pages=document.getElementById('pages');
   if(!d){info.innerHTML='<h1>დოკუმენტი ვერ მოიძებნა</h1><p class="lead"><a href="./">დაბრუნდი ბაზაში</a></p>';return}
   document.title=d.t+' · Safe Corner';
-  var matsne=d.id?'https://matsne.gov.ge/ka/document/view/'+d.id:'',law=/კანონ/.test(d.ty);
-  info.innerHTML='<div class="dm"><span class="ty'+(law?' law':'')+'">'+e(d.ty)+'</span>'+e([d.n?'№'+d.n:'',d.dt].filter(Boolean).join(' · '))+'</div><h1>'+e(d.t)+'</h1><p class="lead">'+e(d.d)+'</p><div class="acts">'+(d.pdf?'<a class="btn p" href="pdf/'+e(d.pdf)+'" download>გადმოწერა PDF ↓</a>':'')+(matsne?'<a class="btn g" href="'+matsne+'" target="_blank" rel="noopener">matsne.gov.ge ↗</a>':'')+'<span class="ver">'+(d.v?'PDF ატვირთულია: '+e(d.v)+' · ':'')+'უახლესი რედაქცია ყოველთვის <a href="'+(matsne||'https://matsne.gov.ge/ka')+'" target="_blank" rel="noopener">matsne-ზეა</a></span></div>'+(d.am&&d.am.length?'<div class="am"><b>ცვლილებები</b>'+d.am.map(function(a){return '<a href="pdf/'+e(a.pdf)+'" target="_blank" rel="noopener">'+e(a.t)+' <em>PDF ↗</em></a>'}).join('')+'</div>':'');
-  if(!d.pdf||!window.pdfjsLib){msg.hidden=false;msg.innerHTML='<b>სრული ტექსტი მალე დაემატება</b>მანამდე დოკუმენტი გახსენი matsne.gov.ge-ზე.';return}
+  var f=d.pdf?'pdf/'+e(d.pdf):'';
+  info.innerHTML='<div class="tx"><div class="dm"><span class="ty">'+e(d.ty)+'</span>'+e([d.n?'№'+d.n:'',d.dt].filter(Boolean).join(' · '))+'</div><h1>'+e(d.t)+'</h1></div>'+(f?'<a class="dl" id="dl" href="'+f+'" download>გადმოწერა PDF ↓ <small id="np"></small></a>':'')+(d.am&&d.am.length?'<div class="am">'+d.am.map(function(a){return '<a href="pdf/'+e(a.pdf)+'" target="_blank" rel="noopener">'+e(a.t)+' <em>PDF ↓</em></a>'}).join('')+'</div>':'');
+  if(!f||!window.pdfjsLib){msg.hidden=false;msg.innerHTML='<b>სრული ტექსტი მალე დაემატება</b>';return}
   pdfjsLib.GlobalWorkerOptions.workerSrc='lib/pdf.worker.min.js';
-  pdfjsLib.getDocument('pdf/'+d.pdf).promise.then(function(pdf){
-    bar.hidden=false;bar.innerHTML='<span><b>'+pdf.numPages+'</b> გვერდი</span><a href="pdf/'+e(d.pdf)+'" download>გადმოწერა ↓</a>';
+  pdfjsLib.getDocument(f).promise.then(function(pdf){
+    document.getElementById('np').textContent='· '+pdf.numPages+' გვ.';
     var io=new IntersectionObserver(function(es){es.forEach(function(x){if(!x.isIntersecting)return;io.unobserve(x.target);render(+x.target.dataset.n,x.target)})},{rootMargin:'800px 0px'});
     for(var n=1;n<=pdf.numPages;n++){var el=document.createElement('div');el.className='pg';el.dataset.n=n;pages.appendChild(el);io.observe(el)}
     function render(n,el){pdf.getPage(n).then(function(p){var w=el.clientWidth,v=p.getViewport({scale:1}),sc=w/v.width*Math.min(2,window.devicePixelRatio||1),vp=p.getViewport({scale:sc});
       var c=document.createElement('canvas');c.width=vp.width;c.height=vp.height;el.style.aspectRatio=vp.width+'/'+vp.height;el.appendChild(c);p.render({canvasContext:c.getContext('2d'),viewport:vp})})}
-  }).catch(function(){msg.hidden=false;msg.innerHTML='<b>ფაილი ვერ ჩაიტვირთა</b><a href="pdf/'+e(d.pdf)+'">გადმოწერე PDF</a> '+(matsne?'ან გახსენი <a href="'+matsne+'" target="_blank" rel="noopener">matsne-ზე</a>.':'')});
+  }).catch(function(){msg.hidden=false;msg.innerHTML='<b>ფაილი ვერ ჩაიტვირთა</b><a href="'+f+'" download>გადმოწერე PDF</a>'});
 })();
 </script>
 </body>
