@@ -26,9 +26,10 @@ var FIELD=[
   var CH="https://www.youtube.com/@SafeCorner2024";
   function e(t){var d=document.createElement('div');d.textContent=t||'';return d.innerHTML}
   var pl=document.getElementById('pods');
-  if(pl)pl.innerHTML=PODCASTS.slice().reverse().map(function(p){
+  if(pl)pl.innerHTML=PODCASTS.map(function(p,i){
+    var k=PODCASTS.length>1?i/(PODCASTS.length-1):0,c='hsl('+(46-8*k).toFixed(1)+','+(88+8*k).toFixed(0)+'%,'+(64-22*k).toFixed(1)+'%)';
     var u=p.yt?'https://www.youtube.com/watch?v='+p.yt:CH;
-    return '<a class="pd" href="'+u+'" target="_blank" rel="noopener"><span class="pn">'+(p.n<10?'0':'')+p.n+'</span><span class="pb"><b>'+e(p.g)+'</b>'+(p.r?'<small>'+e(p.r)+'</small>':'')+(p.t?'<span class="pt">'+e(p.t)+'</span>':'')+'</span><span class="pw" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>';
+    return '<a class="pd" style="--c:'+c+'" href="'+u+'" target="_blank" rel="noopener"><span class="pn">'+(p.n<10?'0':'')+p.n+'</span><span class="pb"><b>'+e(p.g)+'</b>'+(p.r?'<small>'+e(p.r)+'</small>':'')+(p.t?'<span class="pt">'+e(p.t)+'</span>':'')+'</span><span class="pw" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span></a>';
   }).join('');
   var fl=document.getElementById('field');
   if(fl){fl.innerHTML=FIELD.map(function(v){

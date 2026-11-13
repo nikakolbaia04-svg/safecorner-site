@@ -181,6 +181,16 @@ html[lang=ka] h2{font-family:var(--ka)}
 .fv-t p{font-size:14.5px;color:var(--ink2)}
 .fv-t a{margin-top:auto;padding-top:8px;align-self:flex-start;font-size:13px;font-weight:700;text-decoration:none;border-bottom:2px solid var(--yellow)}
 @media (max-width:900px){.pods{grid-template-columns:1fr}.fvs{grid-template-columns:1fr}.pn{font-size:24px}.pd{grid-template-columns:48px minmax(0,1fr) 36px;gap:12px}}
+.pwin{margin-top:28px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:32px;align-items:center;padding:28px 32px;background:#F6F5F1;text-decoration:none;color:var(--ink);position:relative;transition:background .3s,box-shadow .35s}
+.pwin::before{content:"";position:absolute;left:0;bottom:0;width:30px;height:30px;border-left:4px solid var(--yellow);border-bottom:4px solid var(--yellow);transition:width .4s,height .4s}
+.pwin:hover{background:#fff;box-shadow:0 18px 40px #0000001a}.pwin:hover::before{width:46px;height:46px}
+.pwin-n{display:flex;flex-direction:column;align-items:flex-start;padding-right:30px;border-right:1px solid var(--line);min-width:150px}
+.pwin-n b{font-family:var(--wide);font-weight:900;font-stretch:125%;font-size:64px;line-height:1;color:var(--yellow);background:linear-gradient(180deg,#F2C94C,#C98500);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.pwin-n span{font-weight:700;font-size:15px;margin-top:6px}
+.pwin-t b{display:block;font-size:22px;line-height:1.3;margin:10px 0 6px}
+.pwin-t small{display:block;color:var(--ink2);font-size:15px;max-width:640px}
+.pwin:hover .pwin-b{background:var(--ink);color:var(--bg)}
+@media (max-width:900px){.pwin{grid-template-columns:1fr;gap:16px;padding:24px 20px}.pwin-n{flex-direction:row;align-items:baseline;gap:12px;border-right:0;padding:0 0 12px;border-bottom:1px solid var(--line)}.pwin-n b{font-size:46px}.pwin-b{justify-content:center}}
 /* founders */
 .people{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
 .profile{background:#F6F5F1;position:relative}
@@ -444,7 +454,7 @@ a.ep{text-decoration:none;color:inherit}
     <div class="links">
       <a href="#about"><span class="ka">პროექტი</span><span class="en">About</span></a>
       <a href="#season"><span class="ka">ახალი სეზონი</span><span class="en">New season</span></a>
-      <a href="#podcasts"><span class="ka">ვიდეოები</span><span class="en">Videos</span></a>
+      <a href="#fieldv"><span class="ka">ვიდეოები</span><span class="en">Videos</span></a>
       <a href="#team"><span class="ka">გუნდი</span><span class="en">Team</span></a>
       <a href="#articles"><span class="ka">სტატიები</span><span class="en">Articles</span></a>
       <a href="#resources"><span class="ka">რესურსები</span><span class="en">Resources</span></a>
@@ -542,30 +552,21 @@ a.ep{text-decoration:none;color:inherit}
     </div>
   </section>
 
-  <section id="podcasts">
-    <div class="wrap">
-      <div class="sec-head">
-        <div>
-          <div class="eyebrow"><span class="ka">პოდკასტები · 2024-დან</span><span class="en">Podcasts · since 2024</span></div>
-          <h2 style="margin-top:16px"><span class="ka">ვინ ისაუბრა უსაფრთხო კუთხეში</span><span class="en">Who has joined Safe Corner</span></h2>
-        </div>
-        <p><span class="ka">14 პოდკასტი დარგის სპეციალისტებთან: ინსპექცია, განათლება, რისკის შეფასება, ისტორია და პრაქტიკა.</span><span class="en">14 podcasts with industry specialists: inspection, training, risk assessment, history and practice.</span></p>
-      </div>
-      <div class="pods" id="pods"></div>
-      <a class="btn ghost pods-more" href="https://www.youtube.com/@SafeCorner2024" target="_blank" rel="noopener"><span class="ka">ყველა ეპიზოდი YouTube-ზე</span><span class="en">All episodes on YouTube</span> ↗</a>
-    </div>
-  </section>
-
   <section id="fieldv">
     <div class="wrap">
       <div class="sec-head">
         <div>
-          <div class="eyebrow"><span class="ka">საველე ვიდეოები</span><span class="en">Field videos</span></div>
+          <div class="eyebrow"><span class="ka">ვიდეოები</span><span class="en">Videos</span></div>
           <h2 style="margin-top:16px"><span class="ka">ობიექტიდან, რეალურად</span><span class="en">On site, for real</span></h2>
         </div>
         <p><span class="ka">რეალური შემოწმებები სამუშაო ობიექტებზე: ამწე, ხარაჩო, დამცავი ქამარი. უყურე პირდაპირ აქ.</span><span class="en">Real inspections on work sites: crane, scaffolding, safety harness. Watch right here.</span></p>
       </div>
       <div class="fvs" id="field"></div>
+      <a class="pwin" id="podcasts" href="/podkastebi/">
+        <span class="pwin-n"><b>14</b><span class="ka">პოდკასტი</span><span class="en">podcasts</span></span>
+        <span class="pwin-t"><span class="eyebrow"><span class="ka">პოდკასტები · 2024-დან</span><span class="en">Podcasts · since 2024</span></span><b><span class="ka">ჩვენი სტუმრები</span><span class="en">Our guests</span></b><small><span class="ka">ირაკლი არაბიძე, ნათია სვანიძე, კახა დათიაშვილი, დავით თხელიძე და კიდევ 6 სპეციალისტი: ინსპექცია, რისკის შეფასება, განათლება და პრაქტიკა.</span><span class="en">Irakli Arabidze, Natia Svanidze, Kakha Datiashvili, Davit Tkhelidze and 6 more specialists.</span></small></span>
+        <span class="btn ghost pwin-b"><span class="ka">ყველა ეპიზოდი</span><span class="en">All episodes</span> →</span>
+      </a>
     </div>
   </section>
 
@@ -752,7 +753,7 @@ a.ep{text-decoration:none;color:inherit}
         <a href="https://www.facebook.com/profile.php?id=61563196905202" target="_blank" rel="noopener">Facebook</a>
         <a href="#about"><span class="ka">პროექტი</span><span class="en">About</span></a>
         <a href="#season"><span class="ka">სეზონი</span><span class="en">Season</span></a>
-        <a href="#podcasts"><span class="ka">ვიდეოები</span><span class="en">Videos</span></a>
+        <a href="#fieldv"><span class="ka">ვიდეოები</span><span class="en">Videos</span></a>
         <a href="#team"><span class="ka">გუნდი</span><span class="en">Team</span></a>
         <a href="#articles"><span class="ka">სტატიები</span><span class="en">Articles</span></a>
       <a href="#resources"><span class="ka">რესურსები</span><span class="en">Resources</span></a>
@@ -864,7 +865,7 @@ var RESOURCES=[
   });
 })();
 </script>
-<script src="/assets/media.js?v=1"></script>
+<script src="/assets/media.js?v=2"></script>
 <script src="/assets/bot.js" defer></script>
 </body>
 </html>
