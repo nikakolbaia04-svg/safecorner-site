@@ -64,11 +64,11 @@ var SEASON=[
    docs:[5512758,5572284,"d590",6488414,4776091]}
 ];
 (function(){
-  /* მთავარ გვერდზე სეზონის სტრიქონები ეპიზოდის გვერდებზე გადადის */
+  /* მთავარ გვერდზე: სეზონის სტრიქონი YouTube-ზე გადადის მხოლოდ მაშინ, როცა ეპიზოდს yt აქვს */
   document.querySelectorAll('.ep[data-ep]').forEach(function(row){
-    var ep=SEASON.filter(function(x){return String(x.n)===row.dataset.ep})[0];if(!ep)return;
-    var a=document.createElement('a');a.className=row.className;a.href='/epizodi/'+ep.n+'/';a.dataset.ep=row.dataset.ep;a.innerHTML=row.innerHTML;
-    if(ep.yt){var s=a.querySelector('.soon');if(s)s.outerHTML='<span class="watch"><svg><use href="#yt"/></svg><span class="ka">უყურე</span><span class="en">Watch</span></span>'}
+    var ep=SEASON.filter(function(x){return String(x.n)===row.dataset.ep})[0];if(!ep||!ep.yt)return;
+    var a=document.createElement('a');a.className=row.className;a.href='https://www.youtube.com/watch?v='+encodeURIComponent(ep.yt);a.target='_blank';a.rel='noopener';a.innerHTML=row.innerHTML;
+    var s=a.querySelector('.soon');if(s)s.outerHTML='<span class="watch"><svg><use href="#yt"/></svg><span class="ka">უყურე</span><span class="en">Watch</span></span>';
     row.replaceWith(a);
   });
 })();
