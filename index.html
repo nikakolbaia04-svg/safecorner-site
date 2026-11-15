@@ -452,6 +452,23 @@ a.ep{text-decoration:none;color:inherit}
 .sx2 .sx-f{border-top:1px solid #ffffff26}.sx2 .sx-f div+div{border-left:1px solid #ffffff1f}.sx2 .sx-f b{color:var(--o)}
 .sx2 .sx-btn{background:var(--r);color:#fff}.sx2 .sx-btn:hover{background:var(--o);color:var(--c)}
 @media (max-width:900px){.sx2-in{grid-template-columns:minmax(0,1fr);gap:28px;padding:40px 24px 40px 30px}}
+#community{background:var(--bg2);border-top:1px solid #0E0E0E40;position:relative}
+.jb{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:64px;align-items:center}
+.jb-l h2{margin-top:18px;font-size:clamp(34px,4.2vw,54px);line-height:1.08}
+.jb-n{display:flex;align-items:baseline;gap:12px;margin-top:44px;padding-top:20px;border-top:1px solid #0E0E0E26;color:var(--ink2);font-size:15px}
+.jb-n b{font-family:var(--wide);font-weight:900;font-stretch:125%;font-size:40px;line-height:1;color:var(--ink)}
+.jb-r{border-top:2px solid var(--ink)}
+.jr{display:grid;grid-template-columns:64px minmax(0,1fr) 48px;gap:22px;align-items:center;padding:30px 20px 30px 0;border-bottom:1px solid #0E0E0E26;text-decoration:none;color:var(--ink);position:relative;transition:padding .35s cubic-bezier(.2,.7,.2,1),background .3s}
+.jr-ic{width:64px;height:64px;display:grid;place-items:center;border:1.5px solid var(--ink);transition:background .3s,color .3s,border-color .3s}
+.jr-ic svg{width:30px;height:30px}
+.jr-t b{display:block;font-size:24px;line-height:1.2}
+.jr-t small{display:block;font-size:15px;color:var(--ink2);margin-top:6px}
+.jr-go{width:48px;height:48px;display:grid;place-items:center;font-size:20px;background:var(--yellow);transition:background .3s,color .3s,transform .3s}
+.jr:hover{padding-left:16px;background:#F6F5F1}
+.jr:hover .jr-go{background:var(--ink);color:var(--bg);transform:rotate(45deg)}
+.jr.fb:hover .jr-ic{background:#1877F2;border-color:#1877F2;color:#fff}.jr.wa:hover .jr-ic{background:#25D366;border-color:#25D366;color:#fff}
+@media (max-width:900px){.jb{grid-template-columns:1fr;gap:36px}}
+@media (max-width:560px){.jr{grid-template-columns:48px minmax(0,1fr) 40px;gap:14px;padding:22px 0}.jr-ic{width:48px;height:48px}.jr-t b{font-size:19px}.jr-go{width:40px;height:40px}}
 </style>
 </head>
 <body>
@@ -519,20 +536,6 @@ a.ep{text-decoration:none;color:inherit}
     </div>
   </div>
 
-  <section class="jn" id="community">
-    <div class="wrap">
-      <div class="jn-in">
-        <div class="t">
-          <div class="eyebrow"><span class="ka">შემოგვიერთდი</span><span class="en">Join us</span></div>
-          <b><span class="ka">გაწევრიანდი ჩვენს Facebook ჯგუფსა და WhatsApp-ის ჩათში</span><span class="en">Join our Facebook group and WhatsApp chat</span></b>
-        </div>
-        <div class="l">
-          <a class="fb" id="fb-link" href="#" target="_blank" rel="noopener" hidden><svg><use href="#fbi"/></svg><span class="ka">Facebook ჯგუფი</span><span class="en">Facebook group</span></a>
-          <a class="wa" id="wa-link" href="#" target="_blank" rel="noopener" hidden><svg><use href="#wai"/></svg><span class="ka">WhatsApp ჩათი</span><span class="en">WhatsApp chat</span></a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <section id="about">
     <div class="wrap">
@@ -593,6 +596,8 @@ a.ep{text-decoration:none;color:inherit}
       </a>
     </div>
   </section>
+
+  <section id="community"><div class="wrap jb"><div class="jb-l"><div class="eyebrow"><span class="ka">შემოგვიერთდი</span><span class="en">Join us</span></div><h2><span class="ka">იკითხე.<br>განიხილე.<br>გაიგე პირველმა.</span><span class="en">Ask.<br>Discuss.<br>Hear it first.</span></h2><p class="jb-n"><b>140+</b><span class="ka">წევრი ჩვენს Facebook ჯგუფში</span><span class="en">members in our Facebook group</span></p></div><div class="jb-r"><a class="jr fb" href="https://www.facebook.com/groups/safecorner2026" target="_blank" rel="noopener"><span class="jr-ic"><svg><use href="#fbi"/></svg></span><span class="jr-t"><b><span class="ka">Facebook ჯგუფი</span><span class="en">Facebook group</span></b><small><span class="ka">კითხვები, დისკუსიები, ვაკანსიები და სიახლეები. 140-ზე მეტი წევრი.</span><span class="en">Questions, discussions, jobs and news. 140+ members.</span></small></span><span class="jr-go">↗</span></a><a class="jr wa" href="https://chat.whatsapp.com/GI1HW5CBWVD4ionFVCQExu" target="_blank" rel="noopener"><span class="jr-ic"><svg><use href="#wai"/></svg></span><span class="jr-t"><b><span class="ka">WhatsApp ჩათი</span><span class="en">WhatsApp chat</span></b><small><span class="ka">სწრაფი შეტყობინებები ახალ ეპიზოდებსა და სიახლეებზე.</span><span class="en">Quick alerts about new episodes and news.</span></small></span><span class="jr-go">↗</span></a></div></div></section>
 
   <section id="team">
     <div class="wrap">
@@ -719,7 +724,7 @@ a.ep{text-decoration:none;color:inherit}
           <div><span class="lbl"><span class="ka">ელფოსტა</span><span class="en">Email</span></span><a href="mailto:Safecorner2024@gmail.com">Safecorner2024@gmail.com</a></div>
           <div><span class="lbl">YouTube</span><a href="https://www.youtube.com/@SafeCorner2024" target="_blank" rel="noopener">@SafeCorner2024</a></div>
           <div><span class="lbl">Facebook</span><a href="https://www.facebook.com/profile.php?id=61563196905202" target="_blank" rel="noopener">Safe Corner</a></div>
-          <div><span class="lbl"><span class="ka">ჯგუფები</span><span class="en">Groups</span></span><a href="https://www.facebook.com/groups/1523477912947664" target="_blank" rel="noopener">Facebook</a> · <a href="https://chat.whatsapp.com/GI1HW5CBWVD4ionFVCQExu" target="_blank" rel="noopener">WhatsApp</a></div>
+          <div><span class="lbl"><span class="ka">ჯგუფები</span><span class="en">Groups</span></span><a href="https://www.facebook.com/groups/safecorner2026" target="_blank" rel="noopener">Facebook</a> · <a href="https://chat.whatsapp.com/GI1HW5CBWVD4ionFVCQExu" target="_blank" rel="noopener">WhatsApp</a></div>
         </div>
         <form class="form" name="contact" method="POST" action="https://formsubmit.co/Safecorner2024@gmail.com" id="cform">
           <input type="hidden" name="_subject" value="safecorner.ge: ახალი შეტყობინება">
@@ -827,7 +832,7 @@ var ARTICLES=[
 <script>
 /* ეპიზოდების ვიდეოები: ჩაწერე YouTube ვიდეოს ID ეპიზოდის ნომრის გასწვრივ */
 /* Facebook ჯგუფის ლინკი: ცარიელი = ბლოკი დამალულია */
-var FB_GROUP="https://www.facebook.com/groups/1523477912947664";
+var FB_GROUP="https://www.facebook.com/groups/safecorner2026";
 /* WhatsApp ჯგუფის მოსაწვევი ლინკი (chat.whatsapp.com/...): ცარიელი = ბარათი დამალულია */
 var WA_GROUP="https://chat.whatsapp.com/GI1HW5CBWVD4ionFVCQExu";
 /* რესურსები: file = PDF ფაილის მისამართი (resources/ საქაღალდეში); ცარიელი = "მალე" */
@@ -836,9 +841,6 @@ var RESOURCES=[
 ];
 (function(){
   function e(t){var d=document.createElement('div');d.textContent=t==null?'':String(t);return d.innerHTML}
-  if(FB_GROUP){var fl=document.getElementById('fb-link');fl.href=FB_GROUP;fl.hidden=false}
-  if(WA_GROUP){var wl=document.getElementById('wa-link');wl.href=WA_GROUP;wl.hidden=false}
-  if(!FB_GROUP&&!WA_GROUP)document.getElementById('community').hidden=true
   /* resources */
   var rb=document.getElementById('res');
   rb.innerHTML=RESOURCES.map(function(r){
