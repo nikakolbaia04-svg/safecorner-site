@@ -311,24 +311,6 @@ a.ep{text-decoration:none;color:inherit}
 #resources{padding-top:56px;padding-bottom:56px}
 #resources .lw{margin-top:0}
 /* small group links in CTA */
-/* legislation window */
-.lw{margin-top:24px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:32px;align-items:center;padding:30px 34px;background:#EBBD45;text-decoration:none;color:var(--ink);position:relative;transition:background .3s}
-.lw:hover{background:#E3AE24}
-.lw-m{display:flex;flex-direction:column;align-items:flex-start;gap:6px;width:370px;padding-right:28px;border-right:1px solid #0E0E0E26}
-.lw-m small{font-family:var(--wide);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#3d300c}
-.lw-rot{display:block;height:44px;overflow:hidden;position:relative;width:100%}
-.lw-w{display:flex;flex-direction:column;animation:lwrot 12.5s cubic-bezier(.7,0,.2,1) infinite}
-.lw-w i{display:block;height:44px;line-height:44px;font-style:normal;font-weight:800;font-size:26px;white-space:nowrap;color:var(--ink)}
-.lw:hover .lw-w{animation-play-state:paused}
-@keyframes lwrot{0.00%,15.50%{transform:translateY(-0.0000%)}20.00%,35.50%{transform:translateY(-16.6667%)}40.00%,55.50%{transform:translateY(-33.3333%)}60.00%,75.50%{transform:translateY(-50.0000%)}80.00%,95.50%{transform:translateY(-66.6667%)}100%{transform:translateY(-83.3333%)}}
-@media (prefers-reduced-motion:reduce){.lw-w{animation:none}}
-.lw-t b{display:block;font-size:24px;line-height:1.25;margin:10px 0 6px}
-.lw-t small{display:block;color:var(--ink2);font-size:15px;max-width:640px}
-.lw .eyebrow{color:#3d300c}.lw .eyebrow::before{background:var(--ink)}
-.lw-b{white-space:nowrap;background:transparent}
-.lw:hover .lw-b{background:var(--ink);color:var(--bg)}
-.lw:hover .lw-b::before{top:-9px;left:-9px;opacity:1}.lw:hover .lw-b::after{bottom:-9px;right:-9px;opacity:1}
-@media (max-width:900px){.lw{grid-template-columns:minmax(0,1fr);gap:16px;padding:24px 20px}.lw-m{width:100%;border-right:0;padding-right:0;padding-bottom:14px;border-bottom:1px solid #0E0E0E26}.lw-w i{font-size:clamp(18px,5.6vw,21px)}.lw-t b{font-size:20px}.lw-b{justify-content:center}}
 /* join (slim strip, in brand style) */
 .jn{padding:0;background:var(--bg2);border-bottom:1px solid var(--line)}
 .jn-in{display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding:16px 0}
@@ -441,6 +423,26 @@ a.ep{text-decoration:none;color:inherit}
 #contact .form input,#contact .form select,#contact .form textarea{color:var(--bg);background:#1C1C1B;border-color:#3a3a38}
 #contact .form input:focus,#contact .form select:focus,#contact .form textarea:focus{border-color:var(--yellow)}
 #contact .form .btn::before,#contact .form .btn::after{border-color:var(--bg)}
+
+.lb-h{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:end;margin-bottom:40px}
+.lb-h h2{margin-top:16px}.lb-h p{color:var(--ink2);font-size:18px}
+.lb-s{display:flex;align-items:center;gap:14px;border:2px solid var(--ink);background:#fff;padding:0 0 0 22px;transition:box-shadow .3s}
+.lb-s:focus-within{box-shadow:6px 6px 0 var(--yellow)}
+.lb-s svg{width:22px;height:22px;flex:none}
+.lb-s input{flex:1;min-width:0;border:0;outline:0;background:transparent;font:inherit;font-size:20px;padding:20px 0}
+.lb-s input::placeholder{color:#8a887f;transition:opacity .3s}
+.lb-s button{align-self:stretch;border:0;background:var(--ink);color:var(--bg);font:inherit;font-weight:700;font-size:16px;padding:0 28px;cursor:pointer;transition:background .25s,color .25s}
+.lb-s button:hover{background:var(--yellow);color:var(--ink)}
+.lb-g{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:36px;border-top:2px solid var(--ink)}
+.lb-g a{position:relative;display:flex;flex-direction:column;gap:4px;padding:26px 24px 28px;text-decoration:none;color:var(--ink);border-bottom:1px solid var(--line);transition:background .3s}
+.lb-g a+a{border-left:1px solid var(--line)}
+.lb-n{font-family:var(--wide);font-weight:900;font-stretch:125%;font-size:52px;line-height:1;margin-bottom:14px;transition:color .3s}
+.lb-g b{font-size:17px;line-height:1.3}.lb-g small{font-size:14px;color:var(--muted)}
+.lb-g em{position:absolute;right:22px;top:28px;font-style:normal;font-size:20px;transition:transform .3s}
+.lb-g a:hover{background:#fff}.lb-g a:hover .lb-n{color:var(--yellow)}.lb-g a:hover em{transform:translateX(4px)}
+.lb-g a.all::before{content:"";position:absolute;left:0;bottom:0;width:30px;height:30px;border-left:5px solid var(--yellow);border-bottom:5px solid var(--yellow)}
+@media (max-width:900px){.lb-h{grid-template-columns:1fr;gap:16px}.lb-g{grid-template-columns:repeat(2,minmax(0,1fr))}.lb-g b{overflow-wrap:anywhere}.lb-g a:nth-child(3){border-left:0}}
+@media (max-width:560px){.lb-s{padding-left:14px}.lb-s input{font-size:16px;padding:16px 0}.lb-s button{padding:0 16px;font-size:14px}.lb-n{font-size:40px}.lb-g a{padding:20px 16px 22px}.lb-g em{right:14px;top:22px}.lb-g b{font-size:15px}}
 </style>
 </head>
 <body>
@@ -682,11 +684,9 @@ a.ep{text-decoration:none;color:inherit}
         <p><span class="ka">ჩეკლისტები და შაბლონები ეპიზოდებიდან: უფასოდ, ქართულად, ობიექტზე გამოსაყენებლად.</span><span class="en">Checklists and templates from our episodes: free, in Georgian, ready to use on site.</span></p>
       </div>
       <div class="res" id="res"></div>
-      <a class="lw" href="/kanonmdebloba/">
-        <span class="lw-m" aria-hidden="true"><small><span class="ka">მოძებნე</span><span class="en">Look up</span></small><span class="lw-rot"><span class="lw-w"><i><span class="ka">სიმაღლეზე მუშაობა</span><span class="en">Work at height</span></i><i><span class="ka">სახანძრო უსაფრთხოება</span><span class="en">Fire safety</span></i><i><span class="ka">ამწეები</span><span class="en">Cranes</span></i><i><span class="ka">ელექტრობა</span><span class="en">Electricity</span></i><i><span class="ka">ქიმიკატები</span><span class="en">Chemicals</span></i><i><span class="ka">სიმაღლეზე მუშაობა</span><span class="en">Work at height</span></i></span></span></span>
-        <span class="lw-t"><span class="eyebrow"><span class="ka">საკანონმდებლო ბაზა</span><span class="en">Legislation</span></span><b><span class="ka">შრომის უსაფრთხოების კანონები და რეგლამენტები</span><span class="en">OHS laws and technical regulations</span></b><small><span class="ka">ყველა მნიშვნელოვანი დოკუმენტი ერთ სივრცეში: მოძებნე, გაეცანი სრულ ტექსტს პირდაპირ საიტზე და გადმოწერე PDF-ად.</span><span class="en">Key OHS laws and regulations in one place: search, read the full text right on the site and download as PDF.</span></small></span>
-        <span class="btn ghost lw-b"><span class="ka">ბაზის გახსნა</span><span class="en">Open</span> →</span>
-      </a>
+      <div class="lb lbA"><div class="lb-h"><div><div class="eyebrow"><span class="ka">საკანონმდებლო ბაზა</span><span class="en">Legislation</span></div><h2><span class="ka">კანონმდებლობა, ერთ ადგილას.</span><span class="en">The law, in one place.</span></h2></div><p><span class="ka">შრომის უსაფრთხოების კანონები, ტექნიკური რეგლამენტები და ბრძანებები. სრული ტექსტი პირდაპირ საიტზე, გადმოწერა PDF-ად.</span><span class="en">Georgian OHS laws, technical regulations and orders. Read the full text on the site or download it as a PDF.</span></p></div>
+<form class="lb-s" action="/kanonmdebloba/" method="get" role="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input name="q" id="lbq" type="search" autocomplete="off" aria-label="ძებნა" placeholder="მოძებნე: სიმაღლეზე მუშაობა"><button type="submit"><span class="ka">ძებნა</span><span class="en">Search</span> →</button></form>
+<div class="lb-g"><a href="/kanonmdebloba/?g=law"><span class="lb-n">03</span><b><span class="ka">კანონები</span><span class="en">Laws</span></b><small><span class="ka">ძირითადი კანონები</span><span class="en">Core laws</span></small><em>→</em></a><a href="/kanonmdebloba/?g=reg"><span class="lb-n">26</span><b><span class="ka">ტექნიკური რეგლამენტები</span><span class="en">Technical regulations</span></b><small><span class="ka">სამუშაო ადგილის მოთხოვნები</span><span class="en">Workplace requirements</span></small><em>→</em></a><a href="/kanonmdebloba/?g=ord"><span class="lb-n">10</span><b><span class="ka">ბრძანებები და დადგენილებები</span><span class="en">Orders and resolutions</span></b><small><span class="ka">წესები და ჩამონათვალები</span><span class="en">Rules and lists</span></small><em>→</em></a><a class="all" href="/kanonmdebloba/"><span class="lb-n">52</span><b><span class="ka">ყველა დოკუმენტი</span><span class="en">All documents</span></b><small><span class="ka">40 იხსნება საიტზე</span><span class="en">40 open on the site</span></small><em>→</em></a></div></div>
     </div>
   </section>
 
@@ -871,5 +871,7 @@ var RESOURCES=[
 </script>
 <script src="/assets/media.js?v=4"></script>
 <script src="/assets/bot.js" defer></script>
+<script>(function(){var q=document.getElementById('lbq');if(!q)return;var K=["სიმაღლეზე მუშაობა","სახანძრო უსაფრთხოება","ამწეები","ელექტრობა","ქიმიკატები"],E=["work at height","fire safety","cranes","electricity","chemicals"],i=0;
+function f(){var en=document.documentElement.lang==='en';q.placeholder=(en?'Search: ':'მოძებნე: ')+(en?E:K)[i%5]}f();setInterval(function(){if(document.activeElement!==q){i++;f()}},2600)})();</script>
 </body>
 </html>
