@@ -237,6 +237,9 @@ footer a{color:#fff;text-decoration:none;border-bottom:2px solid var(--yellow)}
     cnt.innerHTML=s?L('ძებნა „'+e(q.value.trim())+'“: <b>'+n+'</b> დოკუმენტი','Search “'+e(q.value.trim())+'”: <b>'+n+'</b> documents'):L('ნაჩვენებია <b>'+n+'</b> დოკუმენტი','Showing <b>'+n+'</b> documents');
     if(scroll){var y=document.getElementById('tools').getBoundingClientRect().top+scrollY-72;if(scrollY>y)scrollTo({top:y,behavior:'smooth'})}
   }
+  (function(){var u=new URLSearchParams(location.search),uq=u.get('q'),ug=u.get('g');
+    if(ug&&T.some(function(t){return t.id===ug})){cur=ug;tabs.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.t===ug)})}
+    if(uq){q.value=uq;sb.classList.add('has')}})();
   draw(false);ph();document.addEventListener('sc-lang',function(){ph();setTimeout(moveInd,30)});
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(moveInd);setTimeout(moveInd,50);
   /* reveal + sticky + to top */
