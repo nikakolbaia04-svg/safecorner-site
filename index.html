@@ -20,7 +20,7 @@
 <meta name="google-site-verification" content="f-FEkds6aLT5stUbz-RZ_qX6HWM9rvh-hKxlBWbggSI">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Noto+Sans+Georgian:wght@400..800&family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&family=Noto+Sans+Georgian:wght@400..800&family=Rubik:wght@400;500;700;800&family=Noto+Serif+Georgian:wght@600&family=Noto+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#EEECE6; --bg2:#E4E1D8; --ink:#0E0E0E; --ink2:#3A3A38; --muted:#6B6A66;
@@ -242,22 +242,6 @@ html[lang=ka] h2{font-family:var(--ka)}
 .steps li::before{content:counter(s);font-family:var(--wide);font-weight:800;font-stretch:125%;font-size:20px;color:var(--yellow);min-width:22px}
 
 /* partner: Safety.ge branding */
-#partner{padding:0 0 110px}
-.partner{--sg-red:#EA4123;--sg-ink:#252422;--sg-paper:#E8E5D8;display:grid;grid-template-columns:1fr 1.4fr;gap:64px;align-items:center;background:var(--sg-ink);color:var(--sg-paper);padding:56px;position:relative;overflow:hidden;font-family:"Rubik","Noto Sans Georgian",sans-serif}
-.partner::before{content:"";position:absolute;left:0;top:0;bottom:0;width:10px;background:var(--sg-red)}
-.partner .eyebrow{color:#A8A498;font-family:"Rubik",var(--ka)}
-.partner .eyebrow::before{background:var(--sg-red)}
-.partner .logo{font-family:"Rubik",sans-serif;font-weight:800;font-size:clamp(42px,5.4vw,66px);letter-spacing:-.02em;line-height:1;margin-top:16px;color:var(--sg-paper)}
-.partner .logo i{font-style:normal;color:var(--sg-red)}
-.partner .addr{margin-top:14px;font-size:15px;color:#A8A498}
-.partner p{color:#D3CFC2;margin-bottom:22px;font-family:"Noto Sans Georgian","Rubik",sans-serif}
-.sg-facts{display:flex;gap:28px;flex-wrap:wrap;margin:0 0 26px;padding:18px 0;border-top:1px solid #ffffff1f;border-bottom:1px solid #ffffff1f}
-.sg-facts div{display:grid;gap:2px}
-.sg-facts b{font-family:"Rubik",sans-serif;font-weight:700;font-size:28px;line-height:1;color:var(--sg-paper)}
-.sg-facts span{font-size:13px;color:#A8A498}
-.partner .btn{background:var(--sg-red);border-color:var(--sg-red);color:#fff;font-family:"Rubik","Noto Sans Georgian",sans-serif}
-.partner .btn:hover{background:#c9351b;border-color:#c9351b;color:#fff}
-.partner .btn::before,.partner .btn::after{border-color:var(--sg-paper)}
 
 /* cta / footer */
 .cta{background:var(--yellow);padding:90px 0}
@@ -382,7 +366,7 @@ a.ep{text-decoration:none;color:inherit}
   .ep .watch{grid-column:2;justify-self:start}
   .links a{display:none}
   .hero{padding:56px 0 64px}
-  .hero-grid,.sec-head,.partner{grid-template-columns:1fr;gap:32px}
+  .hero-grid,.sec-head{grid-template-columns:1fr;gap:32px}
   .hero-mark{max-width:170px;justify-self:start;order:-1}
   .formats{grid-template-columns:1fr}
   .people,.arts{grid-template-columns:1fr}
@@ -393,7 +377,6 @@ a.ep{text-decoration:none;color:inherit}
   .ep{grid-template-columns:64px 1fr;gap:18px}
   .ep .n{font-size:32px}
   .ep .soon,.ep .cs{grid-column:2;justify-self:start}
-  .partner{padding:32px}
 }
 @media (max-width:560px){
   .fmts{grid-template-columns:minmax(0,1fr)}
@@ -443,6 +426,32 @@ a.ep{text-decoration:none;color:inherit}
 .lb-g a.all::before{content:"";position:absolute;left:0;bottom:0;width:30px;height:30px;border-left:5px solid var(--yellow);border-bottom:5px solid var(--yellow)}
 @media (max-width:900px){.lb-h{grid-template-columns:1fr;gap:16px}.lb-g{grid-template-columns:repeat(2,minmax(0,1fr))}.lb-g b{overflow-wrap:anywhere}.lb-g a:nth-child(3){border-left:0}}
 @media (max-width:560px){.lb-s{padding-left:14px}.lb-s input{font-size:16px;padding:16px 0}.lb-s button{padding:0 16px;font-size:14px}.lb-n{font-size:40px}.lb-g a{padding:20px 16px 22px}.lb-g em{right:14px;top:22px}.lb-g b{font-size:15px}}
+#partner{padding:96px 0;background:#FBFAF7;border-top:1px solid #0E0E0E40}
+.sx{--r:#EA4123;--c:#252422;--o:#E8E5D8;--cy:#ADC7CB;position:relative;overflow:hidden;font-family:"Noto Sans Georgian","Rubik",sans-serif}
+.sx-k{font-family:"Rubik",var(--ka);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.sx-k::before{content:"";width:22px;height:4px;background:currentColor}
+.sx-f{display:flex;margin:26px 0 28px}
+.sx-f div{flex:1;display:grid;gap:2px;padding-top:14px}
+.sx-f div+div{padding-left:18px}
+.sx-f b{font-family:"Rubik",sans-serif;font-weight:700;font-size:34px;line-height:1;white-space:nowrap}
+.sx-f span{font-size:13px}
+.sx-f b span{font:inherit;color:inherit}
+.sx-p b{font-size:19px!important;white-space:normal!important;margin-bottom:4px}.sx-p>div>span{line-height:1.4}
+@media (max-width:560px){.sx-p{flex-direction:column}.sx-p div+div{border-left:0!important;padding-left:0!important;border-top:1px solid #ffffff1f;margin-top:12px}}
+.sx-btn{display:inline-flex;gap:10px;align-items:center;padding:14px 22px;font-family:"Rubik","Noto Sans Georgian",sans-serif;font-weight:700;font-size:15px;text-decoration:none;transition:background .25s,color .25s}
+.sx-ad{font-size:14px;margin-top:12px}
+@media (max-width:560px){.sx-f b{font-size:24px}.sx-f div+div{padding-left:12px}}
+.sx2{background:var(--c);color:var(--o)}
+.sx2::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 0 62%,#2e2d2a 62% 74%,transparent 74%),linear-gradient(135deg,transparent 0 80%,#EA412318 80% 88%,transparent 88%)}
+.sx2::after{content:"";position:absolute;left:0;top:0;bottom:0;width:8px;background:var(--r)}
+.sx2-in{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:56px;align-items:center;padding:60px 56px}
+.sx2 .sx-k{color:#A8A498}.sx2 .sx-k::before{background:var(--r)}
+.sx2-l img{display:block;width:min(340px,100%);height:auto;margin-top:28px}
+.sx2-tag{font-family:"Noto Serif Georgian","Noto Serif",serif;font-style:italic;font-weight:600;font-size:22px;margin-top:22px}
+.sx2 .sx-ad,.sx2 .sx-f span{color:#A8A498}.sx2 .sx-tx{color:#D3CFC2;font-size:17px;line-height:1.65}
+.sx2 .sx-f{border-top:1px solid #ffffff26}.sx2 .sx-f div+div{border-left:1px solid #ffffff1f}.sx2 .sx-f b{color:var(--o)}
+.sx2 .sx-btn{background:var(--r);color:#fff}.sx2 .sx-btn:hover{background:var(--o);color:var(--c)}
+@media (max-width:900px){.sx2-in{grid-template-columns:minmax(0,1fr);gap:28px;padding:40px 24px 40px 30px}}
 </style>
 </head>
 <body>
@@ -692,22 +701,7 @@ a.ep{text-decoration:none;color:inherit}
 
   <section id="partner">
     <div class="wrap">
-      <div class="partner">
-        <div>
-          <div class="eyebrow"><span class="ka">პარტნიორი</span><span class="en">Partner</span></div>
-          <div class="logo">Safety<i>.ge</i></div>
-          <div class="addr"><span class="ka">უსაფრთხოების მრავალფუნქციური ცენტრი · ბელიაშვილის 136, თბილისი</span><span class="en">Multifunctional safety centre · 136 Beliashvili St, Tbilisi</span></div>
-        </div>
-        <div>
-          <p><span class="ka">ახალი სეზონი სტარტს Safety.ge-ის შოურუმიდან იღებს. ეს შრომის უსაფრთხოების უდიდესი ჰაბია, სადაც ერთ სივრცეშია უსაფრთხოების პროდუქცია, მომსახურება, ტრენინგები და კონსულტაცია.</span><span class="en">The new season starts from the Safety.ge showroom, the largest occupational safety hub, where safety products, services, training and consulting come together in one space.</span></p>
-          <div class="sg-facts">
-            <div><b>420 m²</b><span><span class="ka">შოურუმი</span><span class="en">showroom</span></span></div>
-            <div><b>2</b><span><span class="ka">სართული</span><span class="en">floors</span></span></div>
-            <div><b>8</b><span><span class="ka">მიმართულება</span><span class="en">safety areas</span></span></div>
-          </div>
-          <a class="btn primary" href="https://safety.ge" target="_blank" rel="noopener"><span class="ka">ეწვიე Safety.ge-ს</span><span class="en">Visit Safety.ge</span></a>
-        </div>
-      </div>
+      <div class="sx sx2"><div class="sx2-in"><div class="sx2-l"><div class="sx-k"><span class="ka">პარტნიორი</span><span class="en">Partner</span></div><img src="img/partners/safetyge-logo-light.svg" alt="safety.ge" width="340" height="77"><p class="sx2-tag"><span class="ka">უსაფრთხოება, ერთ სივრცეში.</span><span class="en">Safety, in one place.</span></p><p class="sx-ad"><span class="ka">ბელიაშვილის 138, თბილისი</span><span class="en">138 Beliashvili St, Tbilisi</span></p></div><div class="sx2-r"><p class="sx-tx"><span class="ka">ახალი სეზონი სტარტს Safety.ge-ის შოურუმიდან იღებს. ეს უსაფრთხოების მრავალფუნქციური ცენტრია, სადაც ყველაფერი ერთ სივრცეშია.</span><span class="en">The new season starts from the Safety.ge showroom, a multifunctional safety centre with everything in one space.</span></p><div class="sx-f sx-p"><div><b><span class="ka">პროდუქცია</span><span class="en">Products</span></b><span><span class="ka">დაცვის საშუალებები და აღჭურვილობა</span><span class="en">Protective and safety equipment</span></span></div><div><b><span class="ka">ტრენინგები</span><span class="en">Training</span></b><span><span class="ka">სწავლება და სერტიფიცირება</span><span class="en">Courses and certification</span></span></div><div><b><span class="ka">კონსულტაცია</span><span class="en">Consulting</span></b><span><span class="ka">აუდიტი და მხარდაჭერა</span><span class="en">Audits and support</span></span></div></div><a class="sx-btn" href="https://safety.ge" target="_blank" rel="noopener"><span class="ka">ეწვიე safety.ge-ს</span><span class="en">Visit safety.ge</span> ↗</a></div></div></div>
     </div>
   </section>
 
